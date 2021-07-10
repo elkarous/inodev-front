@@ -1,0 +1,84 @@
+
+.I1{
+  height: 380px;
+}
+.I2{
+  height: 380px;
+}
+.IC1{
+  position: relative;
+  bottom: 0px;
+  height: 120px;
+  width: 100px;
+  left: 50px;
+
+}
+.IC2{
+  position: relative;
+  bottom: 0px;
+  height: 120px;
+  width: 100px;
+  left: 50px;
+}
+.IC3{
+  position: relative;
+  bottom: 0px;
+  height: 120px;
+  width: 100px;
+  left: 90px;
+}
+.h2{
+  position: relative;
+  top: -30px;
+  font-size: 1.75rem;
+  font-weight: bold;
+}
+.card-text{
+  position: relative;
+  top: -30px;
+  font-size: 15px;
+  line-height: 25px;
+}
+.btn{
+  position: relative;
+  top: -30px;
+  background-color: white;
+  color: white;
+  font-size: 15px;
+  font-weight: 300;
+  border-radius: 5px;
+  width: 110px;
+}
+.card{
+  border-radius: 18px;
+  margin-top: 100px;
+  box-shadow: 0px 10px 30px -8px rgb(0 0 0 / 40%);
+}
+.card-title{
+  font-size: 2rem;
+  font-weight: bold;
+  line-height: 1.2;
+}
+.card1{
+  border-radius: 18px;
+  margin-top: 100px;
+}
+
+.img1{
+  width: 335px;
+  height: 200px;
+  bottom: 20px;
+  position: relative;
+}
+.cs1{
+  position: relative;
+
+}
+.carousel-inner > .item {
+  position: relative;
+  display: none;
+  -webkit-transition: 0.6s ease-in-out left;
+  -moz-transition: 0.6s ease-in-out left;
+  -o-transition: 0.6s ease-in-out left;
+  transition: 0.6s ease-in-out left;
+}

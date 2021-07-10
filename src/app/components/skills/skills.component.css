@@ -1,0 +1,170 @@
+*{
+  font-family: 'Avenir Next LT Pro';
+}
+#contwhite {
+  background: rgba(255, 255, 255, 0.658);
+  font-family: 'AvenirNextLTPro';
+  height: 520px;
+  width: 700px;
+  margin-right: 40px;
+  margin-top: 5px;
+
+}
+.wrapper{
+  height: 100px;
+  width: 100px;
+  position: relative;
+  border: 1px solid;
+  border-radius: 50%;
+  background-image: url('src/assets/coimbra.jpg');
+  background-size: 100% 100%;
+  overflow: hidden;
+  align-items: center;
+  margin-left: 20px;
+}
+.file{
+  position: absolute;
+  bottom: 0;
+  outline: none;
+  color: transparent;
+  width: 100%;
+  box-sizing: border-box;
+  cursor: pointer;
+  transition: 0.5s;
+  left: 0px;
+  font-size: 10px;
+}
+.file::-webkit-file-upload-button{
+  visibility: hidden;
+}
+
+#contgreen {
+  margin-left: 55px;
+  margin-top: -25px;
+}
+
+#login {
+  background-color: #178da9;
+  height: 450px;
+  width: 170px;
+  text-align: center;
+  margin-right: -50px;
+  z-index: 1;
+  margin-left: 130px;
+}
+
+#signup {
+  background-color: #178da9;
+  margin-top: 40px;
+  font-family: 'AvenirNextLTPro';
+
+}
+.main {
+  background-image: url(src/assets/coimbra.jpg);
+}
+
+#dn {
+  margin-left: 0.5px;
+}
+
+a{
+  color: white;
+  text-decoration: none;
+  cursor: pointer;
+}
+.df{
+  position: relative;
+  top: 60px;
+  left: 20px;
+}
+#sele1{
+  width: 100px;
+}
+.but {
+  background-color: #178da9;
+  color: white;
+  margin-left: 180px;
+  border-radius: 6px;
+  font-size: 10px;
+  position: relative;
+  left: 30px;
+  top: 57px;
+}
+.but2 {
+  background-color: #178da9;
+  color: white;
+  border-radius: 6px;
+  font-size: 10px;
+  position: relative;
+  top: 30px;
+  left: -100px;
+}
+.add{
+  position: absolute;
+  top: -145px;
+  left: -40px;
+  font-size: 12px;
+}
+
+.ddd{
+  position: relative;
+  margin-top: 210px;
+  margin-left: 50px;
+
+}
+
+#perso{
+  color: #178da9;
+}
+.border{
+  opacity: 75%;
+  border-radius: 6px;
+}
+label{
+  font-size: 15px;
+}
+
+
+@media(max-width: 767px){
+
+  a{
+    font-size: 12px;
+  }
+  *{
+    font-size: 12px;
+  }
+  .but{
+    position: relative;
+    top: -50px;
+    width: 150px;
+    left: -200px;
+  }
+  .ddd{
+    position: relative;
+
+  }
+  .YN{
+    position: relative;
+    top: 20px;
+    left: 70px;
+  }
+  #cr{
+    position: relative;
+    top: 50px;
+    left: -180px;
+  }
+  .but2{
+    position: relative;
+    top: -75px;
+  }
+  .add{
+    position: relative;
+    top: -120px;
+
+  }
+
+}
+
+/* #signup h5{
+  color: white:!important;
+} */

@@ -1,0 +1,151 @@
+.BKI{
+  background-position: center;
+  height: 150px;
+}
+.HH{
+  position: relative;
+  height: 180px;
+  width: 100%;
+}
+.PP{
+  border: none;
+}
+.apply{
+  background-color: #178da9;
+  color: white;
+}
+.Dte{
+  border: 0.5px solid #f5f5f5;
+}
+.ff{
+  background-color: #f5f5f5;
+  border: 0.5px solid black;
+  border-radius: 3px;
+}
+
+.card {
+  background-color: #178da9;
+  transition: 0.5s ease-in-out;
+  border-radius: 10px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  height: 70%;
+  width: 21rem;
+
+}
+.gg{
+  background: url("src/assets/coimbra.jpg");
+}
+a{ text-decoration: none;}
+.card:hover { flex: 1 1 44%; }
+
+.cont{
+  position: absolute;
+  opacity: 0;
+  width: 22rem;
+}
+.pt{
+  position: relative;
+  top: 50px;
+}
+.ps{
+  position: relative;
+  top: 100px;
+}
+.scroll{
+  overflow: hidden;
+  overflow-y: scroll;
+  padding: 10px;
+}
+.card:hover .cont{
+  opacity: 100%;
+  left: 240px;
+  background-color: #178da9;
+}
+.card:hover .EB{
+  width: 15rem;
+}
+button{
+  background-color: transparent;
+  border: white solid 1px;
+  color: white;
+  border-radius: 8px;
+}
+.EB{
+  position: relative;
+}
+.BA{
+  background-color: white;
+  color: #178da9;
+}
+.BA:hover{
+  background-color: transparent;
+  color: white;
+}
+button:hover{
+  background-color: white;
+  color: #178da9;
+}
+.GB {
+  background-color: #178da9;
+  height: 45px;
+  position: relative;
+  opacity: 100%;
+  width: 35px;
+  border-radius: 2px;
+}
+.Yel{
+  color: yellow;
+}
+.dy{
+  position: relative;
+}
+.NN{
+  background-color: #e1edf18f;
+  border-radius: 5px;
+  border-color: aliceblue;
+}
+@media(min-width: 360px) and (max-width: 800px){
+  .card{
+    height: 180px;
+    width: 90%;
+
+  }
+  *{
+    font-size: 13px;
+  }
+  .Yel{
+    position: relative;
+    top: -18px;
+  }
+  .EB{
+    top: -45px;
+    width: 13rem;
+  }
+  .EE{
+    position: relative;
+    top: -10px;
+  }
+  .cont{
+    width: 9rem;
+    position: absolute;
+  }
+  .card:hover .cont{
+    width: 71%;
+    left: 100px;
+  }
+  .card:hover .C {
+    font-size: 5px;
+  }
+  .card:hover .Yel{
+    font-size: 6px;
+  }
+  .card:hover .EB{
+    top: -10px;
+  }
+  .card:hover .B{
+    font-size: 25px;
+  }
+
+
+}

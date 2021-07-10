@@ -1,0 +1,10 @@
+
+body {
+    background-image: url(src/assets/coimbra.jpg);
+    background-position: 100%;
+    background-repeat: no-repeat;
+    margin-top: -135px;
+    font-weight: lighter;
+    font-family: 'metropolislight';
+}
+

@@ -1,0 +1,53 @@
+<style>
+  .h2 {
+    font-weight: bolder;
+  }
+</style>
+
+<div id="carouselExampleSlidesOnly" class="carousel slide h-75 d-flex " data-ride="carousel">
+
+  <div class="carousel-inner row">
+    <div class="col-md-3 active"*ngFor="let item of offre1 | paginate: { itemsPerPage: 4, currentPage: 1 } let i = index">
+      <div class="card cs1 text-center" style="width: 21rem;">
+        <img  src="{{'http://localhost:8080/offre/Imgarticles/'+item[11]}}" class=" img1" alt="...">
+        <div class="card-body">
+          <p class="card-title h2 ct1">{{item[1]}}</p>
+          <p class="card-text" style="height: 90px; width: 250px;word-wrap: break-word; overflow: hidden;">{{item[6]}}</p>
+          <a routerLink="/offre/{{item[0]}}/{{item[10]}}" style="color: #0d6efd" class="btn btn-info">View</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div><br><br>
+<!--Card-->
+<div class="bg-light h-75 row d-flex justify-content-center">
+  <div class="card mr-5 justify-content-center  p-3 mb-5  h-75" style="width: 21rem;background-color: #178da9;">
+    <img src="/assets/Intern%20Abroad.png" class="card-img-top ml-5 IC1" alt="...">
+    <div class="card-body text-center">
+      <p class="card-title h2 mt-5" id="IA" style="color: white">Intern<br> abroad</p>
+      <p class="card-text" style="font-weight: lighter;">Find an internship abroad and gain invaluable experience.
+      </p>
+      <a routerLink="/off/cat/intership" class="btn mt-3" style="color: #178da9">Explore</a>
+    </div>
+  </div>
+  <div class="card justify-content-center p-3 mb-5  h-75" style="width: 21rem;background-color: #178da9;">
+    <img src="/assets/Study%20Abroad.png" class="card-img-top ml-5 IC2 " alt="...">
+    <div class="card-body text-center">
+      <p class="card-title h2 mt-5 " style="color: white">Study<br> abroad</p>
+      <p class="card-text" style="font-weight: lighter;">Find the best capstone project abroad program for you.
+      </p>
+      <a routerLink="/off/cat/study" class="btn mt-3" style="color: #178da9">Explore</a>
+    </div>
+  </div>
+  <div class="card ml-5 justify-content-center p-3 mb-5 h-75" style="width: 21rem;background-color: #178da9;">
+    <img src="/assets/Volunteer%20Abroad.png" class="card-img-top IC3" alt="...">
+    <div class="card-body text-center">
+      <p class="card-title h2 mt-5"style="color: white">Volunteer<br> abroad</p>
+      <p class="card-text" style="font-weight: lighter;">Browse top notch volunteer projects that need your
+        support.</p>
+      <a routerLink="/off/cat/volunteer" class="btn mt-3" style="color: #178da9">Explore</a>
+    </div>
+  </div>
+</div>
+

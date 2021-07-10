@@ -1,0 +1,103 @@
+<nav class="px-1 bg-info position-fixed" id="sticky-sidebar">
+  <div class="nav flex-column flex-nowrap vh-100 overflow-auto text-white p-2" *ngIf="con.admin === 1">
+    <ul class="nav flex-column" >
+      <li class="nav-item">
+        <a class="nav-link list active" routerLink="/dash">
+          <span data-feather="home"></span>
+          Dashboard <span class="sr-only">(current)</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link list" routerLink="/listc">
+          <span data-feather="file"></span>
+          List Users
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link list" routerLink="/listoff/intership">
+          <span data-feather="shopping-cart"></span>
+          List Offres
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link list" routerLink="/listspe">
+          <span data-feather="users"></span>
+          List Specialite
+        </a>
+      </li>
+    </ul>
+
+  </div>
+  <div class="nav flex-column flex-nowrap vh-100 overflow-auto text-white p-2" *ngIf="con.admin === 0">
+    <ul class="nav flex-column" >
+      <li class="nav-item">
+        <a class="nav-link list active" routerLink="/dash">
+          <span data-feather="home"></span>
+          Dashboard <span class="sr-only">(current)</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link list" routerLink="/myapplication">
+          <span data-feather="file"></span>
+          My Application
+        </a>
+      </li>
+      <li class="nav-item" *ngIf="con.enabled != null">
+        <a class="nav-link list" routerLink="/calendar/{{con.enabled}}">
+          <span data-feather="file"></span>
+          My calendar
+        </a>
+      </li>
+
+    </ul>
+  </div>
+
+
+  <div class="mh-100 nav flex-column flex-nowrap min-vh-100 mw-25 overflow-auto text-white p-2" *ngIf="con.admin === 3">
+
+    <ul class="nav flex-column" >
+      <li class="nav-item">
+        <a class="nav-link list active" routerLink="/dash">
+          <span data-feather="home"></span>
+          Dashboard <span class="sr-only">(current)</span>
+        </a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link list" routerLink="/listoff/intership">
+          <span data-feather="shopping-cart"></span>
+          List Offres
+        </a>
+      </li>
+
+    </ul>
+  </div>
+
+
+  <div class="mh-100 nav flex-column flex-nowrap min-vh-100 mw-25 overflow-auto text-white p-2" *ngIf="con.admin === 2">
+
+    <ul class="nav flex-column" >
+      <li class="nav-item">
+        <a class="nav-link list active" routerLink="/dash">
+          <span data-feather="home"></span>
+          Dashboard <span class="sr-only">(current)</span>
+        </a>
+      </li>
+      <li class="nav-item" >
+        <a class="nav-link list" style="width: 200px" routerLink="/project/archive">
+          <span data-feather="file"></span>
+          Archive
+        </a>
+      </li>
+      <li class="nav-item" >
+      <a class="nav-link list" style="width: 200px" routerLink="/project">
+        <span data-feather="file"></span>
+        Project
+      </a>
+    </li>
+
+
+    </ul>
+  </div>
+
+</nav>

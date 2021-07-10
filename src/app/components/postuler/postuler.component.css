@@ -1,0 +1,910 @@
+@font-face {
+  font-family: 'Avenir Next LT Pro';
+
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+*{
+  font-family: 'Avenir Next LT Pro';
+}
+a{
+  text-decoration: none;
+  color: white;
+  cursor: pointer;
+}
+.sidebar{
+  position: relative;
+  width: 230px;
+  background-color: #178da9;
+}
+.list{
+  font-size: 16px;
+  font-weight: bolder;
+}
+.ADD{
+  background-color: #f5f5f5;
+  border-radius: 3px;
+
+}
+.PADD{
+  background-color: white;
+
+}
+.ASS p{
+  color: black;
+}
+.BM{
+  background-color:white;
+
+  color: #178da9;
+  border: #178da9 2px solid;
+  border-radius: 5px;
+}
+.EB{
+  border: #f5f5f5 1px solid;
+}
+.EF:hover{
+  border: #178da9 2px solid;
+}
+
+.BM:hover{
+  background-color:#178da9;
+  color: white;
+}
+.EB:hover {
+  border: #178da9 2px solid;
+}
+
+.NN{
+  color: black;
+  font-weight: lighter;
+
+}
+.NM{
+  color: black;
+  text-decoration: none;
+  font-weight: bolder;
+}
+.NN:hover{
+
+  color: #178da9;
+  border: 0.7px #178da9 solid;
+}
+.NM:hover{
+  color: #178da9;
+  border: 0.7px #178da9 solid;
+}
+.active .NN{
+  background-color: #178da9;
+  color: white;
+  border: 0.3px #178da9 solid;
+}
+.V{
+  color: gray;
+}
+.CFH{
+  background-color: #f5f5f5
+}
+.card-header{
+  border: none;
+  margin: 0;
+}
+
+.CHD {
+  position: relative;
+  margin-top: -40px;
+  border-bottom: #f5f5f5 2px solid;
+}
+.btnu{
+  background-color: #178da9;
+  color: white;
+}
+.wrapper{
+  overflow: hidden;
+  background-color: white;
+  width: 130px;
+  margin-left: 250px;
+
+}
+.ggg{
+  color: white;
+  position: absolute;
+  background-color: #178da9;
+  height: 40px;
+  width: 140px;
+  cursor: pointer;
+  overflow: hidden;
+  border-radius: 8px;
+  margin-top: 10px;
+}
+
+
+.Pwrapper{
+  overflow: hidden;
+  overflow-y: scroll;
+  background-color: white;
+  height: 200px;
+  position: relative;
+  margin-top: -30px;
+}
+.BZ1:hover{
+  border: #178da9 3px solid;
+}
+.BRD{
+  border-bottom: 0.3px solid rgb(223, 210, 210);
+}
+hr{
+  background-color: black;
+}
+.NAV2{
+  background-color: #f5f5f5;
+  border: 0.3px solid rgb(223, 210, 210);
+  border-radius: 3px;
+}
+.btnnav{
+  background-color: white;
+  color: #178da9;
+  border: #178da9 2px solid;
+  border-radius: 5px;
+}
+.btnnav:hover{
+  background-color:#178da9;
+  color: white;
+}
+.zsearch{
+  border-radius: 20px;
+}
+.LS{
+  border: none;
+}
+.LS:hover{
+  border: #178da9 solid 3px;
+}
+.col3 {
+  border: none;
+  width: 300px;
+}
+.next{
+  background-color: #178da9;
+  color: white;
+}
+.rtr{
+  background-color: #617688;
+  color: white;
+}
+.btnu{
+  background-color: #178da9;
+}
+.MF{
+  background-color: #f5f5f5;
+}
+.docr{
+  font-weight: bolder;
+}
+.eto{
+  color: red;
+}
+.adfb{
+  background-color: white;
+  color: #178da9;
+  border: 1px solid #178da9;
+}
+.adfb:hover{
+  background-color: #178da9;
+  color: white;
+}
+.bt3{
+  font-size: 16px;
+  font-weight: bold;
+}
+.btn2{
+  font-size: 17px;
+  font-weight: bold;
+}
+.nom{
+  font-weight:bold;
+}
+.vvs{
+  position: relative;
+  margin-top: 60px;
+}
+.col3{
+  margin-top: 10px;
+}
+
+.PADD{
+  position: relative;
+  width: 1300px;
+}
+.FM{
+  border: #178da9 2px solid;
+}
+.MDF{
+  background-color: #f5f5f5;
+}
+.Cont1{
+  border: none;
+}
+.HG{
+  color: #f5f5f5;
+  opacity: 0.2;
+}
+.prev{
+  background-color: #0c2340;
+  color: white;
+}
+
+
+
+
+
+@media(min-width: 360px) and (max-width: 800px){
+  .sidebar{
+    position: relative;
+    width: 190px;
+
+  }
+  .list{
+    font-size: 12px;
+  }
+  .ADS{
+    font-size: 10px;
+  }
+  .ASS{
+    position: relative;
+    padding-right: 20px;
+  }
+  .BZ1{
+    position: relative;
+    margin-left: -230px;
+    margin-top: 180px;
+  }
+  .Z1{
+    font-size: 10px;
+  }
+  .Z1 h6{
+    position: relative;
+    font-size: 9px;
+  }
+  .ADD{
+    position: relative;
+    height: 50px;
+    width: 600px;
+  }
+  .BM{
+    position: relative;
+    height: 35px;
+  }
+  .col3{
+    position: relative;
+    margin-top: 480px;
+    left: -280px;
+    width: 500px;
+
+
+  }
+  .vvs{
+    position: relative;
+    width: 500px;;
+    left: -53px;
+  }
+  .PADD{
+    position: relative;
+    width: 700px;
+  }
+  .GPADD{
+    position: relative;
+    width: 600px;
+  }
+  .nom{
+    font-size: 12px;
+  }
+  .req{
+    font-size: 10px;
+  }
+
+
+
+}
+a{
+  text-decoration: none;
+  color: white;
+  cursor: pointer;
+}
+.sidebar{
+  position: relative;
+  width: 230px;
+  background-color: #178da9;
+}
+.list{
+  font-size: 16px;
+  font-weight: bolder;
+}
+.ADD{
+  background-color: #f5f5f5;
+  border-radius: 3px;
+
+}
+.PADD{
+  background-color: white;
+
+}
+.ASS p{
+  color: black;
+}
+.BM{
+  background-color:white;
+
+  color: #178da9;
+  border: #178da9 2px solid;
+  border-radius: 5px;
+}
+.EB{
+  border: #f5f5f5 1px solid;
+}
+.EF:hover{
+  border: #178da9 2px solid;
+}
+
+.BM:hover{
+  background-color:#178da9;
+  color: white;
+}
+.EB:hover {
+  border: #178da9 2px solid;
+}
+
+.NN{
+  color: black;
+  font-weight: lighter;
+
+}
+.NM{
+  color: black;
+  text-decoration: none;
+  font-weight: bolder;
+}
+.NN:hover{
+
+  color: #178da9;
+  border: 0.7px #178da9 solid;
+}
+.NM:hover{
+  color: #178da9;
+  border: 0.7px #178da9 solid;
+}
+.active .NN{
+  background-color: #178da9;
+  color: white;
+  border: 0.3px #178da9 solid;
+}
+.V{
+  color: gray;
+}
+.CFH{
+  background-color: #f5f5f5
+}
+.card-header{
+  border: none;
+  margin: 0;
+}
+
+.CHD {
+  position: relative;
+  margin-top: -40px;
+  border-bottom: #f5f5f5 2px solid;
+}
+.btnu{
+  background-color: #178da9;
+  color: white;
+}
+.wrapper{
+  overflow: hidden;
+  background-color: white;
+  width: 130px;
+  margin-left: 250px;
+
+}
+.ggg{
+  color: white;
+  position: absolute;
+  background-color: #178da9;
+  height: 40px;
+  width: 140px;
+  cursor: pointer;
+  overflow: hidden;
+  border-radius: 8px;
+  margin-top: 10px;
+}
+
+
+.Pwrapper{
+  overflow: hidden;
+  overflow-y: scroll;
+  background-color: white;
+  height: 200px;
+  position: relative;
+  margin-top: -30px;
+}
+.BZ1:hover{
+  border: #178da9 3px solid;
+}
+.BRD{
+  border-bottom: 0.3px solid rgb(223, 210, 210);
+}
+hr{
+  background-color: black;
+}
+.NAV2{
+  background-color: #f5f5f5;
+  border: 0.3px solid rgb(223, 210, 210);
+  border-radius: 3px;
+}
+.btnnav{
+  background-color: white;
+  color: #178da9;
+  border: #178da9 2px solid;
+  border-radius: 5px;
+}
+.btnnav:hover{
+  background-color:#178da9;
+  color: white;
+}
+.zsearch{
+  border-radius: 20px;
+}
+.LS{
+  border: none;
+}
+.LS:hover{
+  border: #178da9 solid 3px;
+}
+.col3 {
+  border: none;
+  width: 300px;
+}
+.next{
+  background-color: #178da9;
+  color: white;
+}
+.rtr{
+  background-color: #617688;
+  color: white;
+}
+.btnu{
+  background-color: #178da9;
+}
+.MF{
+  background-color: #f5f5f5;
+}
+.docr{
+  font-weight: bolder;
+}
+.eto{
+  color: red;
+}
+.adfb{
+  background-color: white;
+  color: #178da9;
+  border: 1px solid #178da9;
+}
+.adfb:hover{
+  background-color: #178da9;
+  color: white;
+}
+.bt3{
+  font-size: 16px;
+  font-weight: bold;
+}
+.btn2{
+  font-size: 17px;
+  font-weight: bold;
+}
+.nom{
+  font-weight:bold;
+}
+.vvs{
+  position: relative;
+  margin-top: 60px;
+}
+.col3{
+  margin-top: 10px;
+}
+
+
+
+
+
+
+
+@media(min-width: 360px) and (max-width: 800px){
+  .sidebar{
+    position: relative;
+    width: 190px;
+
+  }
+  .list{
+    font-size: 12px;
+  }
+  .ADS{
+    font-size: 10px;
+  }
+  .ASS{
+    position: relative;
+    padding-right: 20px;
+  }
+  .BZ1{
+    position: relative;
+    margin-left: -230px;
+    margin-top: 180px;
+  }
+  .Z1{
+    font-size: 10px;
+  }
+  .Z1 h6{
+    position: relative;
+    font-size: 9px;
+  }
+  .ADD{
+    position: relative;
+    height: 50px;
+    width: 600px;
+  }
+  .BM{
+    position: relative;
+    height: 35px;
+  }
+  .col3{
+    position: relative;
+    margin-top: 480px;
+    left: -280px;
+    width: 500px;
+
+
+  }
+  .vvs{
+    position: relative;
+    width: 500px;;
+    left: -53px;
+  }
+  .PADD{
+    position: relative;
+    width: 700px;
+  }
+  .GPADD{
+    position: relative;
+    width: 600px;
+  }
+  .nom{
+    font-size: 12px;
+  }
+  .req{
+    font-size: 10px;
+  }
+
+
+
+}
+
+a{
+  text-decoration: none;
+  color: white;
+  cursor: pointer;
+}
+.sidebar{
+  position: relative;
+  width: 230px;
+  background-color: #178da9;
+}
+.list{
+  font-size: 16px;
+  font-weight: bolder;
+}
+.ADD{
+  background-color: #f5f5f5;
+  border-radius: 3px;
+
+}
+.PADD{
+  background-color: white;
+
+}
+.ASS p{
+  color: black;
+}
+.BM{
+  background-color:white;
+
+  color: #178da9;
+  border: #178da9 2px solid;
+  border-radius: 5px;
+}
+.EB{
+  border: #f5f5f5 1px solid;
+}
+.EF:hover{
+  border: #178da9 2px solid;
+}
+
+.BM:hover{
+  background-color:#178da9;
+  color: white;
+}
+.EB:hover {
+  border: #178da9 2px solid;
+}
+
+.NN{
+  color: black;
+  font-weight: lighter;
+
+}
+.NM{
+  color: black;
+  text-decoration: none;
+  font-weight: bolder;
+}
+.NN:hover{
+
+  color: #178da9;
+  border: 0.7px #178da9 solid;
+}
+.NM:hover{
+  color: #178da9;
+  border: 0.7px #178da9 solid;
+}
+.active .NN{
+  background-color: #178da9;
+  color: white;
+  border: 0.3px #178da9 solid;
+}
+.V{
+  color: gray;
+}
+.CFH{
+  background-color: #f5f5f5
+}
+.card-header{
+  border: none;
+  margin: 0;
+}
+
+.CHD {
+  position: relative;
+  margin-top: -40px;
+  border-bottom: #f5f5f5 2px solid;
+}
+.btnu{
+  background-color: #178da9;
+  color: white;
+}
+.wrapper{
+  overflow: hidden;
+  background-color: white;
+  width: 130px;
+  margin-left: 250px;
+
+}
+.ggg{
+  color: white;
+  position: absolute;
+  background-color: #178da9;
+  height: 40px;
+  width: 140px;
+  cursor: pointer;
+  overflow: hidden;
+  border-radius: 8px;
+  margin-top: 10px;
+}
+
+
+.Pwrapper{
+  overflow: hidden;
+  overflow-y: scroll;
+  background-color: white;
+  height: 200px;
+  position: relative;
+  margin-top: -30px;
+}
+.BZ1:hover{
+  border: #178da9 3px solid;
+}
+.BRD{
+  border-bottom: 0.3px solid rgb(223, 210, 210);
+}
+hr{
+  background-color: black;
+}
+.NAV2{
+  background-color: #f5f5f5;
+  border: 0.3px solid rgb(223, 210, 210);
+  border-radius: 3px;
+}
+.btnnav{
+  background-color: white;
+  color: #178da9;
+  border: #178da9 2px solid;
+  border-radius: 5px;
+}
+.btnnav:hover{
+  background-color:#178da9;
+  color: white;
+}
+.zsearch{
+  border-radius: 20px;
+}
+.LS{
+  border: none;
+}
+.LS:hover{
+  border: #178da9 solid 3px;
+}
+.col3 {
+  border: none;
+  width: 300px;
+}
+.next{
+  background-color: #178da9;
+  color: white;
+}
+.rtr{
+  background-color: #617688;
+  color: white;
+}
+.btnu{
+  background-color: #178da9;
+}
+.MF{
+  background-color: #f5f5f5;
+}
+.docr{
+  font-weight: bolder;
+}
+.eto{
+  color: red;
+}
+.adfb{
+  background-color: white;
+  color: #178da9;
+  border: 1px solid #178da9;
+}
+.adfb:hover{
+  background-color: #178da9;
+  color: white;
+}
+.bt3{
+  font-size: 16px;
+  font-weight: bold;
+}
+.btn2{
+  font-size: 17px;
+  font-weight: bold;
+}
+.nom{
+  font-weight:bold;
+}
+.vvs{
+  position: relative;
+  margin-top: 60px;
+}
+.col3{
+  margin-top: 10px;
+}
+
+.PADD{
+  position: relative;
+  width: 1300px;
+}
+.FM{
+  border: #178da9 2px solid;
+}
+.MDF{
+  background-color: #f5f5f5;
+}
+.Cont1{
+  border: none;
+}
+.HG{
+  color: #f5f5f5;
+  opacity: 0.2;
+}
+.prev{
+  background-color: #0c2340;
+  color: white;
+}
+.SP{
+  background-color: red;
+}
+
+.B1{
+  box-sizing: border-box;
+  border: 2.5px solid #f5f5f5;
+  border-bottom: 1px solid black;
+  box-shadow: black 1px ;
+}
+.WW{
+  background-color: #f5f5f5;
+}
+.Edit{
+
+  color: #178da9
+}
+.vv{
+  color: #178da9;
+}
+.Edit:hover{
+  border: #178da9 1px solid;
+}
+
+
+
+
+@media(min-width: 360px) and (max-width: 800px){
+  .sidebar{
+    position: relative;
+    width: 190px;
+
+  }
+  .list{
+    font-size: 12px;
+  }
+  .ADS{
+    font-size: 10px;
+  }
+  .ASS{
+    position: relative;
+    padding-right: 20px;
+  }
+  .BZ1{
+    position: relative;
+    margin-left: -230px;
+    margin-top: 180px;
+  }
+  .Z1{
+    font-size: 10px;
+  }
+  .Z1 h6{
+    position: relative;
+    font-size: 9px;
+  }
+  .ADD{
+    position: relative;
+    height: 50px;
+    width: 600px;
+  }
+  .BM{
+    position: relative;
+    height: 35px;
+  }
+  .col3{
+    position: relative;
+    margin-top: 480px;
+    left: -280px;
+    width: 500px;
+
+
+  }
+  .vvs{
+    position: relative;
+    width: 500px;;
+    left: -53px;
+  }
+  .PADD{
+    position: relative;
+    width: 700px;
+  }
+  .GPADD{
+    position: relative;
+    width: 600px;
+  }
+  .nom{
+    font-size: 12px;
+  }
+  .req{
+    font-size: 10px;
+  }
+
+
+
+}

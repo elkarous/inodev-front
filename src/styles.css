@@ -1,0 +1,6 @@
+@import 'themes/calendar_blue.css';
+@import 'themes/calendar_traditional.css';
+@import 'themes/calendar_transparent.css';
+@import 'themes/calendar_white.css';
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

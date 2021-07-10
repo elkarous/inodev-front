@@ -1,0 +1,79 @@
+<style>
+  .h2 {
+    font-weight: bolder;
+  }
+</style>
+
+
+<div class="bg-light min-vh-100 row">
+  <app-sidebar></app-sidebar>
+  <div class="col-sm-9 offset-2">
+
+<form class="bg-light">
+  <div class="form-row">
+    <div class="col-md-4 mb-3">
+      <label >Name</label>
+      <input type="text" class="form-control form-control-sm" [(ngModel)]="offre1[0][1]" [ngModelOptions]="{standalone: true}">
+    </div>
+    <div class="col-md-4 mb-3">
+      <label >Date Debut</label>
+      <input class="form-control form-control-sm"
+             [(ngModel)]="offre1[0][4]"  [ngModelOptions]="{standalone: true}" type="date">          </div>
+    <div class="col-md-4 mb-3">
+      <label >Date Fin</label>
+      <input class="form-control form-control-sm "
+             [(ngModel)]="offre1[0][5]"  [ngModelOptions]="{standalone: true}" type="date">
+
+    </div>
+  </div>
+  <div class="form-row">
+    <div class="col-md-6 mb-3">
+      <label for="validationServer03">Organisation</label>
+      <input type="text" [(ngModel)]="offre1[0][7]" [ngModelOptions]="{standalone: true}" class="form-control" id="validationServer03" required>
+    </div>
+    <div class="col-md-3 mb-3">
+      <label>Niveau</label>
+      <select [(ngModel)]="offre1[0][10]" [ngModelOptions]="{standalone: true}" class="form-control  form-select-lg mr-3"
+              aria-label=".form-select-lg example">
+        <option value="Student 1st cycle">Student 1st cycle</option>
+        <option value="Student 2nd cycle">Student 2nd cycle</option>
+        <option value="Student 3rd cycle">Student 3rd cycle</option>
+        <option value="4">Graduate</option>
+
+      </select>          </div>
+    <div class="col-md-3 mb-3">
+      <label >Lien Video</label>
+      <input type="text" [ngModelOptions]="{standalone: true}" [(ngModel)]="offre1[0][14]" class="form-control" required>
+    </div>
+  </div>
+  <div class="form-row">
+    <div class="col-md-4 mb-3">
+      <label for="validationServer03">Price</label>
+      <input type="number" [(ngModel)]="offre1[0][8]" [ngModelOptions]="{standalone: true}" class="form-control" required>
+    </div>
+    <div class="col-md-4 mb-3">
+      <label for="validationServer03">Type</label>
+      <select [(ngModel)]="offre1[0][12]" [ngModelOptions]="{standalone: true}" class="form-control form-select-lg"
+              aria-label=".form-select-lg example">
+        <option value="intership">intership</option>
+        <option value="study">study</option>
+        <option value="volunteer">volunteer</option>
+      </select>            </div>
+    <div class="col-md-4 mb-3">
+      <label >Duree</label>
+      <select [(ngModel)]="offre1[0][11]" [ngModelOptions]="{standalone: true}" class="form-control form-select-lg"
+              aria-label=".form-select-lg example">
+        <option value="Semester">Semester</option>
+        <option value="Summer">Summer</option>
+        <option value="Academic year">Academic year</option>
+      </select>          </div>
+  </div>
+  <div class="form-row">
+    <div class="col-md-10 mb-10">
+      <label >Description</label>
+      <textarea  type="text" class="form-control "[(ngModel)]="offre1[0][6]" [ngModelOptions]="{standalone: true}" required></textarea>
+    </div>
+  </div>
+  <button class="btn btn-primary" (click)="edit(offre1[0][13])">Update</button>
+</form>
+  </div>  </div>

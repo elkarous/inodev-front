@@ -1,0 +1,215 @@
+<div class="bg-light min-vh-100 row">
+  <app-sidebar></app-sidebar>
+  <div class="col-sm-9 offset-2">
+<div class="container emp-profile">
+  <form method="post">
+    <div class="row">
+      <div class="col-md-4">
+        <div class="profile-img">
+          <img src="{{'http://localhost:8080/condidat/img/'+con.userId}}" alt=""/>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="profile-head">
+          <h5>
+            {{con.firstName}} {{con.lastName}}
+          </h5>
+          <h6>
+           {{con.nationality}}
+          </h6>
+          <p class="proile-rating">Type : <span *ngIf="con.admin === 0">Condidat</span> <span *ngIf="con.admin === 2">Supervisor</span>
+            <span *ngIf="con.admin === 3">Company</span>
+          </p>
+          <ul class="nav nav-tabs" id="myTab" role="tablist">
+            <li class="nav-item">
+              <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" id="edu-tab" data-toggle="tab" href="#education" role="tab" aria-controls="profile" aria-selected="false">Education</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" id="exp-tab" data-toggle="tab" href="#experience" role="tab" aria-controls="profile" aria-selected="false">Experience</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" id="skill-tab" data-toggle="tab" href="#skills" role="tab" aria-controls="profile" aria-selected="false">Document</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+    <div class="row">
+      <div class="col-md-4">
+        <div class="profile-work">
+          <p>SKILLS</p>
+          <a *ngFor="let s of skills">{{s.nom}}<br></a>
+          <hr>
+        </div>
+      </div>
+      <div class="col-md-8">
+        <div class="tab-content profile-tab" id="myTabContent">
+          <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+            <div class="row">
+              <div class="col-md-6">
+                <label>User Id</label>
+              </div>
+              <div class="col-md-6">
+                <p>{{con.userId}}</p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-6">
+                <label>Name</label>
+              </div>
+              <div class="col-md-6">
+                <p>{{con.firstName}} {{con.lastName}}</p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-6">
+                <label>Email</label>
+              </div>
+              <div class="col-md-6">
+                <p>{{con.email}}</p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-6">
+                <label>Phone</label>
+              </div>
+              <div class="col-md-6">
+                <p>{{con.phone}}</p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-6">
+                <label>Date Birthday</label>
+              </div>
+              <div class="col-md-6">
+                <p>{{con.date_birthday | date}}</p>
+              </div>
+            </div>
+          </div>
+          <div class="tab-pane fade" id="education" role="tabpanel" aria-labelledby="edu-tab" >
+            <div *ngFor="let education of educations">
+            <div class="row" >
+              <div class="col-md-6">
+                <label>Degree :</label>
+              </div>
+              <div class="col-md-6">
+                <p>{{education.niveau}}</p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-6">
+                <label>Institute name :</label>
+              </div>
+              <div class="col-md-6">
+                <p>{{education.nomFaculte}}</p>
+              </div>
+            </div>
+              <div class="row">
+                <div class="col-md-6">
+                  <label>Date Start</label>
+                </div>
+                <div class="col-md-6">
+                  <p>{{education.dateDebut}}</p>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6">
+                  <label>Date End</label>
+                </div>
+                <div class="col-md-6">
+                  <p>{{education.dateFin}}</p>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6">
+                  <label>Specialite</label>
+                </div>
+                <div class="col-md-6">
+                  <p>{{education.specialite}}</p>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6">
+                  <label>Pays</label>
+                </div>
+                <div class="col-md-6">
+                  <p>{{education.pays}}</p>
+                </div>
+              </div>
+              <hr>
+            </div>
+          </div>
+          <div class="tab-pane fade" id="experience" role="tabpanel" aria-labelledby="exp-tab">
+            <div  *ngFor="let e of experience">
+            <div class="row" >
+              <div class="col-md-6">
+                <label>Job title :</label>
+              </div>
+              <div class="col-md-6">
+                <p>{{e.job_title}}</p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-6">
+                <label>Organisation name :</label>
+              </div>
+              <div class="col-md-6">
+                <p>{{e.organization}}</p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-6">
+                <label>Date Start</label>
+              </div>
+              <div class="col-md-6">
+                <p>{{e.dateDebut}}</p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-6">
+                <label>Date End</label>
+              </div>
+              <div class="col-md-6">
+                <p>{{e.dateFin}}</p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-6">
+                <label>Type</label>
+              </div>
+              <div class="col-md-6">
+                <p>{{e.type}}</p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-6">
+                <label>Pays</label>
+              </div>
+              <div class="col-md-6">
+                <p>{{e.pays}}</p>
+              </div>
+            </div>
+              <hr>
+            </div>
+          </div>
+          <div class="tab-pane fade" id="skills" role="tabpanel" aria-labelledby="skill-tab">
+            <div  *ngFor="let s of document">
+            <div class="row">
+              <div class="col-md-6">
+                <label>{{ s.nom }}</label>
+                <a href="{{'http://localhost:8080/document/download/'+s.nom}}">Download</a>
+              <hr>
+              </div>
+            </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      </div>
+  </form>
+</div>
+  </div></div>

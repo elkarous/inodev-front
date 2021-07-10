@@ -1,0 +1,23 @@
+a{
+  text-decoration: none;
+  color: white;
+  cursor: pointer;
+}
+.sidebar{
+  position: relative;
+  width: 230px;
+  background-color: #178da9;}
+.list{
+  font-size: 16px;
+  font-weight: bolder;
+}
+@media(min-width: 360px) and (max-width: 800px){
+  .sidebar{
+    position: relative;
+    width: 190px;
+
+  }
+  .list{
+    font-size: 12px;
+  }
+}

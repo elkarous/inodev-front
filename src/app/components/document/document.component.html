@@ -1,0 +1,80 @@
+<head>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.0/font/bootstrap-icons.css">
+</head>
+
+<div class=" main h-100 w-100">
+  <div class="container h-100 w-75 d-flex align-items-center justify-content-center" id="contp">
+    <!-- Block gauche-->
+    <div class="text-center align-items-center" id="login">
+      <div class="wrapper">
+        <input type="file" class="file">
+      </div>
+      <div class="row h-25"></div>
+      <div class="h-50 ml-2 align-items-center justify-content-center" id="signup">
+        <p class="h6 text-left" routerLink="/profil"><a class="text-light">Personal details</a></p><br>
+        <p class="h6 text-left" routerLink="/education"><a class="text-light">Education</a></p><br>
+        <p class="h6 text-left"><a routerLink="/skills" class="text-light">Skills</a></p><br>
+        <p class="h6 text-left"><a routerLink="/experience" class="text-light">Experience</a></p><br>
+        <p class="h6 text-left"><a routerLink="/question"class="text-light">Job Question</a></p><br>
+        <p class="h6 text-left"><a routerLink="/source"class="text-light">Source</a></p><br>
+        <p class="h6 text-left"><a routerLink="/document" class="text-light">Add Documents</a></p>
+      </div>
+    </div>
+    <!--Block Droit-->
+    <div class="d-flex justify-content-center  align-items-center" id="contwhite">
+      <div class="container  w-75 h-100" id="cc">
+        <div class="containair  h-100 w-100" id="cb">
+          <div class=" container mb-5 mh-100 ml-5 justify-content-center h-100 w-100 ">
+            <div class=" justify-content-center  w-75  ml-5 h-100 mt-4 align-items-center" id="ppd">
+              <p class="h5 text-center mt-2 pa" style="color:#178da9; margin-left: -110px; ">Document</p>
+              <div class="justify-content-center ml-5">
+                <i class="bi bi-plus-circle-dotted" style="font-size: 15px;position: absolute; margin-left: -40px;margin-top: -2px;"></i>
+                <button  type="button" class="bg-transparent border border-light" (click)="openform()">Add Document</button>
+              </div>
+              <form *ngIf="form" [formGroup]="experienceForm">
+                <div class="justify-content-center w-75 mr-0 h-100  align-items-center">
+                  <div class="sbd">
+                    <p style="font-size: 13px;">Nom</p>
+               <input type="file" (change)="onSelectFile($event)" />
+
+                    <button type="button" class="btn btn-secondary form-control-sm rounded border border-dark bg-transparent"  (click)="fermeform()">Cancel</button>
+                    <button type="submit" [disabled]="experienceForm.invalid" (click)="createExperience()" class="btn btn-info " >Save</button>
+                  </div>
+                </div> <br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+              </form>
+
+
+              <div  class="container border border-dark mt-4" *ngFor="let education of educations" >
+                <div >{{ education.nom }}
+                  <a href="{{'http://localhost:8080/document/download/'+education.nom}}">download</a>
+                <button class="btn bg-transparent float-right" (click)="editExperience(education)">
+                  edit
+                </button>
+
+                </div>
+
+                <ul class="list-group container border border-dark w-75 h-100 list-group-flush" *ngIf="statut && education.documentId == educt.documentId">
+
+                  <li class="list-group-item "> Document :<br>
+                    <input type="file" (change)="onSelectFile($event)" />
+                  <li class="list-group-item list-group-item text-center">
+                    <button class="btn btn-primary mr-2" (click)="edit(education.documentId)">Edit</button>
+                    <button class="btn btn-dark mr-2" (click)="delete(education.documentId)">Delete</button>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+
+
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+
+      <script src="https://kit.fontawesome.com/6d3194976d.js" crossorigin="anonymous"></script></div>
+  </div></div>

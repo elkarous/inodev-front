@@ -1,0 +1,64 @@
+
+<nav class="navbar navbar-expand-sm sticky-top navbar-light bg-light" style="opacity: 0.75; z-index: 99;" >
+
+    <div class="col-4 ml-4" >
+
+    <a class="navbar-brand" routerLink="/dashboard"><img src={{logo}} alt="logo"></a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+    </div>
+    <div class="col-8" >
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav " *ngIf="!loggedIn">
+      <li class="nav-item active col-6">
+        <a class="nav-link" href="#">Internship abroad    <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item col-6">
+        <a class="nav-link" href="#">Study abroad</a>
+      </li>
+      <li class="nav-item col-6">
+        <a class="nav-link" href="#">Volunteer abroad</a>
+      </li>
+
+    </ul>
+    <ul class="navbar-nav "*ngIf="loggedIn" >
+      <li class="nav-item  col-4">
+        <a class="nav-link" routerLink="/off/cat/intership">Internship abroad </a>
+      </li>
+      <li class="nav-item col-4">
+        <a class="nav-link" routerLink="/off/cat/study">Study abroad</a>
+      </li>
+      <li class="nav-item col-4">
+        <a class="nav-link" routerLink="/off/cat/volunteer">Volunteer abroad</a>
+      </li>
+      <li class="nav-item col-1">
+        <div class="dropdown">
+        <a class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <img class="card-img-top img-responsive"
+               src = "{{'http://localhost:8080/condidat/img/'+con.userId}}"
+               style = "height :30px;width:30px"
+               alt="">
+        </a>
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <a class="dropdown-item" routerLink="/profil">profil</a>
+            <a class="dropdown-item" *ngIf="con.admin != 0" routerLink="/dash">Dashbord</a>
+        <a class="dropdown-item" *ngIf="con.admin === 0" routerLink="/myapplication">
+          <span data-feather="file"></span>
+          My Application
+        </a>
+        <a  *ngIf="con.enabled != null && con.admin === 0" class="dropdown-item" routerLink="/calendar/{{con.enabled}}">
+          <span data-feather="file"></span>
+          My calendar
+        </a>
+
+            <a class="dropdown-item" (click)="logout()">Log out</a>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </div>
+    </div>
+
+</nav>
+

@@ -1,0 +1,71 @@
+<div class="bg-light min-vh-100 row">
+  <nav class="px-1 bg-info position-fixed" id="sticky-sidebar">
+  <div class="nav flex-column flex-nowrap vh-100 overflow-auto text-white p-2" >
+    <ul class="nav flex-column" >
+      <li class="nav-item">
+        <a class="nav-link list active" routerLink="/dash">
+          <span data-feather="home"></span>
+          Dashboard <span class="sr-only">(current)</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link list" routerLink="/listc">
+          <span data-feather="file"></span>
+          List Users
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link list" routerLink="/listoff/intership">
+          <span data-feather="shopping-cart"></span>
+          List Offres
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link list" routerLink="/listspe">
+          <span data-feather="users"></span>
+          List Specialite
+        </a>
+      </li>
+    </ul>
+
+  </div>  </nav>
+  <div class="col-sm-9 offset-2" >
+<div *ngFor="let item of condidate">
+  <div *ngIf="item[5] === 0" >{{b()}}
+  </div>
+</div>
+<div class="table-responsive">
+  <table class="table table-bordered table-responsive-sm table-responsive-md
+     table-responsive-lg">
+    <thead>
+    <tr>
+      <th scope="col">email</th>
+      <th scope="col">first Name</th>
+      <th scope="col">last Name</th>
+      <th scope="col">Apply At</th>
+      <th scope="col">Statut</th>
+      <th class="text-center" scope="col">Action</th>
+    </tr>
+    </thead>
+    <tbody *ngFor="let item of condidate">
+    <tr>
+      <th>{{item[1]}}</th>
+      <td>{{item[3]}}</td>
+      <td>{{item[2]}}</td>
+      <td>{{item[4] | date}}</td>
+      <td *ngIf="item[5] === 0">Accept</td> <td *ngIf="item[5] === 1">En cours</td>
+      <td><button class="btn btn-warning" style="margin-left: 20px;">
+        <i class="fa fa-pencil-square-o" routerLink="/user/{{item[0]}}/{{item[1]}}"> Show </i></button>
+        <button *ngIf="item[5] === 1 && !bo" class="btn btn-success" style="margin-left: 20px;">
+          <i class="fa fa-pencil-square-o" (click)="a(item[6])"> Accept </i></button>
+        <button *ngIf="item[5] === 0 && bo" class="btn btn-info" style="margin-left: 20px;">
+          <i class="fa fa-pencil-square-o" routerLink="/calendar/{{item[7]}}"> Calendar </i></button>
+        <button *ngIf="item[5] === 0" class="btn disabled btn-success" style="margin-left: 20px;">
+          <i class="fa fa-pencil-square-o" > cette condidat est accepter </i></button>
+      </td>
+
+    </tr></tbody>
+
+  </table>
+</div>
+  </div></div>

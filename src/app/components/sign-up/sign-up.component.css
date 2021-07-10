@@ -1,0 +1,164 @@
+@font-face {
+  font-family: 'Avenir Next LT Pro';
+
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.0/font/bootstrap-icons.css");
+*{
+  font-family: 'Avenir Next LT Pro';
+}
+#contwhite {
+  background: rgba(255, 255, 255, 0.658);
+  font-family: 'AvenirNextLTPro';
+  height: 520px;
+  width: 700px;
+  margin-right: 40px;
+  margin-top: 5px;
+
+}
+
+#contgreen {
+  margin-left: 55px;
+  margin-top: -25px;
+}
+
+#login {
+  background-color: #178da9;
+  height: 450px;
+  width: 170px;
+  text-align: center;
+  margin-right: -50px;
+  z-index: 1;
+  margin-left: 130px;
+}
+
+#signup {
+  background-color: #178da9;
+  margin-top: 40px;
+  font-family: 'AvenirNextLTPro';
+
+}
+.main {
+  background-image: url(src/assets/coimbra.jpg);
+}
+a {
+  text-decoration: none;
+  color: white;
+}
+hr{
+
+  margin-top: 10px;
+}
+#dn {
+  margin-left: 0.5px;
+}
+.lkd{
+  background-color: #178da9;
+  font-size: 10px;
+}
+.fbk{
+  background-color: #0d6efd;
+  font-size: 10px;
+}
+.ggl{
+  background-color: #dc3545;
+  font-size: 10px;
+}
+.CA{
+  background-color: #178da9;
+  font-size: 10px;
+  font-weight: bold;
+}
+.formu {
+  height: 40px;
+}
+#TAC{
+  color: #178da9;
+  font-weight: bold;
+  font-size: 12px;
+}
+#LG{
+  color: #178da9;
+  text-decoration: none;
+  font-weight: normal;
+}
+
+@media(min-width: 360px) and (max-width: 800px){
+
+  #login{
+    position: absolute;
+    width: 100px;
+    left: -125px;
+  }
+  #t1{
+    width: 1px;
+    left: -15px;
+    top: 25px;
+  }
+  #t2{
+    width: 3px;
+    right: -14px;
+    bottom: 26px;
+  }
+  #ppd{
+    position: relative;
+    left: -50px;
+    top: -8px;
+
+  }
+  input{
+    position: relative;
+    top: -10px;
+  }
+  #t3{
+    width: 1px;
+    top: 23px;
+    right: -17px;
+  }
+  #t4{
+    width: 1px;
+    bottom: 24px;
+    left: -16px;
+  }
+  #or{
+    left: 25px;
+  }
+
+  .hb{
+    position: relative;
+    top: -40px;
+
+  }
+  .gg{
+    position: relative;
+    top: -60px;
+
+  }
+  .TP{
+    position: relative;
+    top: -10px;
+  }
+  .btn{
+    font-size: 6px;
+  }
+  i{
+    position: relative;
+    left: 50px;
+    font-size: small;
+
+  }
+  .TP{
+    position: relative;
+
+  }
+
+
+}
+
+
+
+/* #signup h5{
+  color: white:!important;
+} */

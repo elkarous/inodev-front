@@ -1,0 +1,78 @@
+@font-face {
+  font-family: 'Avenir Next LT Pro';
+
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+*{
+  font-family: 'Avenir Next LT Pro';
+}
+#contwhite {
+  background: rgba(255, 255, 255, 0.658);
+  font-family: 'AvenirNextLTPro';
+  height: 520px;
+  width: 700px;
+  margin-right: 40px;
+  margin-top: 5px;
+
+}
+
+#contgreen {
+  margin-left: 55px;
+  margin-top: -25px;
+}
+
+#login {
+  background-color: #178da9;
+  height: 450px;
+  width: 170px;
+  text-align: center;
+  margin-right: -50px;
+  z-index: 1;
+  margin-left: 130px;
+}
+
+#signup {
+  background-color: #178da9;
+  margin-top: 40px;
+  font-family: 'AvenirNextLTPro';
+
+}
+.main {
+  background-image: url(src/assets/coimbra.jpg);
+}
+a {
+  text-decoration: none;
+  color: white;
+}
+hr{
+
+  margin-top: 10px;
+}
+#dn {
+  margin-left: 0.5px;
+}
+@media(min-width: 360px) and (max-width: 800px){
+  #login{
+    position: absolute;
+    width: 100px;
+    left: -125px;
+  }
+  #T1{
+    width: 3px;
+    left: -15px;
+    top: 25px;
+  }
+  #T2{
+    width: 3px;
+    right: -14px;
+    bottom: 26px;
+
+  }
+
+}
+
+/* #signup h5{
+  color: white:!important;
+} */

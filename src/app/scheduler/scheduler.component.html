@@ -1,0 +1,91 @@
+<div class="bg-light">
+<div class="toolbar bg-light">
+
+  <input [(ngModel)]="search.text">&nbsp;<button (click)="search.findRow()" class="btn btn-info find">Find</button><button class="btn btn-primary" (click)="search.clear()">&times;</button>&nbsp;{{search.index}}/{{search.total}}
+  <button class="btn btn-warning float-right" (click)="previous()">Condidat Detail</button>
+  <button  class="btn btn-warning float-right " (click)="today()">Project Detail</button>
+  <button  class="btn btn-warning float-right" (click)="next()">Supervisor Detail</button>
+</div>
+<div class="fullscreen bg-light">
+  <sidebar-container #sidebar [(expanded)]="expanded">
+    <sidebar-expanded>
+      <div style="padding: 3px;">
+        <daypilot-navigator [config]="navigatorConfig" (dateChange)="dateChange()" #navigator></daypilot-navigator>
+      </div>
+    </sidebar-expanded>
+    <sidebar-collapsed></sidebar-collapsed>
+    <sidebar-main>
+      <div class="main-header">
+
+        Height mode:
+        <select [(ngModel)]="config.heightSpec">
+          <option *ngFor="let item of heightModes" [value]="item.value">{{item.name}}</option>
+        </select>
+      </div>
+      <div class="main-body">
+        <daypilot-scheduler class="" [config]="config" [events]="events" (viewChange)="viewChange()" #scheduler></daypilot-scheduler>
+        <div class="main-bottom"></div>
+      </div>
+    </sidebar-main>
+  </sidebar-container>
+</div>
+</div>
+<style>
+  .fullscreen {
+    position: absolute; top:115px; left: 0px; right: 0px; bottom: 0px;
+  }
+  .toolbar {
+    font-size: 14px;
+  }
+  input {
+    padding: 6px;
+  }
+  button {
+    background-color: #f3f3f3;
+    border: 1px solid #c0c0c0;
+    color: #333;
+    padding: 6px 6px;
+    cursor: pointer;
+    margin-right: 5px;
+  }
+  button.find {
+    width: 100px;
+  }
+  h2 {
+    padding-left: 5px;
+    margin: 0;
+  }
+
+  input[type=checkbox] {
+    vertical-align: middle;
+    position: relative;
+    bottom: 1px;
+  }
+
+  .main-header {
+    white-space: nowrap;
+    display: block;
+    height: 50px;
+    border-bottom: 1px solid #ccc;
+    padding: 0px;
+    box-sizing: border-box;
+
+    font-size: 14px;
+  }
+  .main-header select {
+    font-size: 14px;
+    padding: 0px;
+  }
+
+  .main-body {
+    position:absolute; left: 0px; right: 0px; top: 0px; bottom: 0px; overflow:hidden;
+  }
+  .main-bottom {
+    border-top: 1px solid #ccc;
+  }
+  .row {
+    margin-top: 0px;
+    white-space: nowrap;
+    display: block;
+  }
+</style>
