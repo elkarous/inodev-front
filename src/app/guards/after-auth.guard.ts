@@ -25,7 +25,7 @@ export class AfterAuthGuard implements CanActivate {
         return false;
       }
 
-    return true;
+      return true;
   }
 
 }

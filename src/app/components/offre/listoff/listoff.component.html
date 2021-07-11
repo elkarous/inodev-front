@@ -20,7 +20,7 @@
     <div class="col-sm-4" style="max-width: 100%; width: 300px;" *ngFor="let item of offre1 | filter:term let i = index" [ngClass]="{'active': i == 0 }">
       <div *ngIf="condidat.admin === 3 && item[7] === condidat.firstName">
       <div class="card col-12 ml-5 h-100 cs1 text-center"  style="width: 21rem;">
-        <img style="width: 280px; height: 200px;" src="{{'http://localhost:8080/offre/Imgarticles/'+item[11]}}" class=" img1" alt="...">
+        <img style="width: 280px; height: 200px;" src="{{'http://localhost:8081/offre/Imgarticles/'+item[11]}}" class=" img1" alt="...">
         <div class="card-body">
           <p class="card-title h2 ct1">{{item[1]}}</p>
           <p class="card-text">{{item[6]}}</p>
@@ -34,7 +34,7 @@
       </div>
         <div *ngIf="condidat.admin === 1">
         <div class="card col-12 ml-5 h-100 w-100 cs1 text-center" >
-        <img style="width: 280px; height: 200px;" src="{{'http://localhost:8080/offre/Imgarticles/'+item[11]}}" class=" img1" alt="...">
+        <img style="width: 280px; height: 200px;" src="{{'http://localhost:8081/offre/Imgarticles/'+item[11]}}" class=" img1" alt="...">
         <div class="card-body">
           <p class="card-title h2 ct1" style="height: 141px; width: 250px;word-wrap: break-word; overflow: hidden;">{{item[1]}}</p>
           <p class="card-text"style="height: 141px; width: 250px;word-wrap: break-word; overflow: hidden;">{{item[6]}}</p>

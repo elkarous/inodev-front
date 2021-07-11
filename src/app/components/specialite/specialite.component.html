@@ -141,7 +141,7 @@
 
 <div class="row">
   <div class="card col-sm-3 text-center" style="width: 21rem;" *ngFor="let item of offre1 | filter:term let i = index" [ngClass]="{'active': i == 0 }">
-    <img src="{{'http://localhost:8080/specialite/Imgarticles/'+item[3]}}" class=" img1" alt="...">
+    <img src="{{'http://localhost:8081/specialite/Imgarticles/'+item[3]}}" class=" img1" alt="...">
     <div class="card-body">
       <p class="card-title h2 ct1">{{item[0]}}</p>
      <p class="card-text"*ngFor="let it of offre let i = index"> <a *ngIf="it[2] === item[2]">{{it[1]}}</a></p>
