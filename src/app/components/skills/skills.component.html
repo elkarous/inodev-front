@@ -66,9 +66,11 @@
 
           <div  class="container border border-dark mt-4" *ngFor="let education of educations"  >
             <div >
-              Name Skills : {{ education.nom  }} <button class="btn bg-transparent float-right" (click)="editeducation(education)">
-              edit
-            </button>
+              Name Skills : {{ education.nom  }}
+              <a (click)="editeducation(education)">
+              <i class="fa fa-pencil-square-o" aria-hidden="true">
+              </i>
+              </a>
             </div>
 
             <ul class="list-group container border border-dark w-75 h-100 list-group-flush" *ngIf="statut && education.skillsId == educt.skillsId">

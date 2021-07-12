@@ -115,6 +115,7 @@ import { ArchiveComponent } from './components/project/archive/archive.component
     Ng2SearchPipeModule,
     GridModule,
     DayPilotModule,
+
     // ToastrModule added
   ],
   providers: [{

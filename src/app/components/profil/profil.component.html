@@ -34,7 +34,7 @@
       <div class="container justify-content-center mr-5 h-100 w-75">
         <div class="row w-75 ml-5  ddr ">
           <p class="h5 col-sm-8 ml-5 text-center col-xs" id="perso">Personal details</p>
-          <form #form=ngForm >
+          <form #form=ngForm  class="w-100">
 
           <label for="Firstname" class="col-sm-6 col-xs col-form-label FN">First name</label>
           <div class="col-sm-6 col-xs-7">
@@ -331,9 +331,9 @@
             <input class="form-control border border-dark bg-transparent form-control-sm w-100" type="tel"
                     [(ngModel)]="con.phone"  [ngModelOptions]="{standalone: true}"  id="Phone">
           </div>
-            <div class="ml-5">
-              <button type="button" (click)="updateCond()" class="btn btn-sm but">Proceed to next step</button>
-            </div>
+
+              <button type="button" (click)="updateCond()" class="btn btn-primary  offset-6" style=" background-color:#178da9 ;">Proceed to next step</button>
+
           </form>
 
 
@@ -365,7 +365,7 @@
                      id="Emai">
             </div>
             <div class="ml-5">
-              <button type="button" (click)="updateCond()" class="btn btn-sm but">Proceed to next step</button>
+              <button type="button" (click)="updateCond()" class="but btn-sm" >Proceed to next step</button>
             </div>
           </form>
 
@@ -377,5 +377,4 @@
 
 
   </div></div>
-<button (click)="logout()" class=" btn btn-primary float-right mr-5  mt-2 " >Logout</button>
-{{tok}} /// {{id}} /// {{message}}
+
