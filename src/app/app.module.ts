@@ -56,6 +56,8 @@ import { PostulerComponent } from './components/postuler/postuler.component';
 import { SidebarComponent } from './components/partials/sidebar/sidebar.component';
 import { ProjectComponent } from './components/project/project.component';
 import { ArchiveComponent } from './components/project/archive/archive.component';
+import { ChatComponent } from './chat/chat.component';
+import { NewPlanComponent } from './new-plan/new-plan.component';
 
 @NgModule({
   declarations: [
@@ -99,6 +101,8 @@ import { ArchiveComponent } from './components/project/archive/archive.component
     SidebarComponent,
     ProjectComponent,
     ArchiveComponent,
+    ChatComponent,
+    NewPlanComponent,
   ],
   imports: [
     SchedulerModule,

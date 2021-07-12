@@ -1,30 +1,10 @@
 <head>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.0/font/bootstrap-icons.css">
 </head>
-
-
-<div class=" main h-100 w-100">
-  <div class="container h-100 w-75 d-flex align-items-center justify-content-center" id="contp">
-    <!-- Block gauche-->
-    <div class="text-center align-items-center" id="login">
-      <div class="row h-25"></div>
-      <div class="h-50 align-items-center justify-content-center" id="signup">
-        <p class="h6"><a routerLink="/signup">Sign up</a></p><br>
-        <div class=" row  d-flex align-items-center justify-content-center w-100 " id="dn">
-          <hr class="col-sm  bg-light ml-3" id="t1">
-          <h5 class=" col-sm " style="color: white;font-size: 12px;" id="Z">Or</h5><br>
-          <hr class="col-sm  bg-light mr-3" id="t2">
-        </div><br>
-        <p class="h6"><a routerLink="/login">Log in</a></p>
-      </div>
-    </div>
-    <!--Block Droit-->
-    <div class="d-flex justify-content-center  align-items-center " id="contwhite">
-      <div class="container  w-75 h-100">
-        <div class="containair  h-100 w-100  ">
-          <div class=" container mb-5 mh-100 ml-5  justify-content-center h-100 w-100 ">
-            <div class=" justify-content-center w-75  ml-5 h-100 align-items-center" id="ppd">
-              <p class="h5 text-center mt-5 pa" style="color:#178da9; margin-left: -50px; ">Log in</p>
+<div class="containair h-100 w-100  ">
+  <div class=" container  mh-100 ml-5 mb-5 justify-content-center h-100 w-100 ">
+    <div class=" justify-content-center w-75 ml-5 h-100  align-items-center" id="ppd">
+<p class="h5 text-center mt-5 pa" ></p>
               <form [formGroup]="loginForm" (ngSubmit)="signIn()">
 
                 <div class="form-group">
@@ -70,9 +50,12 @@
                 </div>
                 <button [disabled]="loginForm.invalid" class="btn btn-primary btn-block">Sign In</button>
               </form>
-
+              <div class=" text-sm-start text-center mt-2" >
+                <a href="" class="text-info" data-toggle="modal" data-target="#exampleModalCenter">Forgot your password?
+                </a>
+              </div>
               <div class="row w-100  align-items-center mt-3 TG" style= "margin-left: 10px;">
-                <hr class="bg-info col-sm-2  ml-5" id="t3" style="color:#178da9;">
+                <hr class="bg-info col-sm-2  " id="t3" style="color:#178da9;">
                 <h5 class="col-sm-2 ml-1" style="color: #898e8f;font-size: 12px;"
                     id="or">Or</h5>
                 <hr class="bg-info col-sm-2  mr-5" id="t4" style="color:#178da9;">
@@ -96,34 +79,44 @@
               </div>
               <div class=" bd align-items-end mt-2">
 
-                <div class=" w-100 d-flex  align-items-center ">
-                  <button type="submit" class="btn  btn-sm text-light CA w-25">Log in</button>
-                  <p class="h6 ml-2 mt-2 " style="font-size: 10px;">Dont have an account? <a routerLink="/sign up" id="LG"
-                                                                                             style="color: #178da9; font-size: 12px;font-weight: bold;">Sign up</a></p>
-                </div>
-                <div class=" text-sm-start" style="margin-top: -5px;">
-                  <a routerLink="/motdepasse" id="TAC" class="" style="color: black; font-size: 10px; font-weight: bold;">Forgot your password?
-                  </a>
-                </div>
+
+
 
               </div>
 
-            </div>
-          </div>
-        </div>
 
+
+
+
+
+
+
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModalCenter"  tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header "style="background-color: #178da9; opacity: 0.8 ;height: 50px" >
+          <h6 class="modal-title text-white" id="exampleModalLongTitle">Remind password</h6>
+          <button type="button" class="close text-dark" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+
+            <p>Enter your email and we'll send you a link<br>
+              to get back into your account.</p>
+            <input type="text" name="email" placeholder="Email"><br>
+
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-outline-info" data-dismiss="modal">Close</button>
+          <button type="button" class="btn text-white " style="background-color: #178da9;">Send request</button>
+        </div>
       </div>
     </div>
+  </div>
 
-  </div>
-  <div class="PP ">
-    <br>
-    <p>Enter your email and we'll send you a link<br>
-      to get back into your account.</p>
-    <input type="text" name="email" placeholder="Email"><br>
-    <div class="H">
-      <input type="submit" class="j" value="Send password request">
-    </div>
-  </div>
 
   <script src="https://kit.fontawesome.com/6d3194976d.js" crossorigin="anonymous"></script>
+    </div></div></div>
