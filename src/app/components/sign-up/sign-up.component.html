@@ -3,8 +3,8 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.0/font/bootstrap-icons.css">
   </head>
 
-  <div class=" main h-100 w-100">
-    <div class="container h-100 w-75 d-flex align-items-center justify-content-center">
+
+    <div class="container h-100  d-flex align-items-center justify-content-center">
       <!-- Block gauche-->
       <div class="text-center align-items-center" id="login">
         <div class="row h-25"></div>
@@ -23,19 +23,19 @@
         <div class="container  w-75 h-100">
           <div class="containair h-100 w-100  ">
             <div class=" container  mh-100 ml-5 mb-5 justify-content-center h-100 w-100 ">
-              <div class=" justify-content-center w-75 ml-5 h-100  align-items-center" id="ppd">
+              <div class=" justify-content-center w-75 ml-5 h-100  align-items-center" >
                 <p class="h5 text-center pa mt-5" style="color:#178da9;">Add Condidat</p>
                 <form #form=ngForm class="mt-5">
 
 
                   <div class="form-group">
-                    <label> email</label>
+                    <label> Email</label>
                     <input type="text" required [(ngModel)]="condidat.email"  name="email" class="form-control w-100" >
 
                   </div>
 
                   <div class="form-group">
-                    <label> pasword</label>
+                    <label> Password</label>
                     <input type="password" required [(ngModel)]="condidat.password"  name="password"  class="form-control w-100" >
 
                   </div>
@@ -63,45 +63,28 @@
     </div>
   </div>
   <script src="https://kit.fontawesome.com/6d3194976d.js" crossorigin="anonymous"></script>
-</div>
+
 <div [hidden]="con.admin === 1" >
 <head>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.0/font/bootstrap-icons.css">
 </head>
 
-<div class=" main h-100 w-100">
-  <div class="container h-100 w-75 d-flex align-items-center justify-content-center">
-    <!-- Block gauche-->
-    <div class="text-center align-items-center" id="login">
-      <div class="row h-25"></div>
-      <div class="h-50 align-items-center justify-content-center" id="signup">
-        <p class="h6"><a routerLink="/Signup">Sign up</a></p><br>
-        <div class=" row  d-flex align-items-center justify-content-center w-100 " id="dn">
-          <hr class="col-sm bg-light ml-3" id="t1">
-          <h5 class=" col-sm " style="color: white;font-size: 12px;" id="Z">Or</h5><br>
-          <hr class="col-sm  bg-light mr-3" id="t2">
-        </div><br>
-        <p class="h6"><a routerLink="/login">Log in</a></p>
-      </div>
-    </div>
-    <!--Block Droit-->
-    <div class="d-flex justify-content-center  align-items-center " id="contwhite">
-      <div class="container  w-75 h-100">
+
         <div class="containair h-100 w-100  ">
           <div class=" container  mh-100 ml-5 mb-5 justify-content-center h-100 w-100 ">
             <div class=" justify-content-center w-75 ml-5 h-100  align-items-center" id="ppd">
-              <p class="h5 text-center pa" style="color:#178da9;">Sign Up</p>
-              <form #form=ngForm >
 
+              <form #form=ngForm >
+                <br> <br>
 
                 <div class="form-group">
-                  <label> email</label>
+                  <label> Email</label>
                   <input type="text" required [(ngModel)]="condidat.email"  name="email" class="form-control w-100" >
 
                 </div>
 
                 <div class="form-group">
-                  <label> pasword</label>
+                  <label> Password</label>
                   <input type="password" required [(ngModel)]="condidat.password"  name="password"  class="form-control w-100" >
 
                 </div>
@@ -113,12 +96,25 @@
 
 
                 </div>
+                <div class=" align-items-end mt-2 ">
+                  <div class=" text-sm-start  ">
+                    <p class="h6 text-start TM" style="font-size: 10px;">By clicking create account, you agree to our <a
+                      href="" id="TAC" data-toggle="tooltip" data-placement="right" color="info" title=" By clicking create account you agree to use
+                      your personal informations in our website   ">Terms
+                      and
+                      conditions.</a>
+                    </p>
+                  </div>
+                  <div class=" w-100 d-flex  align-items-center TP ">
+                    <input type="submit" class="btn w-100 text-white btn-primary "  [disabled]="form.invalid"value="Create account" (click)="create()">
 
+                  </div>
+                </div>
 
               </form>
 
               <div class="row w-100  align-items-center ml-0  TG">
-                <hr class="bg-info col-sm-2 ml-5" id="t3" style="color:#178da9;">
+                <hr class="bg-info col-sm-2 " id="t3" style="color:#178da9;">
                 <h5 class="col-sm-2 text-info ml-1" style="color: #178da9;font-size: 12px;font-weight: bold;" id="or">Or
                 </h5>
                 <hr class="bg-info col-sm-2 mr-5" id="t4" style="color:#178da9;">
@@ -144,19 +140,7 @@
                     google</button>
                 </div>
               </div>
-              <div class=" align-items-end mt-2 ">
-                <div class=" text-sm-start  ">
-                  <p class="h6 text-start TM" style="font-size: 10px;">By clicking create account, you agree to our <a
-                    routerLink="/" id="TAC" class="">Terms
-                    and
-                    conditions.</a>
-                  </p>
-                </div>
-                <div class=" w-100 d-flex  align-items-center TP ">
-                  <input type="submit" class="CA" [disabled]="form.invalid"value="Create account" (click)="create()">
-                  <p>Already have an account? <a routerLink="/login">Login</a></p>
-                </div>
-              </div>
+
 
 
             </div>
@@ -166,8 +150,7 @@
       </div>
 
 
-    </div>
-  </div>
-</div>
+
+
 <script src="https://kit.fontawesome.com/6d3194976d.js" crossorigin="anonymous"></script>
-</div>
+

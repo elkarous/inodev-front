@@ -39,11 +39,19 @@ import {AddoffreComponent} from './components/offre/addoffre/addoffre.component'
 import {PostulerComponent} from './components/postuler/postuler.component';
 import {ProjectComponent} from './components/project/project.component';
 import {ArchiveComponent} from './components/project/archive/archive.component';
+import {ChatComponent} from './chat/chat.component';
+import {NewPlanComponent} from './new-plan/new-plan.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent},
-  { path: 'plan', component: PlanComponent },
-  { path: 'signup', component: SignUpComponent },
+  { path: 'chat', component: ChatComponent},
+  { path: 'plan', component: PlanComponent ,children: [
+      { path: 'ourplan', component: NewPlanComponent},
+      { path: 'signup', component: SignUpComponent },
+      { path: 'login', component: LoginComponent, canActivate: [AfterAuthGuard] },
+    ]
+  },
+
   { path: 'dashboard', component: DashboardComponent, canActivate: [AuthGuard]},
   { path: 'profil', component: ProfilComponent, canActivate: [AuthGuard]},
   { path: 'skills', component: SkillsComponent, canActivate: [AuthGuard]},

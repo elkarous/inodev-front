@@ -48,6 +48,8 @@
 
 #login {
   background-color: #178da9;
+  color: white;
+  opacity: 0.7;
   height: 510px;
   width: 170px;
   text-align: center;
@@ -65,7 +67,8 @@
 }
 
 a {
-  text-decoration: none;
+ font-size: large;
+  opacity: 1;
   color: white;
 }
 hr{
@@ -187,13 +190,7 @@ hr{
     position: relative;
     left: -3px;
   }
-  #login{
-    position: absolute;
-    width: 100px;
-    left: -50px;
-    margin-top: 150px;
 
-  }
   .pa{
     position: relative;
     top: 10px;

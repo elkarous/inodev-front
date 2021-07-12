@@ -20,17 +20,20 @@
 
 #contgreen {
   margin-left: 55px;
-  margin-top: -25px;
+  padding-top: 50px ;
 }
 
 #login {
   background-color: #178da9;
-  height: 450px;
+  color: white;
+  opacity: 0.7;
+  height: 510px;
   width: 170px;
   text-align: center;
   margin-right: -50px;
   z-index: 1;
-  margin-left: 130px;
+  margin-left: 110px;
+  margin-top: -15px;
 }
 
 #signup {
@@ -43,7 +46,8 @@
   background-image: url(src/assets/coimbra.jpg);
 }
 a {
-  text-decoration: none;
+  font-size: large;
+  opacity: 1;
   color: white;
 }
 hr{
