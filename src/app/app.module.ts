@@ -58,6 +58,7 @@ import { ProjectComponent } from './components/project/project.component';
 import { ArchiveComponent } from './components/project/archive/archive.component';
 import { ChatComponent } from './chat/chat.component';
 import { NewPlanComponent } from './new-plan/new-plan.component';
+import { BigprofileComponent } from './bigprofile/bigprofile.component';
 
 @NgModule({
   declarations: [
@@ -103,6 +104,7 @@ import { NewPlanComponent } from './new-plan/new-plan.component';
     ArchiveComponent,
     ChatComponent,
     NewPlanComponent,
+    BigprofileComponent,
   ],
   imports: [
     SchedulerModule,

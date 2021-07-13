@@ -41,6 +41,7 @@ import {ProjectComponent} from './components/project/project.component';
 import {ArchiveComponent} from './components/project/archive/archive.component';
 import {ChatComponent} from './chat/chat.component';
 import {NewPlanComponent} from './new-plan/new-plan.component';
+import { BigprofileComponent } from './bigprofile/bigprofile.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent},
@@ -52,12 +53,24 @@ const routes: Routes = [
     ]
   },
 
+  { path: 'profile', component: BigprofileComponent ,children: [
+    { path: 'personaldetails', component: ProfilComponent},
+    { path: 'education', component: EducationComponent},
+    { path: 'skills', component: SkillsComponent },
+    { path: 'experiences', component: ExperienceComponent},
+    { path: 'job', component: QuestionComponent },
+    { path: 'source', component: SourceComponent},
+    { path: 'documents', component: DocumentComponent},
+  ]
+},
+
   { path: 'dashboard', component: DashboardComponent, canActivate: [AuthGuard]},
-  { path: 'profil', component: ProfilComponent, canActivate: [AuthGuard]},
-  { path: 'skills', component: SkillsComponent, canActivate: [AuthGuard]},
-  { path: 'education', component: EducationComponent, canActivate: [AuthGuard]},
-  { path: 'experience', component: ExperienceComponent, canActivate: [AuthGuard]},
-  { path: 'question', component: QuestionComponent, canActivate: [AuthGuard]},
+ // { path: 'bigprofile', component: BigprofileComponent, canActivate: [AuthGuard]},
+  //{ path: 'profil', component: ProfilComponent, canActivate: [AuthGuard]},
+ // { path: 'skills', component: SkillsComponent, canActivate: [AuthGuard]},
+ // { path: 'education', component: EducationComponent, canActivate: [AuthGuard]},
+ // { path: 'experience', component: ExperienceComponent, canActivate: [AuthGuard]},
+ // { path: 'question', component: QuestionComponent, canActivate: [AuthGuard]},
   { path: 'source', component: SourceComponent, canActivate: [AuthGuard]},
   { path: 'document', component: DocumentComponent, canActivate: [AuthGuard]},
   { path: 'dash', component: DashComponent, canActivate: [AuthGuard]},
