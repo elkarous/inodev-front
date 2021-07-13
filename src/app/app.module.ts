@@ -59,7 +59,7 @@ import { ArchiveComponent } from './components/project/archive/archive.component
 import { ChatComponent } from './chat/chat.component';
 import { NewPlanComponent } from './new-plan/new-plan.component';
 import { BigprofileComponent } from './bigprofile/bigprofile.component';
-
+import {MatCardModule} from '@angular/material/card';
 @NgModule({
   declarations: [
     AppComponent,
@@ -121,6 +121,7 @@ import { BigprofileComponent } from './bigprofile/bigprofile.component';
     Ng2SearchPipeModule,
     GridModule,
     DayPilotModule,
+    MatCardModule,
 
     // ToastrModule added
   ],

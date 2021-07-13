@@ -48,6 +48,6 @@ logo: any = '../assets/Logo.png';
           positionClass: 'toast-bottom-left'
         }
     );
-    this.router.navigateByUrl('/login');
+    this.router.navigateByUrl('/plan/login');
   }
 }

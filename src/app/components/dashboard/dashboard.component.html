@@ -3,23 +3,46 @@
     font-weight: bolder;
   }
 </style>
+<div class="container">
+  <!--Carousel Wrapper-->
+  <div id="multi-item-example " class="carousel slide carousel-multi-item row" data-ride="carousel">
 
-<div id="carouselExampleSlidesOnly" class="carousel slide h-75 d-flex " data-ride="carousel">
+    <div class="carousel-inner   "  role="listbox">
 
-  <div class="carousel-inner row">
-    <div class="col-md-3 active"*ngFor="let item of offre1 | paginate: { itemsPerPage: 4, currentPage: 1 } let i = index">
-      <div class="card cs1 text-center" style="width: 21rem;">
-        <img  src="{{'http://localhost:8081/offre/Imgarticles/'+item[11]}}" class=" img1" alt="...">
-        <div class="card-body">
-          <p class="card-title h2 ct1">{{item[1]}}</p>
-          <p class="card-text" style="height: 90px; width: 250px;word-wrap: break-word; overflow: hidden;">{{item[6]}}</p>
-          <a routerLink="/offre/{{item[0]}}/{{item[10]}}" style="color: #0d6efd" class="btn btn-info">View</a>
-        </div>
+      <!--First slide-->
+      <div class="carousel-item col-8  offset-3   " [class.active]="isfirst" *ngFor="let item of offre1  ;
+                                          let i = index ;
+                                          first as isfirst;
+                                          event as isevent;
+                                          last as islast;">
+
+        <mat-card class="example-card bg-white mt-3   shadow " style=" width: 320px; height: initial ; border-radius: 5px 5px 20px 20px;">
+          <img mat-card-image src="{{'http://localhost:8081/offre/Imgarticles/'+item[11]}}" alt="Photo of a Shiba Inu">
+          <mat-card-content>
+            <mat-card-title  class="offset-4  "> {{item[5] |date}} </mat-card-title>
+            <h3 class="text-center m-1" style="color: #00465F;">
+              {{item[1]}}    </h3>
+            <mat-card-title  class="offset-4 m-3 text-center "> {{item[10] }} </mat-card-title>
+          </mat-card-content>
+          <mat-card-actions class="row mb-1">
+            <a style=" font-size: 15px "class="col offset-4" routerLink="/offre/{{item[0]}}/{{item[10]}}" > <i class="fas fa-angle-right fa-x"></i> Read more</a>
+          </mat-card-actions>
+        </mat-card>
+
+
       </div>
+      <!--/.First slide-->
+
+
+
     </div>
+    <!--/.Slides-->
 
   </div>
-</div><br><br>
+  <!--/.Carousel Wrapper-->
+</div>
+<br><br>
+
 <!--Card-->
 <div class="bg-light h-75 row d-flex justify-content-center">
   <div class="card mr-5 justify-content-center  p-3 mb-5  h-75" style="width: 21rem;background-color: #178da9;">
@@ -50,4 +73,5 @@
     </div>
   </div>
 </div>
-
+<div class="container bg-secondary p-5">
+</div>

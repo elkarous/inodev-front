@@ -82,3 +82,39 @@
   -o-transition: 0.6s ease-in-out left;
   transition: 0.6s ease-in-out left;
 }
+.badgeC{
+  position: absolute;
+
+  width: 70px;
+  top: 5px;
+  left: 5px;
+  background: #e80b0b;
+  color: white;
+  font-size: 16px;
+}
+.badgecs{
+  position: absolute;
+  width: 70px;
+  top: 5px;
+  left: 5px;
+  background: #2a57e9;
+  color: white;
+  font-size: 16px;
+}
+.example-card {
+  max-width: 400px;
+  cursor: pointer;
+
+}
+
+.example-car d:hover{
+ position: relative;
+transform: translate3d(1,2,0);
+
+}
+
+
+.example-header-image {
+  background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+  background-size: cover;
+}
