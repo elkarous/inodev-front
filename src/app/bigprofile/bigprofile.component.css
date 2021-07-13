@@ -10,10 +10,11 @@
   #contwhite {
     background: rgba(255, 255, 255, 0.658);
     font-family: 'AvenirNextLTPro';
-    height: 520px;
+    height: 800px;
     width: 700px;
     margin-right: 40px;
-    margin-top: 5px;
+    margin-top: 100px;
+    
   
   }
   #contwhite1 {
@@ -60,8 +61,8 @@
   
   #login {
     background-color: #178da9;
-    opacity: 0.7;
-    height: 500px;
+  
+    height: 700px;
     width: 170px;
     text-align: center;
     margin-right: -50px;
@@ -76,7 +77,8 @@
   
   }
   .main {
-    background-image: url(src/assets/coimbra.jpg);
+   /*  background-image: url(src/assets/coimbra.jpg); */
+   background-color: #f0f3f5 !important;
   }
   
   #dn {

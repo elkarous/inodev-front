@@ -74,9 +74,7 @@
   font-family: 'AvenirNextLTPro';
 
 }
-.main {
-  background-image: url(src/assets/coimbra.jpg);
-}
+
 
 #dn {
   margin-left: 0.5px;
@@ -100,9 +98,10 @@ a{
 #pers{
   color: #178da9;
 }
-.border{
-  opacity: 75%;
+.bord{
+  opacity: 50%;
   border-radius: 6px;
+  border:solid 4px;
 }
 label{
   font-size: 15px;

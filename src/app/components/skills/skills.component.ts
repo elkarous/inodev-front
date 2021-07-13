@@ -93,7 +93,7 @@ export class SkillsComponent implements OnInit {
   }
 
   editeducation(education: Skills) {
-    this.statut = true;
+    this.statut =!this.statut;
     this.educt = education;
   }
   delete(idedu: string) {
@@ -116,7 +116,7 @@ export class SkillsComponent implements OnInit {
     this.skillsForm.reset();
   }
   openform(){
-    this.form = true;
+    this.form = !this.form;
   }
   fermeform(){
     this.form = false;

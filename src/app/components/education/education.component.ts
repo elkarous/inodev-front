@@ -96,7 +96,7 @@ form = false;
 
 
   editeducation(education: Education) {
-    this.statut = true;
+    this.statut = !this.statut;
     this.educt = education;
   }
   delete(idedu: string) {
@@ -131,7 +131,7 @@ form = false;
     this.educationForm.reset();
   }
   openform(){
-    this.form = true;
+    this.form = !this.form;
   }
   fermeform(){
     this.form = false;
