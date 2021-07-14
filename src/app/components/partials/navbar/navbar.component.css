@@ -1,1 +1,22 @@
+.bg-custom-1 {
+  background-color: #85144b;
+}
 
+.bg-custom-2 {
+  background-image: linear-gradient(15deg, #13547a 0%, #80d0c7 100%);
+}
+a{
+  color: #6c757d;
+}
+i{
+  font-size: large;
+}
+.badgec{
+  position: absolute;
+  color: white;
+  background-color: #ff0440;
+  font-size: 12px;
+  height: 17px;
+  width: 17px;
+
+}

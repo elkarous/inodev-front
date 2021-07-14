@@ -84,13 +84,21 @@
 }
 .badgeC{
   position: absolute;
-
+  z-index: 1000;
   width: 70px;
-  top: 5px;
-  left: 5px;
-  background: #e80b0b;
+  text-decoration: blink;
+  margin-top: -7px;
+  margin-left: -60px;
+  background: #ff0440;
   color: white;
   font-size: 16px;
+  animation: Test 2s infinite;
+}
+
+@keyframes Test{
+  0%{opacity: 1;}
+  50%{opacity: 0;}
+  100%{opacity: 1;}
 }
 .badgecs{
   position: absolute;
@@ -102,7 +110,7 @@
   font-size: 16px;
 }
 .example-card {
-  max-width: 400px;
+
   cursor: pointer;
 
 }
@@ -114,7 +122,4 @@ transform: translate3d(1,2,0);
 }
 
 
-.example-header-image {
-  background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
-  background-size: cover;
-}
+

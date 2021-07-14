@@ -99,7 +99,6 @@ const routes: Routes = [
      { path: '{id}', component: ShowAddressesComponent },
     ], canActivate: [AuthGuard]
   },
-  { path: 'login', component: LoginComponent, canActivate: [AfterAuthGuard] },
   { path: '**', component: PageNotFoundComponent}
 
 ];
