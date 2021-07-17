@@ -109,7 +109,7 @@ export class DocumentComponent implements OnInit {
     this.experienceForm.reset();
   }
   openform(){
-    this.form = true;
+    this.form = !this.form;
   }
   fermeform(){
     this.form = false;

@@ -14,8 +14,8 @@
     width: 700px;
     margin-right: 40px;
     margin-top: 100px;
-    
-  
+
+
   }
   #contwhite1 {
     background: rgba(255, 255, 255, 0.658);
@@ -24,7 +24,7 @@
     width: 700px;
     margin-right: 40px;
     margin-top: 5px;
-  
+
   }
   .wrapper{
     height: 100px;
@@ -53,15 +53,15 @@
   .file::-webkit-file-upload-button{
     visibility: hidden;
   }
-  
+
   #contgreen {
     margin-left: 55px;
     margin-top: -25px;
   }
-  
+
   #login {
     background-color: #178da9;
-  
+
     height: 700px;
     width: 170px;
     text-align: center;
@@ -69,18 +69,18 @@
     z-index: 1;
     margin-left: 130px;
   }
-  
+
   #signup {
     background-color: #178da9;
     margin-top: 40px;
     font-family: 'AvenirNextLTPro';
-  
+
   }
   .main {
-   /*  background-image: url(src/assets/coimbra.jpg); */
+   background-image: url(src/assets/profile.jpg);
    background-color: #f0f3f5 !important;
   }
-  
+
   #dn {
     margin-left: 0.5px;
   }
@@ -96,7 +96,7 @@
     margin-top: 30px;
     border-radius: 6px;
   }
-  
+
   #perso{
     color: #178da9;
   }
@@ -112,12 +112,12 @@
   }
   .but{
     font-size: 10px;
-  
+
   }
-  
-  
+
+
   @media(min-width: 360px) and (max-width: 800px){
-  
+
     a{
       font-size: 12px;
     }
@@ -163,7 +163,7 @@
       position: relative;
       top: -30px;
     }
-  
+
     #Lastnam{
       position: relative;
       top: -50px;
@@ -176,7 +176,7 @@
       position: relative;
       top: -30px;
     }
-  
+
     .LN{
       position: relative;
       top: -50px;
@@ -252,8 +252,7 @@
       left: -20px;
     }
   }
-  
+
   /* #signup h5{
     color: white:!important;
   } */
-  

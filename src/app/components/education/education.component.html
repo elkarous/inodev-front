@@ -5,10 +5,10 @@
           <div class=" container mb-5 mh-100 ml-5 justify-content-center h-100 w-100 ">
             <div class=" justify-content-center  w-75  ml-5 h-100 mt-4 align-items-center" id="ppd">
               <p class="h5 text-center mt-2 pa" style="color:#178da9; margin-left: -110px; ">Education</p>
-            
+
                 <div  class="container border border-dark mt-4" *ngFor="let education of educations" >
                 <div>
-                      Degree : {{ education.niveau }} 
+                      Degree : {{ education.niveau }}
                       <a (click)="editeducation(education)" class="float-right">
                         <i class="fa fa-pencil-square-o" aria-hidden="true" style="color: red;">
                         </i>
@@ -40,15 +40,15 @@
                       Add academic experience
                     </button>
                 </div>
-                <form class="form" *ngIf="form" [formGroup]="educationForm">
-                  <div class="justify-content-center w-75 mr-0 h-100  align-items-center">
+                <form class="form-row" *ngIf="form" [formGroup]="educationForm">
+                  <div>
 
                     <div class="row ">
                   <div class="form-group col-6">
                     <label class="m-2">Institute name</label>
                     <input type="text" formControlName="nomFaculte"   name="institutename" class=" form-control form-control-sm rounded border border-dark bg-transparent">
                   </div>
-                  
+
                   <div class="form-group col-6">
                     <label class="m-2">Start date</label>
                     <input type="date" formControlName="dateDebut"   name="start date" class=" form-control form-control-sm rounded border border-dark bg-transparent">
@@ -60,7 +60,7 @@
                     <label>Specialisation</label>
                     <select formControlName="specialite" class=" form-control form-control-sm rounded border border-dark bg-transparent"
                             aria-label=".form-select-lg example" >
-  
+
                       <option value="Accounting">Accounting</option>
                       <option value="Administrative">Administrative</option>
                       <option value="Agriculture">Agriculture</option>
@@ -163,7 +163,7 @@
                       <option value="Zoology & Wildlife Sciences">Zoology & Wildlife Sciences</option>
                     </select>
                     </div>
-                
+
                   <div class="form-group col-6">
                     <label>Country</label>
                     <select id="country" formControlName="pays"  name="country" class=" form-control form-control-sm rounded border border-dark bg-transparent">
@@ -417,7 +417,7 @@
                     </select>
                   </div>
                   </div>
-  
+
                   <div class="row">
                     <div class="form-group col-6">
                     <label>End date</label>
@@ -430,21 +430,19 @@
                       <option value="master" >Master</option>
                       <option value="doctorat" >Doctorat</option>
                       <option value="other" >Other</option>
-  
+
                     </select>
                     </div>
                     </div>
-                  
-  
-                    <br>
-                    <button  type="submit" [disabled]="educationForm.invalid" (click)="createEducation()" class="btn btn-info offset-9" >Save</button>
-                  
+
+                    <button  type="submit" [disabled]="educationForm.invalid" (click)="createEducation()" class="btn btn-info offset-11" >Save</button>
+
                   </div> <br><br><br><br><br><br><br><br><br><br><br><br><br><br>
                 </form>
-                  
+
                 </div>
 
-               
+
 
 
     </div>
@@ -456,4 +454,4 @@
 
 
 <script src="https://kit.fontawesome.com/6d3194976d.js" crossorigin="anonymous"></script>
-  
+

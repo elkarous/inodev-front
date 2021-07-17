@@ -35,7 +35,7 @@ export class ExperienceComponent implements OnInit {
     });
   }
 
-  form = true;
+  form = false;
   statut = false;
   educt: Experience;
   educ: Experience = {
@@ -98,7 +98,7 @@ export class ExperienceComponent implements OnInit {
   }
 
   editExperience(education: Experience) {
-    this.statut = true;
+    this.statut = !this.statut;
     this.educt = education;
   }
   delete(idedu: string) {
@@ -121,7 +121,7 @@ export class ExperienceComponent implements OnInit {
     this.experienceForm.reset();
   }
   openform(){
-    this.form = true;
+    this.form = !this.form;
   }
   fermeform(){
     this.form = false;

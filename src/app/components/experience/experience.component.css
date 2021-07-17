@@ -70,7 +70,7 @@
   margin-left: -200px;
 
 }
-.border{
+.bor{
   border-radius: 6px;
   opacity: 75%;
 }
@@ -110,14 +110,7 @@ a{
   border-radius: 6px;
 }
 
-.For{
-  margin-top: -15px;
-  width: 100%;
-}
-.Rl{
-  margin-top: -15px;
-  width: 70%;
-}
+
 
 
 .bt{
@@ -215,12 +208,7 @@ a{
     width: 75%;
     height: 75px;
   }
-  .For{
-    width: 85%;
-  }
-  .Rl{
-    width: 60%;
-  }
+
 
 
 }
