@@ -8,7 +8,8 @@
         <div class="card A SF" *ngFor="let item of of | paginate: { itemsPerPage: 3, currentPage: p } let i = index" [ngClass]="{'active': i == 0 }" >
           <div class="EE">
             <div class="p-3">
-              <p class="h1 B text-light" style="height: 141px; width: 250px;word-wrap: break-word; overflow: hidden;">{{item[1]}}</p>
+              <p class="h1 B text-light" style="height: 141px; width: 250px;word-wrap: break-word; overflow: hidden;">{{item[14]}}</p>
+              <p>{{item[1]}}</p>
               <p class="text-light C" > {{item[7]}}<br>
               </p>
               <p class="Yel">SPECIALIZATION<p class="text-light C" *ngFor="let it of s let i = index"> <a *ngIf="it[2] === item[0]">{{it[0]}}</a>

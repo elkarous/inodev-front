@@ -1,12 +1,32 @@
-
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+<div class=" bg-light d-flex justify-content-center    ">
+<mat-card class="bg-white m-2   ">
+  <div class="row align-items-center  ">
+    <img src="{{'http://localhost:8081/offre/Imgarticles/'+offre1[0][13]}}"  class=" col-8 mb-2 offset-2 h-75">
 
-<div style="border: none" class="bg-light h-25">
-<img src="{{'http://localhost:8081/offre/Imgarticles/'+offre1[0][13]}}" class="HH">
+  </div>
+  <hr class="text-light">
+  <div class="row">
+<div  class=" col-5 mr-1 ">
+
+  <h4>Description</h4>
+  <p>{{offre1[0][6]}}</p>
+  <hr>
+
+  <h4>Process</h4><br>
+  <p>The steps involved in being recruited for this job.</p>
+  <div class="d-flex"><p>1</p><p class="ml-2"> Contact applicant after receiving application</p></div>
+  <div class="d-flex"> <p>2</p><p class="ml-2"> Set up interview with applicant based on schedules favorable to applicant</p></div>
+  <div class="d-flex"> <p>3</p><p class="ml-2"> Set up interview with applicant and company</p></div>
+  <div class="d-flex"> <p>4</p><p class="ml-2"> Make a decision on shortlisted applicants</p></div>
+  <div class="d-flex"> <p>5</p><p class="ml-2"> Final decision on selected applicants</p></div>
+  <div class="d-flex"> <p>6</p><p class="ml-2"> Provde feedback to candidate after interview</p></div>
+
 </div>
-<div class="bg-light ">
-  <div class="container h-50 d-flex">
-    <div class="container bg-light w-75 " style="margin-right: 340px;border: none">
+
+<div class=" col-6  ">
+  <h4>Details</h4>
+  <div class="container bg-white " >
       <p class="h5">{{offre1[0][7]}}</p>
       <p class="h3">{{offre1[0][1]}}</p>
       <div class="d-flex pt-2">
@@ -21,6 +41,7 @@
 
         </div>
       </div>
+
       <div class="d-flex">
         <div>
           <i class="bi bi-chat-fill"></i>
@@ -30,53 +51,44 @@
           <p>To Learn portugues visit our langage platform</p>
         </div>
       </div>
-<hr>
-      <h4>Description</h4>
-      <p>{{offre1[0][6]}}</p>
-      <hr>
-      <h4>Requirements</h4>
+    <hr class="text-light">
+    <h4>Requirements</h4>
       <div class="d-flex row">
+         <br>
         <div class="col-sm-6"><h6>Backgrounds</h6></div>
         <div class="col-sm-6 "> <p class="ff">Mechanical </p></div>
       </div>
       <div class="d-flex row">
         <div class="col-sm-6"><h6>Skills</h6></div>
-        <div class="col-sm-6 "><p class="ff">Mechanical</p><hr></div>
+        <div class="col-sm-6 "><p class="ff">Mechanical</p>
+
+        </div>
       </div>
-      <hr>
-      <h4>Process</h4><br>
-      <p>The steps involved in being recruited for this job.</p>
-        <div class="d-flex"><p>1</p><p class="ml-2"> Contact applicant after receiving application</p></div>
-      <div class="d-flex"> <p>2</p><p class="ml-2"> Set up interview with applicant based on schedules favorable to applicant</p></div>
-      <div class="d-flex"> <p>3</p><p class="ml-2"> Set up interview with applicant and company</p></div>
-      <div class="d-flex"> <p>4</p><p class="ml-2"> Make a decision on shortlisted applicants</p></div>
-      <div class="d-flex"> <p>5</p><p class="ml-2"> Final decision on selected applicants</p></div>
-      <div class="d-flex"> <p>6</p><p class="ml-2"> Provde feedback to candidate after interview</p></div>
-      <hr>
+    <hr class="text-light">
       <h4>Date {{offre1[0][10]}}</h4>
       <div class="d-flex row p-1"><p class="col-sm-4">Offer end date</p><p class="col-sm-4 ml-2 ff"> {{offre1[0][4] | date}}</p></div>
       <div class="d-flex p-1"><p class="col-sm-4">Start Day</p><p class="col-sm-4 ml-2 ff"> {{offre1[0][5] | date}}</p></div>
 
-    </div>
+    <hr class="text-light">
+
+  <div class="d-flex row p-1"><p class="col-sm-4">Price : </p><p class="col-sm-4 ml-2 ff">{{offre1[0][8]}} DT</p></div>
+
+        <p class="card-text text-center">Pick the slot most suitable for you</p>
+
+        <button routerLink="/postuler/{{offre1[0][0]}}/{{offre1[0][12]}}" class="btn row   text-white w-100 mb-3"  style="background-color: #ff0440">Apply Now</button>
+  <br>
 
 
 
-    <div class="container position-fixed bg-light  PP" id="sticky-sidebar" style="margin-left: 55%">
-      <div class="card h-25">
-        <div class="card-body">
-          <h5 class="card-title">{{offre1[0][8]}} DT</h5><br>
-          <p class="card-text">Pick the slot most suitable for you</p>
-
-          <a routerLink="/postuler/{{offre1[0][0]}}/{{offre1[0][12]}}" class="btn btn-sm apply" style="background-color: white;color: black">Apply Now</a>
-        </div>
-      </div>
-    </div>
+  <button class="btn btn-primary row w-100 " routerLink="{{offre1[0][14]}}">Watch Video</button>
+  </div>
   </div>
 
-<a class="btn btn-info" href="{{offre1[0][14]}}">Watch Video</a>
+
   </div>
-<div class="h-100">
+
+
+
+</mat-card>
 
 </div>
-
-

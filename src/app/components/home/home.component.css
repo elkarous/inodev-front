@@ -1,10 +1,15 @@
 
-body {
-    background-image: url(src/assets/coimbra.jpg);
-    background-position: 100%;
-    background-repeat: no-repeat;
-    margin-top: -135px;
-    font-weight: lighter;
-    font-family: 'metropolislight';
-}
 
+.bod{
+  background-image: url(src/assets/pexels-magda-ehlers-2549156.jpg);
+  height: 750px;
+  width: 100%;
+  margin :0;
+  padding: 0;
+  background-position: center;
+  background-repeat: no-repeat;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+
+}

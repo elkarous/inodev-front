@@ -60,6 +60,9 @@ import { ChatComponent } from './chat/chat.component';
 import { NewPlanComponent } from './new-plan/new-plan.component';
 import { BigprofileComponent } from './bigprofile/bigprofile.component';
 import {MatCardModule} from '@angular/material/card';
+import { FooterComponent } from './components/partials/footer/footer.component';
+import { MDBBootstrapModule } from 'angular-bootstrap-md';
+import { TestComponent } from './test/test.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -105,6 +108,8 @@ import {MatCardModule} from '@angular/material/card';
     ChatComponent,
     NewPlanComponent,
     BigprofileComponent,
+    FooterComponent,
+    TestComponent,
   ],
   imports: [
     SchedulerModule,
@@ -122,6 +127,7 @@ import {MatCardModule} from '@angular/material/card';
     GridModule,
     DayPilotModule,
     MatCardModule,
+    MDBBootstrapModule.forRoot(),
 
     // ToastrModule added
   ],
