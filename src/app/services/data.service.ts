@@ -12,24 +12,24 @@ export class DataService {
   }
 
   getEvents(from: DayPilot.Date, to: DayPilot.Date, id: number): Observable<any[]> {
-    return this.http.get('http://localhost:8080/api/events?from=' + from.toString() + '&to=' + to.toString() + '&id='
+    return this.http.get('http://localhost:8081/api/events?from=' + from.toString() + '&to=' + to.toString() + '&id='
       + id.toString()) as Observable<any>;
   }
 
   getResources(): Observable<any[]> {
-    return this.http.get('http://localhost:8080/api/resources') as Observable<any>;
+    return this.http.get('http://localhost:8081/api/resources') as Observable<any>;
   }
 
   createEvent(data: EventCreateParams): Observable<EventData> {
-    return this.http.post('http://localhost:8080/api/events/create', data) as Observable<any>;
+    return this.http.post('http://localhost:8081/api/events/create', data) as Observable<any>;
   }
 
   moveEvent(data: EventMoveParams): Observable<EventData> {
-    return this.http.post('http://localhost:8080/api/events/move', data) as Observable<any>;
+    return this.http.post('http://localhost:8081/api/events/move', data) as Observable<any>;
   }
 
   deleteEvent(data: EventDeleteParams): Observable<EventData> {
-    return this.http.post('http://localhost:8080/api/events/delete', data) as Observable<any>;
+    return this.http.post('http://localhost:8081/api/events/delete', data) as Observable<any>;
   }
 
 }

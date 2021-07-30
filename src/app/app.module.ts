@@ -60,6 +60,7 @@ import { ChatComponent } from './chat/chat.component';
 import { NewPlanComponent } from './new-plan/new-plan.component';
 import { BigprofileComponent } from './bigprofile/bigprofile.component';
 import {MatCardModule} from '@angular/material/card';
+import { DashSupervisorComponent } from './dash-supervisor/dash-supervisor.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -105,6 +106,7 @@ import {MatCardModule} from '@angular/material/card';
     ChatComponent,
     NewPlanComponent,
     BigprofileComponent,
+    DashSupervisorComponent,
   ],
   imports: [
     SchedulerModule,
