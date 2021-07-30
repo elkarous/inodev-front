@@ -29,7 +29,8 @@ logo: any = '../assets/Logo.png';
   ngOnInit() {
     this.account.authStatus.subscribe(value => {
       this.loggedIn = value;
-      this.id = this.Token.getInfos().id;
+      this.id = this.Token.getId();
+      console.log(this.id)
       this.userInfos = this.Token.getInfos();
       this.sign.get(this.id).subscribe((res: Condidat) => { console.log(res);
                                                             this.con = res;

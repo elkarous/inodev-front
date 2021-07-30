@@ -8,7 +8,7 @@ public c: any[];
   constructor() { }
 
   set(data: any) {
-    localStorage.setItem('token', data.token);
+    localStorage.setItem('accessToken', data.accessToken);
     localStorage.setItem('id', data.id);
   }
 
@@ -17,7 +17,7 @@ public c: any[];
   }
 
   getToken() {
-    return localStorage.getItem('token');
+    return localStorage.getItem('accessToken');
   }
 
   getId() {
@@ -25,7 +25,7 @@ public c: any[];
   }
 
   remove() {
-    localStorage.removeItem('token');
+    localStorage.removeItem('accessToken');
   }
 
   decode(payload) {
@@ -33,8 +33,8 @@ public c: any[];
     return JSON.parse(atob(payload));
   }
 
-  payload(token) {
-    const payload = token.split('.')[1];
+  payload(accessToken) {
+    const payload = accessToken.split('.')[1];
     console.log('payload : ', payload);
     return this.decode(payload);
   }
@@ -46,12 +46,12 @@ setC(a: any){
     this.c = a;
 }
   isValid() {
-    const token = this.getToken();
+    const accessToken = this.getToken();
     const id = this.getId();
 
-    if (token) {
+    if (accessToken) {
 
-      const payload = this.payload(token);
+      const payload = this.payload(accessToken);
       if (payload) {
         return id == payload.id;
       }
@@ -61,10 +61,10 @@ setC(a: any){
 
   getInfos() {
 
-    const token = this.getToken();
+    const accessToken = this.getToken();
 
-    if (token) {
-      const payload = this.payload(token);
+    if (accessToken) {
+      const payload = this.payload(accessToken);
       return payload ? payload : null;
     }
 

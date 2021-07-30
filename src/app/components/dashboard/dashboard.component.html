@@ -1,20 +1,18 @@
-<style>
-  .h2 {
-    font-weight: bolder;
-  }
-</style>
-<div class="container">
+
+<div class="bod">
+<div class="container ">
   <!--Carousel Wrapper-->
   <div id="multi-item-example " class="carousel slide carousel-multi-item row " data-ride="carousel">
 
     <div class="carousel-inner   "  role="listbox">
 
       <!--First slide-->
-      <div class="carousel-item col-8  offset-3 mb-1   " [class.active]="isfirst" *ngFor="let item of offre1  ;
+      <div class="carousel-item col-8  offset-3 mb-1   " [class.active]="isfirst"  *ngFor="let item of offre1  ;
                                           let i = index ;
                                           first  as isfirst ;
                                           event as isevent;
-                                          last as islast;"
+                                          last as islast;
+                                          odd as isodd"
                                           style="height: 520px; ">
 
         <mat-card class="example-card bg-white mt-3  h-100 w-50 shadow " style="  border-radius: 5px 5px 30px 30px;">
@@ -49,7 +47,7 @@
   </div>
   <!--/.Carousel Wrapper-->
 </div>
-<br><br>
+</div>
 
 <!--Card-->
 <div class="bg-light h-75 row d-flex justify-content-center">
@@ -81,4 +79,5 @@
     </div>
   </div>
 </div>
+
 
