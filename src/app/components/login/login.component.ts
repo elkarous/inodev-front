@@ -57,7 +57,7 @@ export class LoginComponent implements OnInit {
     );
     this.ju = this.token.getInfos().id;
     console.log( this.ju);
-    this.router.navigateByUrl('/chat');
+    this.router.navigateByUrl('/dashboard');
     window.location.reload();
   }
 
