@@ -10,11 +10,11 @@ export class AddressService {
 
   constructor(private http: HttpClient) { }
 
-  getAll() {
+  getAll(): Address {
     return this.http.get(`${environment.baseUrl}/addresses`);
   }
 
-  Save(data: Address) {
+  Save(data: Address):Address {
     return this.http.post(`${environment.baseUrl}/addresses`, data);
   }
 }

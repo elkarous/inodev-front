@@ -1,5 +1,10 @@
 export class Specialite {
-  nom: string;
-  image: string;
-  specialiteId: string;
+  constructor(
+    nom: string,
+    image: string,
+    specialiteId: string
+
+  ) {}
+
+
 }

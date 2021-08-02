@@ -1,5 +1,9 @@
-export interface Source{
-  describ: string;
-  position: string;
-  sourceId: string;
+export class Source{
+  constructor(
+    describ: string,
+    position: string,
+    sourceId: string
+  ) {
+  }
+
 }

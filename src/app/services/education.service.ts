@@ -3,6 +3,7 @@ import {HttpClient} from '@angular/common/http';
 import {environment} from '../../environments/environment';
 import {Education} from '../models/education';
 import {Condidat} from '../models/condidat';
+import {Observable} from 'rxjs';
 
 
 @Injectable({
@@ -12,20 +13,21 @@ export class EducationService {
 
   constructor(private http: HttpClient) { }
 
-  getAll() {
-    return this.http.get(`${environment.baseUrl}/users/education`);
+  getAll(): Observable<Education[]> {
+
+    return this.http.get<Education[]> (`${environment.baseUrl}/users/education`);
   }
 
-  Save(data: Education) {
+  Save(data: Education) : Education {
     return this.http.post(`${environment.baseUrl}/users/education`, data);
   }
-  get(id: string){
+  get(id: string): Education{
     return this.http.get(`${environment.baseUrl}/users/education/` + id);
   }
-  getuser(id: string){
+  getuser(id: string): Condidat{
     return this.http.get(`${environment.baseUrl}/users/education/get/` + id);
   }
-  updateEducation(id: string, data: Education) {
+  updateEducation(id: string, data: Education) : Education{
     return this.http.put(`${environment.baseUrl}/users/education/` + id, data);
   }
   delete(idedu: string){

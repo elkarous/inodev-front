@@ -1,4 +1,8 @@
-export interface Document{
-  nom: string;
-  documentId: string;
+export class Document{
+  constructor(
+    nom: string,
+   documentId: string
+  ) {
+  }
+
 }

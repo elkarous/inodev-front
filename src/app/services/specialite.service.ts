@@ -2,6 +2,7 @@ import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {environment} from '../../environments/environment';
 import {Observable} from 'rxjs';
+import {Specialite} from '../models/specialite';
 
 @Injectable({
   providedIn: 'root'
@@ -10,8 +11,8 @@ export class SpecialiteService {
 
   constructor(private http: HttpClient) { }
 
-  getAll(){
-    return this.http.get(`${environment.baseUrl}/specialite` );
+  getAll():Observable<Specialite>{
+    return this.http.get<Specialite>(`${environment.baseUrl}/specialite` );
   }
   getohoto(id: string): Observable<any>{
     return this.http.get(`${environment.baseUrl}/specialite/Imgarticles/` + id);
@@ -26,10 +27,10 @@ export class SpecialiteService {
 
     return this.http.delete(`${environment.baseUrl}/specialite/` + id);
   }
-  save(photo: FormData){
+  save(photo: FormData): Specialite{
     return this.http.post(`${environment.baseUrl}/specialite`,  photo);
   }
-  update(id: string, a: any){
+  update(id: string, a: any) : Specialite{
     return this.http.put(`${environment.baseUrl}/specialite/edit/` + id,  a);
   }
 }

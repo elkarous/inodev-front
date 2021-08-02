@@ -2,6 +2,9 @@ import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {environment} from '../../environments/environment';
 import {Experience} from '../models/experience';
+import {Observable} from 'rxjs';
+import {Education} from '../models/education';
+import {Condidat} from '../models/condidat';
 
 @Injectable({
   providedIn: 'root'
@@ -9,20 +12,20 @@ import {Experience} from '../models/experience';
 export class ExperienceService {
   constructor(private http: HttpClient) { }
 
-  getAll() {
-    return this.http.get(`${environment.baseUrl}/experience`);
+  getAll(): Observable<Experience> {
+    return this.http.get<Experience>(`${environment.baseUrl}/experience`);
   }
 
-  Save(data: Experience) {
+  Save(data: Experience) : Experience {
     return this.http.post(`${environment.baseUrl}/experience`, data);
   }
-  get(id: string){
+  get(id: string) : Experience{
     return this.http.get(`${environment.baseUrl}/experience/` + id);
   }
-  getuser(id: string){
+  getuser(id: string): Condidat{
     return this.http.get(`${environment.baseUrl}/experience/get/` + id);
   }
-  updateExperience(id: string, data: Experience) {
+  updateExperience(id: string, data: Experience) : Experience{
     return this.http.put(`${environment.baseUrl}/experience/` + id, data);
   }
   delete(idedu: string){
