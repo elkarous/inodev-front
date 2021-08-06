@@ -12,8 +12,8 @@ import {CondidatoffreService} from '../../services/condidatoffre.service';
   styleUrls: ['./condidature.component.css']
 })
 export class CondidatureComponent implements OnInit {
-  candidate: any;
-  con: any ;
+  candidate: Condidat[];
+  con: any;
   public id: any;
   constructor(
     private account: AccountService,

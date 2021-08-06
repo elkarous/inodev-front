@@ -23,23 +23,23 @@ export class SignupServiceService {
   };
   constructor(private http: HttpClient) {}
 
-  Save(data: Condidat) {
-    return this.http.post(`${environment.baseUrl}/condidat`, data, this.httpOptions);
+  Save(data: Condidat):Observable<Condidat> {
+    return this.http.post<Condidat>(`${environment.baseUrl}/condidat`, data, this.httpOptions);
   }
 
-  updateC(id: string, photo: FormData){
-  return this.http.put(`${environment.baseUrl}/condidat/` + id,  photo);
+  updateC(id: string, photo: FormData):Observable<Condidat>{
+  return this.http.put<Condidat>(`${environment.baseUrl}/condidat/` + id,  photo);
   }
-  get(id: string){
-    return this.http.get(`${environment.baseUrl}/condidat/` + id);
+  get(id: string):Observable<Condidat>{
+    return this.http.get<Condidat>(`${environment.baseUrl}/condidat/` + id);
   }
   delete(id: string){
     return this.http.delete(`${environment.baseUrl}/condidat/` + id);
   }
-  getohoto(id: string){
-    return this.http.get(`${environment.baseUrl}/condidat/img/` + id);
+  getohoto(id: string):Observable<Condidat>{
+    return this.http.get<Condidat>(`${environment.baseUrl}/condidat/img/` + id);
   }
-  getAll(){
-    return this.http.get(`${environment.baseUrl}/condidat` );
+  getAll():Observable<Condidat[]>{
+    return this.http.get<Condidat[]>(`${environment.baseUrl}/condidat` );
   }
 }

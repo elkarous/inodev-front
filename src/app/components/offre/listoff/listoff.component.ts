@@ -85,7 +85,7 @@ export class ListoffComponent implements OnInit {
   }
 
   allOffre() {
-    this.off.getaAll(this.route.snapshot.params.id).subscribe(res => {
+    this.off.getOfferbyType(this.route.snapshot.params.id).subscribe(res => {
       console.log(res);
       this.offre1 = res;
     });
@@ -116,21 +116,21 @@ export class ListoffComponent implements OnInit {
     this.add = false ;
   }
   CI() {
-    this.off.getaAll('intership').subscribe(res => {
+    this.off.getOfferbyType('intership').subscribe(res => {
       console.log(res);
       this.offre1 = res;
       this.router.navigateByUrl('/listoff/intership');
     });
   }
   CS() {
-    this.off.getaAll('study').subscribe(res => {
+    this.off.getOfferbyType('study').subscribe(res => {
       console.log(res);
       this.offre1 = res;
       this.router.navigateByUrl('/listoff/study');
     });
   }
   CV() {
-    this.off.getaAll('volunteer').subscribe(res => {
+    this.off.getOfferbyType('volunteer').subscribe(res => {
       console.log(res);
       this.offre1 = res;
       this.router.navigateByUrl('/listoff/volunteer');

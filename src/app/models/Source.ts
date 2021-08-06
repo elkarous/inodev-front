@@ -1,9 +1,7 @@
 export class Source{
-  constructor(
-    describ: string,
-    position: string,
-    sourceId: string
-  ) {
-  }
+
+    describ: string;
+    position: string;
+    sourceId: string;
 
 }

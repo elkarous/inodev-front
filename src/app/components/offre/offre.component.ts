@@ -63,7 +63,6 @@ export class OffreComponent implements OnInit {
     });
   }
   allOffre() {
-
     this.spe.getAll().subscribe((res: Specialite[]) => {
       console.log(res);
       this.offre = res;

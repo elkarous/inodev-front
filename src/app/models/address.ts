@@ -1,9 +1,13 @@
+import {Condidat} from './condidat';
+
 export class Address {
-  constructor(
-    city: string,
-    country: string,
-    street: string,
-    postal: string,
-    type: string
-  )    {}
+    id: number;
+    addressId : string;
+    city: string;
+    country: string;
+    street: string;
+    postal: string;
+    type: string;
+    user:Condidat;
+
 }

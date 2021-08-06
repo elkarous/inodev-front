@@ -11,8 +11,8 @@ export class SpecialiteService {
 
   constructor(private http: HttpClient) { }
 
-  getAll():Observable<Specialite>{
-    return this.http.get<Specialite>(`${environment.baseUrl}/specialite` );
+  getAll():Observable<Specialite[]>{
+    return this.http.get<Specialite[]>(`${environment.baseUrl}/specialite` );
   }
   getohoto(id: string): Observable<any>{
     return this.http.get(`${environment.baseUrl}/specialite/Imgarticles/` + id);
@@ -27,10 +27,10 @@ export class SpecialiteService {
 
     return this.http.delete(`${environment.baseUrl}/specialite/` + id);
   }
-  save(photo: FormData): Specialite{
-    return this.http.post(`${environment.baseUrl}/specialite`,  photo);
+  save(photo: FormData): Observable<Specialite>{
+    return this.http.post<Specialite>(`${environment.baseUrl}/specialite`,  photo);
   }
-  update(id: string, a: any) : Specialite{
-    return this.http.put(`${environment.baseUrl}/specialite/edit/` + id,  a);
+  update(id: string, a: any) : Observable<Specialite>{
+    return this.http.put<Specialite>(`${environment.baseUrl}/specialite/edit/` + id,  a);
   }
 }

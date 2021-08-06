@@ -1,10 +1,8 @@
 import {Condidat} from './condidat';
 
-export class Document{
-  id: number;
-  documentId: string;
+export class Hobbies{
+  id : number;
   nom: string;
+  description : string;
   condidat : Condidat;
-
-
 }

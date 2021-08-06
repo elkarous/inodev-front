@@ -13,8 +13,8 @@ import {OffreService} from '../../services/offre.service';
   styleUrls: ['./dash.component.css']
 })
 export class DashComponent implements OnInit {
-  candidate: any;
-  con: any ;
+  candidate: Condidat[];
+  con: Condidat;
   public id: any;
   public pos: any;
   public summer: any;

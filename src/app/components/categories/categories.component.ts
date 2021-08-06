@@ -21,23 +21,22 @@ export class CategoriesComponent implements OnInit {
   public p: number;
   public s: any;
   constructor(private Token: TokenService,
-              public off: OffreService,
+              public offreService: OffreService,
               public route: ActivatedRoute,
               private router: Router,
-              public spe: SpecialiteService,
-              public spec: SpecialiteService) {
-  }
+              public specialiteService: SpecialiteService
+  ) {}
   ngOnInit(): void {
     this.kol = null;
     this.alloffre(this.route.snapshot.params.id);
   }
   alloffre(o: string) {
     this.p = 1;
-    this.off.getcat(o, this.route.snapshot.params.id1).subscribe(res => {
+    this.offreService.getcat(o, this.route.snapshot.params.id1).subscribe(res => {
         console.log(res);
         this.of = res;
       });
-    this.spec.getAll().subscribe(res => {
+    this.specialiteService.getAll().subscribe(res => {
       console.log(res);
       this.s = res;
     });

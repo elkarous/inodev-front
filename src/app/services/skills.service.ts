@@ -12,24 +12,24 @@ export class SkillsService {
 
   constructor(private http: HttpClient) { }
 
-  getAll():Observable<Skills> {
-    return this.http.get<Skills>(`${environment.baseUrl}/skills`);
+  getAll():Observable<Skills[]> {
+    return this.http.get<Skills[]>(`${environment.baseUrl}/skills`);
   }
-  skillsoffre(id: number):Skills {
-    return this.http.get(`${environment.baseUrl}/skills/offre/` + id);
+  skillsoffre(id: number):Observable<Skills[]> {
+    return this.http.get<Skills[]>(`${environment.baseUrl}/skills/offre/` + id);
   }
 
-  Save(data: Skills) : Skills{
-    return this.http.post(`${environment.baseUrl}/skills`, data);
+  Save(data: Skills) : Observable<Skills>{
+    return this.http.post<Skills>(`${environment.baseUrl}/skills`, data);
   }
-  get(id: string): Skills{
-    return this.http.get(`${environment.baseUrl}/skills/` + id);
+  get(id: string): Observable<Skills>{
+    return this.http.get<Skills>(`${environment.baseUrl}/skills/` + id);
   }
-  getuser(id: string):Condidat{
-    return this.http.get(`${environment.baseUrl}/skills/get/` + id);
+  getskillBYUser(id: string):Observable<Skills[]>{
+    return this.http.get<Skills[]>(`${environment.baseUrl}/skills/get/` + id);
   }
-  updateSkills(id: string, data: Skills):Skills {
-    return this.http.put(`${environment.baseUrl}/skills/` + id, data);
+  updateSkills(id: string, data: Skills):Observable<Skills> {
+    return this.http.put<Skills>(`${environment.baseUrl}/skills/` + id, data);
   }
   delete(idedu: string){
     return this.http.delete(`${environment.baseUrl}/skills/` + idedu);

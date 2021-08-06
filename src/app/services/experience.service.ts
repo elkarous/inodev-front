@@ -12,21 +12,21 @@ import {Condidat} from '../models/condidat';
 export class ExperienceService {
   constructor(private http: HttpClient) { }
 
-  getAll(): Observable<Experience> {
-    return this.http.get<Experience>(`${environment.baseUrl}/experience`);
+  getAll(): Observable<Experience[]> {
+    return this.http.get<Experience[]>(`${environment.baseUrl}/experience`);
   }
 
-  Save(data: Experience) : Experience {
-    return this.http.post(`${environment.baseUrl}/experience`, data);
+  Save(data: Experience) : Observable<Experience>{
+    return this.http.post<Experience>(`${environment.baseUrl}/experience`, data);
   }
-  get(id: string) : Experience{
-    return this.http.get(`${environment.baseUrl}/experience/` + id);
+  get(id: string) : Observable<Experience>{
+    return this.http.get<Experience>(`${environment.baseUrl}/experience/` + id);
   }
-  getuser(id: string): Condidat{
-    return this.http.get(`${environment.baseUrl}/experience/get/` + id);
+  getEperienceBYUser(id: string):Observable< Experience[]>{
+    return this.http.get<Experience[]>(`${environment.baseUrl}/experience/get/` + id);
   }
-  updateExperience(id: string, data: Experience) : Experience{
-    return this.http.put(`${environment.baseUrl}/experience/` + id, data);
+  updateExperience(id: string, data: Experience) : Observable<Experience>{
+    return this.http.put<Experience>(`${environment.baseUrl}/experience/` + id, data);
   }
   delete(idedu: string){
     return this.http.delete(`${environment.baseUrl}/experience/` + idedu);

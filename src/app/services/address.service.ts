@@ -2,6 +2,7 @@ import { Address } from './../models/address';
 import { environment } from './../../environments/environment';
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import {Observable} from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -10,11 +11,11 @@ export class AddressService {
 
   constructor(private http: HttpClient) { }
 
-  getAll(): Address {
-    return this.http.get(`${environment.baseUrl}/addresses`);
+  getAll():Observable <Address[]>{
+    return this.http.get<Address[]>(`${environment.baseUrl}/addresses`);
   }
 
-  Save(data: Address):Address {
-    return this.http.post(`${environment.baseUrl}/addresses`, data);
+  Save(data: Address):Observable<Address> {
+    return this.http.post<Address>(`${environment.baseUrl}/addresses`, data);
   }
 }

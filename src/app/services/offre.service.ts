@@ -11,8 +11,8 @@ export class OffreService {
 
   constructor(private http: HttpClient) { }
 
-  getAll(): Observable<Offre>{
-    return this.http.get<Offre>(`${environment.baseUrl}/offre` );
+  getAll(): Observable<Offre[]>{
+    return this.http.get<Offre[]>(`${environment.baseUrl}/offre` );
   }
   getOfferbyType(type: string):Observable<Offre>{
     return this.http.get<Offre>(`${environment.baseUrl}/offre/getaAll/` + type);
@@ -20,14 +20,14 @@ export class OffreService {
   getohoto(id: string): Observable<any>{
     return this.http.get(`${environment.baseUrl}/offre/Imgarticles/` + id);
   }
-  get(id: string, type: string): Offre{
-    return this.http.get(`${environment.baseUrl}/offre/` + id + '/' + type);
+  get(id: string, type: string):Observable <Offre>{
+    return this.http.get<Offre>(`${environment.baseUrl}/offre/` + id + '/' + type);
   }
- public getid(id: number, type: string){
-    return this.http.get(`${environment.baseUrl}/offre/id/` + id + '/' + type);
+ public getid(id: number, type: string):Observable<String>{
+    return this.http.get<string>(`${environment.baseUrl}/offre/id/` + id + '/' + type);
   }
-  public getcat(id: string, type: string){
-    return this.http.get(`${environment.baseUrl}/offre/cat/` + id + '/' + type);
+  public getcat(id: string, type: string):Observable<Offre>{
+    return this.http.get<Offre>(`${environment.baseUrl}/offre/cat/` + id + '/' + type);
   }
   public getsearch(spe: string, duree: string, niveau: string, type: string){
     return this.http.get(`${environment.baseUrl}/offre/` + spe + '/' + duree + '/' + niveau + '/' + type);

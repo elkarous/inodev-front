@@ -10,18 +10,18 @@ import {Observable} from 'rxjs';
 export class QuestionService {
   constructor(private http: HttpClient) { }
 
-  getAll():Observable<Question> {
-    return this.http.get<Question>(`${environment.baseUrl}/question`);
+  getAll():Observable<Question[]> {
+    return this.http.get<Question[]>(`${environment.baseUrl}/question`);
   }
 
-  Save(data: Question):Question {
-    return this.http.post(`${environment.baseUrl}/question`, data);
+  Save(data: Question):Observable<Question> {
+    return this.http.post<Question>(`${environment.baseUrl}/question`, data);
   }
-  get(id: string):Question{
-    return this.http.get(`${environment.baseUrl}/question/` + id);
+  get(id: string):Observable<Question>{
+    return this.http.get<Question>(`${environment.baseUrl}/question/` + id);
   }
-  updateQuestion(id: string, data: Question):Question {
-    return this.http.put(`${environment.baseUrl}/question/` + id, data);
+  updateQuestion(id: string, data: Question):Observable<Question> {
+    return this.http.put<Question>(`${environment.baseUrl}/question/` + id, data);
   }
   delete(idedu: string){
     return this.http.delete(`${environment.baseUrl}/question/` + idedu);

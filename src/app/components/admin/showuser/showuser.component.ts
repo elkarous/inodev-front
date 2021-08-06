@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {Document} from '../../../models/document';
 import {DocumentService} from '../../../services/document.service';
 import {Condidat} from '../../../models/condidat';
@@ -18,51 +18,61 @@ import {ActivatedRoute} from '@angular/router';
   styleUrls: ['./showuser.component.css']
 })
 export class ShowuserComponent implements OnInit {
-  public document: any;
+  public documents: Document[];
   public aa: any;
-  public skills: any;
-  public educations: any;
-  public experience: any;
+  public skills: Skills[];
+  public educations: Education[];
+  public experiences: Experience[];
   private email: string;
 
   constructor(public sign: SignupServiceService,
               private Token: TokenService,
-              private edu: EducationService,
-              private srv: DocumentService,
+              private educationService: EducationService,
+              private documentService: DocumentService,
               private route: ActivatedRoute,
-              private exp: ExperienceService,
-              private skill: SkillsService) { }
-  con: any ;
+              private experienceService: ExperienceService,
+              private skillsService: SkillsService) {
+  }
+
+  con: Condidat;
   tok: string;
   id: string;
+
   ngOnInit(): void {
     this.id = this.route.snapshot.params.id;
     this.email = this.route.snapshot.params.id1;
-    this.sign.get(this.id).subscribe((res: Condidat) => { console.log(res);
-                                                          this.con = res;
+    this.sign.get(this.id).subscribe((res: Condidat) => {
+      console.log(res);
+      this.con = res;
     });
-    this.sign.getohoto(this.id).subscribe((res: Condidat) => { console.log(res);
-                                                               this.aa = res;   console.log('hna');
+    this.sign.getohoto(this.id).subscribe((res: Condidat) => {
+      console.log(res);
+      this.aa = res;
+      console.log('hna');
     });
     this.alldoc();
     this.alledu();
     this.allexp();
     this.allskills();
   }
-  allskills(){
-    this.skill.getuser(this.email)
+
+  allskills() {
+    this.skillsService.getskillBYUser(this.email)
       .subscribe((res: Skills[]) => this.skills = res);
   }
-  allexp(){
-    this.exp.getuser(this.email)
-      .subscribe((res: Experience[]) => this.experience = res);
+
+  allexp() {
+    this.experienceService.getEperienceBYUser(this.email)
+      .subscribe((res: Experience[]) => this.experiences = res);
   }
-  alldoc(){
-    this.srv.getuser(this.email)
-      .subscribe((res: Document[]) => this.document = res);
+
+  alldoc() {
+    this.documentService.getDocumentByUser(this.email)
+      .subscribe((res: Document[]) => this.documents = res);
   }
-  alledu(){
-    this.edu.getuser(this.email)
+
+  alledu() {
+    this.educationService.getEducationBYUser(this.email)
       .subscribe((res: Education[]) => this.educations = res);
   }
 }

@@ -18,17 +18,17 @@ export class EducationService {
     return this.http.get<Education[]> (`${environment.baseUrl}/users/education`);
   }
 
-  Save(data: Education) : Education {
-    return this.http.post(`${environment.baseUrl}/users/education`, data);
+  Save(data: Education): Observable<Education> {
+    return this.http.post<Education>(`${environment.baseUrl}/users/education`, data);
   }
-  get(id: string): Education{
-    return this.http.get(`${environment.baseUrl}/users/education/` + id);
+  get(id: string): Observable<Education>{
+    return this.http.get<Education>(`${environment.baseUrl}/users/education/` + id);
   }
-  getuser(id: string): Condidat{
-    return this.http.get(`${environment.baseUrl}/users/education/get/` + id);
+  getEducationBYUser(id: string):Observable<Education[]>{
+    return this.http.get<Education[]>(`${environment.baseUrl}/users/education/get/` + id);
   }
-  updateEducation(id: string, data: Education) : Education{
-    return this.http.put(`${environment.baseUrl}/users/education/` + id, data);
+  updateEducation(id: string, data: Education) :  Observable<Education>{
+    return this.http.put<Education>(`${environment.baseUrl}/users/education/` + id, data);
   }
   delete(idedu: string){
     return this.http.delete(`${environment.baseUrl}/users/education/` + idedu);

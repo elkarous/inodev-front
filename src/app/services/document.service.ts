@@ -15,19 +15,19 @@ export class DocumentService {
     return this.http.get(`${environment.baseUrl}/document`);
   }
 
-  Save(data: FormData):Document {
+  Save(data: FormData) {
     return this.http.post(`${environment.baseUrl}/document`, data);
   }
-  get(id: string):Document{
+  get(id: string){
     return this.http.get(`${environment.baseUrl}/document/` + id);
   }
-  download(id: string):Document{
+  download(id: string){
     return this.http.get(`${environment.baseUrl}/document/download/` + id);
   }
-  getuser(id: string):Condidat{
+  getDocumentByUser(id: string){
     return this.http.get(`${environment.baseUrl}/document/get/` + id);
   }
-  updateDocument(id: string, data: FormData) :Document{
+  updateDocument(id: string, data: FormData){
     return this.http.put(`${environment.baseUrl}/document/` + id, data);
   }
   delete(idedu: string){

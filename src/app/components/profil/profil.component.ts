@@ -27,25 +27,12 @@ photo: File;
     private route: ActivatedRoute,
     private toastr: ToastrService
   ) { }
-  con: Condidat = {
-    id: 0,
-    firstName: '',
-    phone: '',
-    email: '',
-    admin: 0,
-    date_birthday: new Date(),
-    password: '',
-    lastName: '',
-    nationality: '',
-    gender: '',
-    photo: '',
-    enabled: '',
-    userId: '',
-  };
+  con:Condidat;
   candidate: any ;
   tok: string;
   id: string;
   ngOnInit(): void {
+    this.con = new Condidat();
     this.id = this.Token.getInfos().id;
     this.tok = this.Token.getToken();
     this.sign.get(this.id).subscribe((res: Condidat) => { console.log(res);
