@@ -17,9 +17,9 @@
               <h6>
                 {{con.nationality}}
               </h6>
-              <p class="proile-rating">Type : <span *ngIf="con.admin === 0">Condidat</span> <span
-                *ngIf="con.admin === 2">Supervisor</span>
-                <span *ngIf="con.admin === 3">Company</span>
+              <p class="proile-rating">Type : <span *ngIf="con.role === 0">Condidat</span>
+                <span *ngIf="con.role === 2">Supervisor</span>
+                <span *ngIf="con.role === 3">Company</span>
               </p>
               <ul class="nav nav-tabs" id="myTab" role="tablist">
                 <li class="nav-item">

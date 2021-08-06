@@ -1,4 +1,4 @@
-<body *ngIf="con.admin === 2">
+<body *ngIf="con.role === 2">
 <div class="container-fluid">
   <div class="row my-4">
     <div class="col-md-6">
@@ -25,7 +25,7 @@
         </tr>
         </thead>
         <tbody *ngFor="let condidate of candidates ">
-        <tr *ngIf="con.enabled === id && condidate.admin === 0">
+        <tr *ngIf="con.enabled === id && condidate.role === 0">
           <th>{{condidate.email}}</th>
           <td>{{condidate.firstName}}</td>
           <td>{{condidate.lastName}}</td>
@@ -50,7 +50,7 @@
 <div class="bg-light row">
 
   <app-sidebar></app-sidebar>
-  <div *ngIf="con.admin === 1">
+  <div *ngIf="con.role === 1">
     <div class="col-sm-9 offset-3 ">
       <div class="form-group">
         <input type="text" class="form-control" placeholder="Search Here" [(ngModel)]="term">

@@ -38,15 +38,7 @@ export class ExperienceComponent implements OnInit {
   form = false;
   statut = false;
   educt: Experience;
-  educ: Experience = {
-    experienceId: '',
-    job_title: '',
-    organization: '',
-    pays: '',
-    dateDebut: new Date(),
-    dateFin: new Date(),
-    type: ''
-  };
+  educ: Experience ;
   edu: any;
   tok: string;
   id: string;

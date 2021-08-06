@@ -16,14 +16,14 @@ export class Offre {
     dateFin: Date;
     description: string;
     video: string;
-  duree: string;
+    duree: string;
     niveau: string;
     prix: number;
-  supervisor: number;
+    supervisor: number;
     processus: string;
-  condidatoffre: CondidatOffre;
+    condidatoffre: CondidatOffre;
     skills: Skills[];
-    project : Project;
+    project : Project[];
 
 
 }

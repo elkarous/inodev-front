@@ -40,12 +40,12 @@
           <a id="dropdownMenuButton1" data-toggle="dropdown" aria-haspopup="true" class="btn" aria-expanded="false"> <i class="nav-item far fa-comment fa-2x "></i></a>
           <div class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
             <a class="dropdown-item" routerLink="/profile">profil</a>
-            <a class="dropdown-item" *ngIf="con.admin != 0" routerLink="/dash">Dashbord</a>
-            <a class="dropdown-item" *ngIf="con.admin === 0" routerLink="/myapplication">
+            <a class="dropdown-item" *ngIf="con.role!= 0" routerLink="/dash">Dashbord</a>
+            <a class="dropdown-item" *ngIf="con.role=== 0" routerLink="/myapplication">
               <span data-feather="file"></span>
               My Application
             </a>
-            <a  *ngIf="con.enabled != null && con.admin === 0" class="dropdown-item" routerLink="/calendar/{{con.enabled}}">
+            <a  *ngIf="con.enabled != null && con.role=== 0" class="dropdown-item" routerLink="/calendar/{{con.enabled}}">
               <span data-feather="file"></span>
               My calendar
             </a>
@@ -60,12 +60,12 @@
 
         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
           <a class="dropdown-item" routerLink="/profile/personaldetails">profil</a>
-          <a class="dropdown-item" *ngIf="con.admin != 0" routerLink="/dash">Dashbord</a>
-          <a class="dropdown-item" *ngIf="con.admin === 0" routerLink="/myapplication">
+          <a class="dropdown-item" *ngIf="con.role != 0" routerLink="/dash">Dashbord</a>
+          <a class="dropdown-item" *ngIf="con.role === 0" routerLink="/myapplication">
             <span data-feather="file"></span>
             My Application
           </a>
-          <a  *ngIf="con.enabled != null && con.admin === 0" class="dropdown-item" routerLink="/calendar/{{con.enabled}}">
+          <a  *ngIf="con.enabled != null && con.role === 0" class="dropdown-item" routerLink="/calendar/{{con.enabled}}">
             <span data-feather="file"></span>
             My calendar
           </a>
@@ -82,12 +82,12 @@
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
               <a class="dropdown-item" routerLink="/profile/personaldetails">profil</a>
-              <a class="dropdown-item" *ngIf="con.admin != 0" routerLink="/dash">Dashbord</a>
-              <a class="dropdown-item" *ngIf="con.admin === 0" routerLink="/myapplication">
+              <a class="dropdown-item" *ngIf="con.role != 0" routerLink="/dash">Dashbord</a>
+              <a class="dropdown-item" *ngIf="con.role === 0" routerLink="/myapplication">
                 <span data-feather="file"></span>
                 My Application
               </a>
-              <a  *ngIf="con.enabled != null && con.admin === 0" class="dropdown-item" routerLink="/calendar/{{con.enabled}}">
+              <a  *ngIf="con.enabled != null && con.role === 0" class="dropdown-item" routerLink="/calendar/{{con.enabled}}">
                 <span data-feather="file"></span>
                 My calendar
               </a>

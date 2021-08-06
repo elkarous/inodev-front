@@ -9,11 +9,11 @@
                              style = "height :100px;width:100px"
                              alt=""></a>
            </div><br>
-          <div class=" text-left ml-2" *ngIf="con.admin === 3">
+          <div class=" text-left ml-2" *ngIf="con.role === 3">
             <p class="h6 text-left" routerLink="/profil"><a class="text-light">Company details</a></p><br>
-  
+
           </div>
-          <div class=" text-left ml-2 h-100" *ngIf="con.admin != 3">
+          <div class=" text-left ml-2 h-100" *ngIf="con.role != 3">
             <p class="h6 text-left" routerLink="/profile/personaldetails"><a class="text-white">Personal details</a></p><br>
             <p class="h6 text-left" routerLink="/profile/education"><a class="text-white active" >Education</a></p><br>
             <p class="h6 text-left"><a routerLink="/profile/skills" class="text-white">Skills</a></p><br>
@@ -23,11 +23,11 @@
             <p class="h6 text-left"><a routerLink="/profile/documents" class="text-white">Add Documents</a></p>
           </div>
         </div>
-  
-  
+
+
       </div>
       <!-- block right-->
-      <div class="justify-content-center align-items-center " id="contwhite" *ngIf="con.admin != 3">
+      <div class="justify-content-center align-items-center " id="contwhite" *ngIf="con.role != 3">
         <div class="container justify-content-center mr-5 h-100 w-75">
             <router-outlet></router-outlet>
         </div>

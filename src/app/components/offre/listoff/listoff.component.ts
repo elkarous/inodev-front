@@ -37,7 +37,7 @@ export class ListoffComponent implements OnInit {
   message: File ;
   message1: File ;
   term: string;
-  public condidat: any;
+  condidat: Condidat;
   private id: any;
   p: any;
   constructor(
@@ -69,7 +69,7 @@ export class ListoffComponent implements OnInit {
     const formData = new FormData();
     if (this.photo){
       this.con.image = this.photo.name; }
-    this.con.specialite = this.dataarray;
+    this.con.project= this.dataarray;
     this.con.skills = this.dataarra;
     formData.append('file', this.photo);
     formData.append('offre', JSON.stringify(this.con));

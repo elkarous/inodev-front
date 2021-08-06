@@ -2,7 +2,7 @@
 
 <div class="bg-light min-vh-100 row">
   <app-sidebar></app-sidebar>
-  <div class="col-sm-9 offset-2" *ngIf="con.admin === 1">
+  <div class="col-sm-9 offset-2" *ngIf="con.role === 1">
 
 
       <iframe width="1200" height="700"
@@ -12,12 +12,12 @@
 
   </div>
 
-  <div class="col-sm-9 offset-2" *ngIf="con.admin === 0">
+  <div class="col-sm-9 offset-2" *ngIf="con.role === 0">
 
 
   </div>
 
-  <div class="col-sm-9 offset-2 " *ngIf="con.admin === 2">
+  <div class="col-sm-9 offset-2 " *ngIf="con.role === 2">
 
 <h4 class="justify-content-center"> Condidats Encadré</h4>
     <div  *ngFor="let a of pos" > <div class="row" *ngIf="a[3] === con.id">
@@ -29,7 +29,7 @@
       </div></div></div></div>
     <iframe class="mt-5" width="1300" height="400" src="https://app.powerbi.com/reportEmbed?reportId=878aeba3-2078-4064-890d-fe82fba66aeb&autoAuth=true&ctid=1158e2d5-dc24-41ad-abce-62841076dbde&config=eyJjbHVzdGVyVXJsIjoiaHR0cHM6Ly93YWJpLXdlc3QtdXMtYi1wcmltYXJ5LXJlZGlyZWN0LmFuYWx5c2lzLndpbmRvd3MubmV0LyJ9" frameborder="0" allowFullScreen="true"></iframe>
   </div>
-  <div class="col-sm-9 offset-2" *ngIf="con.admin === 3">
+  <div class="col-sm-9 offset-2" *ngIf="con.role === 3">
 
   </div>
 </div>

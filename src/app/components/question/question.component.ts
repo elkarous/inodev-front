@@ -36,33 +36,14 @@ export class QuestionComponent implements OnInit {
   form = true;
   statut = false;
   educt: Question;
-  educ: Question = {
-    questionId: '',
-    premier: '',
-    deuxieme: '',
-    troiseme: ''
-  };
+  educ: Question ;
   edu: any;
   tok: string;
   id: string;
   ide: string;
   email: string;
   show1: Question;
-  con: Condidat = {
-    id: 0,
-    firstName: '',
-    phone: '',
-    email: '',
-    admin: 0,
-    date_birthday: new Date(),
-    password: '',
-    lastName: '',
-    nationality: '',
-    gender: '',
-    photo: '',
-    userId: '',
-    enabled: '',
-  };
+  con: Condidat;
   educations: Question[];
   educationss: any;
   ngOnInit(): void {

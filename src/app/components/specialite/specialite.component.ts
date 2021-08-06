@@ -28,11 +28,7 @@ export class SpecialiteComponent implements OnInit {
   public add = false;
   myDate: string ;
   term: string;
-  con: Specialite = {
-    image: '',
-    specialiteId: '',
-    nom: ''
-  };
+  con: Specialite;
   photo: File;
   message: File ;
   constructor(private account: AccountService,

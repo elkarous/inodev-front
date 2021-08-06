@@ -36,12 +36,7 @@ export class SkillsComponent implements OnInit {
   form = false;
   statut = false;
   educt: Skills;
-  educ: Skills = {
-    nom: '',
-    niveau: '',
-    certifier: false,
-    skillsId: ''
-  };
+  educ: Skills;
   edu: any;
   tok: string;
   id: string;

@@ -16,21 +16,7 @@ import {ToastrService} from 'ngx-toastr';
 })
 export class SignUpComponent implements OnInit {
 condidas: Observable<object>;
-  condidat: Condidat = {
-    id: 0,
-    firstName: '',
-    phone: '',
-    admin: 0,
-    email: '',
-    date_birthday: new Date(),
-    password: '',
-    lastName: '',
-    nationality: '',
-    gender: '',
-    photo: '',
-    enabled: '',
-    userId: '',
-  };
+  condidat: Condidat;
   ju: any;
   private id: string;
   public con: any;

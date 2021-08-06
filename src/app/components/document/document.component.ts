@@ -38,10 +38,7 @@ export class DocumentComponent implements OnInit {
   form = false;
   statut = false;
   educt: Document;
-  educ: Document = {
-    documentId: '',
-    nom: ''
-  };
+  educ: Document;
   edu: any;
   tok: string;
   id: string;

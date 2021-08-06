@@ -32,6 +32,7 @@ export class Condidat {
   question:Question;
   document:Document;
   hobbies: Hobbies;
+  enabled :string;
 
   }
 

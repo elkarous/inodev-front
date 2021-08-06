@@ -18,7 +18,7 @@
 
 <div class="row mt-5">
     <div class="col-sm-4" style="max-width: 100%; width: 300px;" *ngFor="let item of offre1 | filter:term let i = index" [ngClass]="{'active': i == 0 }">
-      <div *ngIf="condidat.admin === 3 && item[7] === condidat.firstName">
+      <div *ngIf="condidat.role === 3 && item[7] === condidat.firstName">
       <div class="card col-12 ml-5 h-100 cs1 text-center"  style="width: 21rem;">
         <img style="width: 280px; height: 200px;" src="{{'http://localhost:8081/offre/Imgarticles/'+item[11]}}" class=" img1" alt="...">
         <div class="card-body">
@@ -32,7 +32,7 @@
         </div>
       </div>
       </div>
-        <div *ngIf="condidat.admin === 1">
+        <div *ngIf="condidat.role === 1">
         <div class="card col-12 ml-5 h-100 w-100 cs1 text-center" >
         <img style="width: 280px; height: 200px;" src="{{'http://localhost:8081/offre/Imgarticles/'+item[11]}}" class=" img1" alt="...">
         <div class="card-body">
@@ -40,7 +40,7 @@
           <p class="card-text"style="height: 141px; width: 250px;word-wrap: break-word; overflow: hidden;">{{item[6]}}</p>
           <a type="button" class="btn btn-secondary" routerLink="/offre/edit/{{item[0]}}/{{item[10]}}">Edit</a>
           <a type="button" (click)="delete(item[11])" class="btn ml-5 btn-info " >Delete</a>
-          <a type="button" *ngIf="condidat.admin === 1" class="btn btn-danger mt-5" routerLink="/postulation/{{item[0]}}">Les postulation</a>
+          <a type="button" *ngIf="condidat.role === 1" class="btn btn-danger mt-5" routerLink="/postulation/{{item[0]}}">Les postulation</a>
           <br>
           <h3 *ngIf="item[5]< myDate" style="color: red; border-color: #dc3545; background-color: deepskyblue; font-style: italic"> Expire</h3>
         </div>
