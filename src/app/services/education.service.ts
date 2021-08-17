@@ -18,8 +18,8 @@ export class EducationService {
     return this.http.get<Education[]> (`${environment.baseUrl}/users/education`);
   }
 
-  Save(data: Education): Observable<Education> {
-    return this.http.post<Education>(`${environment.baseUrl}/users/education`, data);
+  Save(data: Education,id:string): Observable<Education> {
+    return this.http.post<Education>(`${environment.baseUrl}/users/education/`+id, data);
   }
   get(id: string): Observable<Education>{
     return this.http.get<Education>(`${environment.baseUrl}/users/education/` + id);

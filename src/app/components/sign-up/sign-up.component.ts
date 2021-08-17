@@ -15,11 +15,9 @@ import {ToastrService} from 'ngx-toastr';
   styleUrls: ['./sign-up.component.css']
 })
 export class SignUpComponent implements OnInit {
-condidas: Observable<object>;
-  condidat: Condidat;
-  ju: any;
-  private id: string;
-  public con: any;
+
+  condidat: Condidat ;
+
   constructor( public sign: SignupServiceService,
                private authService: AuthService,
                private token: TokenService,
@@ -29,20 +27,14 @@ condidas: Observable<object>;
   {}
 
   ngOnInit() {
-    this.id = this.token.getInfos().id;
-    this.sign.get(this.id).subscribe((res: Condidat) => { console.log(res);
-                                                          this.con = res;
-    });
+    this.condidat =new Condidat();
+     this.condidat.role=1;
   }
   create(){
-      this.sign.Save(this.condidat)
-        .subscribe();
+      this.sign.Save(this.condidat).subscribe();
+      console.log(this.condidat);
       this.router.navigateByUrl('/dashboard');
     }
-  create1(){
-    this.sign.Save(this.condidat)
-      .subscribe();
-    this.router.navigateByUrl('/listc');
-  }
+
   }
 

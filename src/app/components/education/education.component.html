@@ -434,6 +434,10 @@
                     </select>
                     </div>
                     </div>
+                    <div class="form-group col-6">
+                      <label class="m-2">year</label>
+                      <input type="text" formControlName="year"   name="year"   class=" form-control form-control-sm rounded border border-dark bg-transparent">
+                    </div>
 
                     <button  type="submit" [disabled]="educationForm.invalid" (click)="createEducation()" class="btn btn-info offset-11" >Save</button>
 

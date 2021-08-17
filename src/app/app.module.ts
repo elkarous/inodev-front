@@ -1,7 +1,7 @@
 import { JwtInterceptor } from './services/jwt.interceptor';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './components/login/login.component';
 import {NgxPaginationModule} from 'ngx-pagination';
@@ -115,6 +115,7 @@ import { TestComponent } from './test/test.component';
     TestComponent,
   ],
   imports: [
+    FontAwesomeModule,
     SchedulerModule,
     BrowserModule,
     ReactiveFormsModule,

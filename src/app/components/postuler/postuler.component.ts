@@ -136,7 +136,7 @@ export class PostulerComponent implements OnInit {
     this.statut = false;
   }
   persistEducation(data: Education) {
-    this.srve.Save(data)
+    this.srve.Save(data,this.id)
       .subscribe((res: Education) => this.education = [res, ...this.educations]);
     this.all();
     this.toastr.success('Data Store successfully !!', 'STORE', {
@@ -245,7 +245,7 @@ export class PostulerComponent implements OnInit {
     }
   }
   persistEducatione(data: Education) {
-    this.srve.Save(data)
+    this.srve.Save(data,this.id)
       .subscribe((res: Education) => this.education = [res, ...this.education]);
     this.forme = false;
     this.toastr.success('Data Store successfully !!', 'STORE', {

@@ -24,9 +24,11 @@ export class SignupServiceService {
   constructor(private http: HttpClient) {}
 
   Save(data: Condidat):Observable<Condidat> {
-    return this.http.post<Condidat>(`${environment.baseUrl}/condidat`, data, this.httpOptions);
+    return this.http.post<Condidat>(`${environment.baseUrl}/condidat/add`, data, this.httpOptions);
   }
-
+  update(id: string, condidat: Condidat):Observable<Condidat>{
+    return this.http.put<Condidat>(`${environment.baseUrl}/condidat/update/` + id,  condidat);
+  }
   updateC(id: string, photo: FormData):Observable<Condidat>{
   return this.http.put<Condidat>(`${environment.baseUrl}/condidat/` + id,  photo);
   }
