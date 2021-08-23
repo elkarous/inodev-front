@@ -1,9 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-import {AccountService} from '../../services/account.service';
 import {ActivatedRoute, Router} from '@angular/router';
-import {SignupServiceService} from '../../services/signup-service.service';
-import {OffreService} from '../../services/offre.service';
-import {TokenService} from '../../services/token.service';
+import {SubDeciplineService} from '../../services/SubDecipline.service';
+import {Project} from '../../models/project';
+import {SubDecipline} from '../../models/subDecipline';
+import {ProjectService} from '../../services/Project.service';
+import { Location } from '@angular/common';
+import {Specialite} from '../../models/specialite';
+import {SpecialiteService} from '../../services/specialite.service';
 
 @Component({
   selector: 'app-project',
@@ -11,38 +14,73 @@ import {TokenService} from '../../services/token.service';
   styleUrls: ['./project.component.css']
 })
 export class ProjectComponent implements OnInit {
-  candidate: any;
-  con: any ;
-  public id: any;
-  public type: any;
-  public summer: Date;
-  public year: Date;
-  public taw: string;
-  public semester: Date;
-  public etat = false;
-  public pos: any;
+
   constructor(
-    private account: AccountService,
-    private router: Router,
-    public sign: SignupServiceService,
-    public co: OffreService,
-    private Token: TokenService,
-    private route: ActivatedRoute,
+    public route: ActivatedRoute,
+    public projectService : ProjectService,
+    public subdeciplineService: SubDeciplineService,
+    public specialiteService: SpecialiteService,
+    private location : Location,
+    public router: Router,
+
     ) { }
+  project : Project;
+  idproject : number;
+  subdecipline : SubDecipline;
+  IDsubdecipline : number;
+  specialite : Specialite;
+  idSpecialite : number;
+  categorie : any ;
 
   ngOnInit(): void {
-    this.year = new Date();
-    this.taw = new Date().toISOString();
-    this.summer = new Date();
-    this.semester = new Date();
-    this.semester.setDate(this.semester.getDate() + 180);
-    this.year.setDate(this.year.getDate() + 365);
-    this.summer.setDate(this.summer.getDate() + 90);
-    this.id = this.Token.getInfos().id;
-    this.sign.get(this.id).subscribe((res: any) => { console.log(res);
-                                                     this.con = res;
-    });
-    this.co.getbynom().subscribe(res => {this.pos = res; console.log(this.pos); });
+    this.getProject();
+    this.categorie = this.route.snapshot.params.categorie;
+
   }
+
+  getProject(){
+    this.route.params.subscribe(
+      (params) => {
+        this.idproject = params.idproject,
+          this.IDsubdecipline= params.subdecipline,
+          this.idSpecialite=params.id
+
+
+      })
+    this.projectService.getbyId(this.idproject).subscribe(
+      data=>{
+        console.log(data)
+        this.project=data
+      }
+
+    ),this.subdeciplineService.getbyId(this.IDsubdecipline).subscribe(
+      data=>{
+        console.log(data)
+        this.subdecipline=data}
+
+      ),this.specialiteService.getbyId(this.idSpecialite).subscribe(
+      data=>{
+        console.log(data)
+        this.specialite=data})
+
+    ;
+
+    console.log(this.project);
+    console.log(this.subdecipline);
+
+}
+
+GoBack(){
+    this.location.back();
+}
+
+  GoToRequirements()
+  {
+
+    window.location.href="https://student.inodev.tn/";
+
+  }
+
+
 
 }

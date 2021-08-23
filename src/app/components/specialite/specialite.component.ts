@@ -9,9 +9,10 @@ import {SpecialiteService} from '../../services/specialite.service';
 import {Location} from '@angular/common';
 import {Offre} from '../../models/offre';
 import {Specialite} from '../../models/specialite';
-import {FormControl} from '@angular/forms';
+import {FormControl, FormGroup} from '@angular/forms';
 import {Observable} from 'rxjs';
 import {map, startWith} from 'rxjs/operators';
+import {DomSanitizer} from '@angular/platform-browser';
 
 @Component({
   selector: 'app-specialite',
@@ -19,96 +20,65 @@ import {map, startWith} from 'rxjs/operators';
   styleUrls: ['./specialite.component.css']
 })
 export class SpecialiteComponent implements OnInit {
-  public offre1: any;
-  public offre: any;
-  public offf: any;
-  myControl = new FormControl();
-  myControle = new FormControl();
-  private a: any;
-  public add = false;
-  myDate: string ;
-  term: string;
-  con: Specialite;
-  photo: File;
-  message: File ;
-  constructor(private account: AccountService,
-              private router: Router,
-              private route: ActivatedRoute,
-              private location: Location,
-              public sign: SignupServiceService,
-              public off: SpecialiteService,
-              public offref: OffreService,
-              private toastr: ToastrService,
-              private Token: TokenService) { }
-  filteredOptions: Observable<string[]>;
+  specialites: Specialite[];
+  public aa: any;
+  public a: any;
+  public p: number;
+  searchForm: FormGroup;
+  constructor(
+    private account: AccountService,
+    private router: Router,
+    public sign: SignupServiceService,
+    public spe: SpecialiteService,
+    private Token: TokenService,
+    public route: ActivatedRoute,
+    private toastr: ToastrService,
+    private sanitizer: DomSanitizer,
+  ) {
+    this.searchForm = new FormGroup({
+      niveau: new FormControl(null),
+      cat: new FormControl(null),
+      duree: new FormControl(null)
+    });
+  }
+  search: any = {
+    niveau: 'null',
+    cat: 'null',
+    duree: 'null'
+  };
+  candidate: any ;
+  tok: string;
+  ty: string;
+  id: string;
+  categorie : any;
   ngOnInit(): void {
+    this.p = 1;
+    this.id = this.Token.getInfos().id;
+    this.tok = this.Token.getToken();
+    this.categorie = this.route.snapshot.params.id;
+
+    this.cond(this.id);
     this.allOffre();
-    this.allOffrereel();
-    this.offref.getbynom().subscribe(res => {
-      console.log(res);
-      this.offf = res;
-
-    });
+    this.specialites;
   }
-  allOffrereel() {
-    this.offref.getbynom().subscribe(res => {
-      console.log(res);
-      this.offre = res;
-    });
-  }
+  cond(id: string) {
 
-  Add(){
-    const formData = new FormData();
-    if (this.photo){
-      this.con.image = this.photo.name; }
-    formData.append('file', this.photo);
-    console.log(this.con);
-    formData.append('spe', JSON.stringify(this.con));
-    this.off.save(formData)
-      .subscribe(res => {
-        console.log(res);
-      });
-    window.location.reload();
-    this.toastr.warning('Data Add successfully !!', 'Create', {
-      timeOut: 3000,
-      positionClass: 'toast-bottom-left'
+    this.sign.get(id).subscribe(res => {
+      console.log(res);
+      this.candidate = res;
     });
   }
   allOffre() {
-
-    this.off.getAll().subscribe(res => {
+    this.spe.getAll().subscribe((res: Specialite[]) => {
       console.log(res);
-      this.offre1 = res;
-
+      this.specialites = res;
     });
   }
 
-  delete(id: string) {
-    if (window.confirm('Are sure you want to delete this Article ?')) {
-    console.log(id);
-    this.off.delete(id)
-      .subscribe(res => {this.a = res; this.allOffre(); });
-    window.location.reload();
-    this.toastr.error('Data delete successfully !!', 'DELETE', {
-      timeOut: 3000,
-      positionClass: 'toast-bottom-left'
+  getimg(ide: string){
+    this.spe.getohoto(ide).subscribe((res: any) => { console.log(res);
+      this.aa = res;
     });
-  }}
-  backClicked() {
-    this.location.back();
   }
 
-  Clicked() {
-    this.add = true ;
-  }
-  Click() {
-    this.add = false ;
-  }
-  onSelectFile(event: any) {
-    if (event.target.files.length > 0) {
-      this.photo = event.target.files[0];
-      this.message = this.photo;
-      console.log(this.message);
-    }
-  }
 }

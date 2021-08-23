@@ -33,4 +33,7 @@ export class SpecialiteService {
   update(id: string, a: any) : Observable<Specialite>{
     return this.http.put<Specialite>(`${environment.baseUrl}/specialite/edit/` + id,  a);
   }
+  getbyId(id:number) : Observable<Specialite>{
+    return this.http.get<Specialite>(`${environment.baseUrl}/specialite/` + id);
+  }
 }

@@ -17,7 +17,7 @@ import {Question} from '../../models/question';
   styleUrls: ['./offre.component.css']
 })
 export class OffreComponent implements OnInit {
-  public offre: Specialite[];
+  specialites: Specialite[];
   public aa: any;
   public a: any;
   public p: number;
@@ -54,6 +54,7 @@ export class OffreComponent implements OnInit {
     this.ty = this.route.snapshot.params.id;
     this.cond(this.id);
     this.allOffre();
+    this.specialites;
   }
   cond(id: string) {
 
@@ -65,7 +66,7 @@ export class OffreComponent implements OnInit {
   allOffre() {
     this.spe.getAll().subscribe((res: Specialite[]) => {
       console.log(res);
-      this.offre = res;
+      this.specialites = res;
     });
   }
 

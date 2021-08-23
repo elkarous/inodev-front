@@ -2,7 +2,7 @@
 <div class=" bg-light d-flex justify-content-center    ">
 <mat-card class="bg-white m-2   ">
   <div class="row align-items-center  ">
-    <img src="{{'http://localhost:8081/offre/Imgarticles/'+offre1[0][13]}}"  class=" col-8 mb-2 offset-2 h-75">
+    <img src="{{'http://localhost:8081/offer/Imgarticles/'+offre.id}}"  class=" col-8 mb-2 offset-2 h-75">
 
   </div>
   <hr class="text-light">
@@ -10,7 +10,7 @@
 <div  class=" col-5 mr-1 ">
 
   <h4>Description</h4>
-  <p>{{offre1[0][6]}}</p>
+  <p>{{offre.description}}</p>
   <hr>
 
   <h4>Process</h4><br>
@@ -27,8 +27,8 @@
 <div class=" col-6  ">
   <h4>Details</h4>
   <div class="container bg-white " >
-      <p class="h5">{{offre1[0][7]}}</p>
-      <p class="h3">{{offre1[0][1]}}</p>
+      <p class="h5">{{offre.duree}}</p>
+      <p class="h3">{{offre.niveau}}</p>
       <div class="d-flex pt-2">
         <p class="ml-2">Porto, Portugal</p>
       </div>
@@ -37,7 +37,7 @@
           <i class="bi bi-wallet-fill"></i>
         </div>
         <div class="ml-2">
-          <p  class="h5">{{offre1[0][11]}}</p>
+          <p  class="h5">{{offre.nom}}</p>
 
         </div>
       </div>
@@ -65,22 +65,22 @@
         </div>
       </div>
     <hr class="text-light">
-      <h4>Date {{offre1[0][10]}}</h4>
-      <div class="d-flex row p-1"><p class="col-sm-4">Offer end date</p><p class="col-sm-4 ml-2 ff"> {{offre1[0][4] | date}}</p></div>
-      <div class="d-flex p-1"><p class="col-sm-4">Start Day</p><p class="col-sm-4 ml-2 ff"> {{offre1[0][5] | date}}</p></div>
+      <h4>Date {{offre.dateFin}}</h4>
+      <div class="d-flex row p-1"><p class="col-sm-4">Offer end date</p><p class="col-sm-4 ml-2 ff"> {{offre.dateDebut | date}}</p></div>
+      <div class="d-flex p-1"><p class="col-sm-4">Start Day</p><p class="col-sm-4 ml-2 ff"> {{offre.dateFin | date}}</p></div>
 
     <hr class="text-light">
 
-  <div class="d-flex row p-1"><p class="col-sm-4">Price : </p><p class="col-sm-4 ml-2 ff">{{offre1[0][8]}} DT</p></div>
+  <div class="d-flex row p-1"><p class="col-sm-4">Price : </p><p class="col-sm-4 ml-2 ff">{{offre.prix}} DT</p></div>
 
         <p class="card-text text-center">Pick the slot most suitable for you</p>
 
-        <button routerLink="/postuler/{{offre1[0][0]}}/{{offre1[0][12]}}" class="btn row   text-white w-100 mb-3"  style="background-color: #ff0440">Apply Now</button>
+        <button routerLink="/postuler/{{offre.id}}/{{offre.id}}" class="btn row   text-white w-100 mb-3"  style="background-color: #ff0440">Apply Now</button>
   <br>
 
 
 
-  <button class="btn btn-primary row w-100 " routerLink="{{offre1[0][14]}}">Watch Video</button>
+  <button class="btn btn-primary row w-100 " routerLink="{{offre.video}}">Watch Video</button>
   </div>
   </div>
 

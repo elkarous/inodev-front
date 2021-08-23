@@ -1,6 +1,8 @@
 import { JwtInterceptor } from './services/jwt.interceptor';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { ShareButtonsModule} from 'ngx-sharebuttons/buttons';
+import {ShareIconsModule} from 'ngx-sharebuttons/icons';
 
 import { AppComponent } from './app.component';
 import { LoginComponent } from './components/login/login.component';
@@ -64,6 +66,7 @@ import { DashSupervisorComponent } from './dash-supervisor/dash-supervisor.compo
 import { FooterComponent } from './components/partials/footer/footer.component';
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
 import { TestComponent } from './test/test.component';
+import { SubdeciplineComponent } from './components/subdecipline/subdecipline.component';
 
 @NgModule({
   declarations: [
@@ -113,6 +116,7 @@ import { TestComponent } from './test/test.component';
     DashSupervisorComponent,
     FooterComponent,
     TestComponent,
+    SubdeciplineComponent,
   ],
   imports: [
     SchedulerModule,
@@ -131,6 +135,8 @@ import { TestComponent } from './test/test.component';
     DayPilotModule,
     MatCardModule,
     MDBBootstrapModule.forRoot(),
+    ShareButtonsModule.withConfig({debug:true}),
+    ShareIconsModule
 
     // ToastrModule added
   ],

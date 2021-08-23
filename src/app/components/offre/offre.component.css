@@ -11,11 +11,9 @@
   -o-background-size: cover;
   background-size: cover;
 }
-*{
-  font-family: 'Avenir Next LT Pro';
-}
+
 .P{
-  background-image: url(/assets/intern\ abroad.jpg);
+  background-image: url(/assets/intern/abroad.jpg);
   background-size: cover;
   background-position: center;
 }
@@ -38,7 +36,7 @@
   border-radius: 8px;
 }
 .btn{
-  background-color: #178da9;
+  background-color: #ff0440;
 }
 .IC1{
 
@@ -48,7 +46,7 @@
   border-radius: 18px;
   border-top-left-radius: 0px;
   border-top-right-radius: 0px;
-  box-shadow: 0px 10px 30px -8px rgb(0 0 0 / 40%);
+  box-shadow: 0px 10px 30px -8px rgb(0 0 0 );
   text-align: center;
   justify-content: center;
 }
@@ -125,4 +123,12 @@ a:hover .overlay{
   .S{
     margin-left: -50px;
   }
+}
+
+.clignote {
+  color:#ff0440;
+  animation: clignote 3s linear infinite;
+}
+@keyframes clignote {
+  50% { opacity: 0; }
 }
