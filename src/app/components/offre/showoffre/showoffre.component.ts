@@ -25,6 +25,10 @@ export class ShowoffreComponent implements OnInit {
   public az: string;
   public id: number;
   public skills: any;
+  public clicked1=false;
+  public clicked2=false;
+  public clicked3=false;
+  public mouse1="#ff0440";
 
   constructor(public route: ActivatedRoute,
               public router: Router,
@@ -38,6 +42,8 @@ export class ShowoffreComponent implements OnInit {
 
   ngOnInit(): void {
 this.getOffer();
+
+
     this.spec.getAll().subscribe(res => {
       this.s = res;
     });
@@ -89,6 +95,23 @@ this.getOffer();
     );
 
     console.log(this.offre);
+
+  }
+  affiche1(){
+    this.clicked1=!this.clicked1;
+    this.clicked2=this.clicked2=false;
+  }
+  affiche2(){
+    this.clicked2=!this.clicked2;
+    this.clicked1=this.clicked3=false;
+  }
+  affiche3(){
+    this.clicked3=!this.clicked3;
+    this.clicked1=this.clicked2=false;
+  }
+  Watchvideo(path:string) {
+
+    window.location.href =path ;
 
   }
 }

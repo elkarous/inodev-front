@@ -2,9 +2,6 @@ import { JwtInterceptor } from './services/jwt.interceptor';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
-import {ShareButtonsModule} from 'ngx-sharebuttons/buttons';
-import {ShareIconsModule} from 'ngx-sharebuttons/icons';
-
 
 import { AppComponent } from './app.component';
 import { LoginComponent } from './components/login/login.component';
@@ -137,8 +134,9 @@ import { SubdeciplineComponent } from './components/subdecipline/subdecipline.co
     DayPilotModule,
     MatCardModule,
     MDBBootstrapModule.forRoot(),
-    ShareButtonsModule.withConfig({debug:true,}),
-    ShareIconsModule,
+
+
+
 
 
     // ToastrModule added

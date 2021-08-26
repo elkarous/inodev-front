@@ -10,6 +10,7 @@ import {ToastrService} from 'ngx-toastr';
 import {Education} from '../../models/education';
 import {EducationService} from '../../services/education.service';
 import {CondidatoffreService} from '../../services/condidatoffre.service';
+import {Offre} from '../../models/offre';
 
 @Component({
   selector: 'app-postuler',
@@ -36,7 +37,7 @@ export class PostulerComponent implements OnInit {
   });
   private id: any;
   public con: any;
-  public offre1: any;
+  public offre1: Offre;
   public document: any;
   public f: any;
   public message: any;
@@ -82,13 +83,12 @@ export class PostulerComponent implements OnInit {
                                                         this.con = res;
     });
     this.id = this.router.snapshot.params.id;
-    this.off.getid(this.id, this.router.snapshot.params.id1).subscribe(res => {
+    this.off.getbyId(this.id).subscribe(res => {
+
       this.offre1 = res;
+      console.log(this.offre1)
     });
-    this.co.exist(this.id).subscribe((aa: number) => {
-      console.log('hnaaaaaaaaaaaaaaaaaaaa' + aa);
-      this.exist = aa;
-    });
+
     this.all();
     this.alle();
   }

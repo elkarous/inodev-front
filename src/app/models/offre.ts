@@ -11,9 +11,11 @@ export class Offre {
     type: string;
     offreId: string;
     nom: string;
+    adress: string;
     organisation: string;
     dateDebut: Date;
     dateFin: Date;
+  startdateoffer: Date;
     description: string;
     video: string;
     duree: string;
