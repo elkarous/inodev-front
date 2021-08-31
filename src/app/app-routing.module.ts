@@ -88,7 +88,7 @@ const routes: Routes = [
   { path: 'offer/:id', component: SpecialiteComponent, canActivate: [AuthGuard]},
   { path: 'offer/:categorie/specialite/:id', component: SubdeciplineComponent, canActivate: [AuthGuard]},
   { path: 'sup', component: SupervisorComponent, canActivate: [AuthGuard]},
-  { path: 'postuler/:id/:id1', component: PostulerComponent, canActivate: [AuthGuard]},
+  { path: 'postuler/:id', component: PostulerComponent, canActivate: [AuthGuard]},
   { path: 'listc', component: ListCondidatComponent, canActivate: [AuthGuard]},
   { path: 'myapplication', component: CondidatureComponent, canActivate: [AuthGuard]},
   //{ path: 'listspe', component: SpecialiteComponent, canActivate: [AuthGuard]},

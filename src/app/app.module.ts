@@ -1,6 +1,8 @@
 import { JwtInterceptor } from './services/jwt.interceptor';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import {MatStepperModule} from '@angular/material/stepper';
+import { CdkStepperModule } from '@angular/cdk/stepper';
 
 
 import { AppComponent } from './app.component';
@@ -134,6 +136,8 @@ import { SubdeciplineComponent } from './components/subdecipline/subdecipline.co
     DayPilotModule,
     MatCardModule,
     MDBBootstrapModule.forRoot(),
+    MatStepperModule,
+    CdkStepperModule,
 
 
 

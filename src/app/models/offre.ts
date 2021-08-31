@@ -15,7 +15,7 @@ export class Offre {
     organisation: string;
     dateDebut: Date;
     dateFin: Date;
-  startdateoffer: Date;
+    startdateoffer: Date;
     description: string;
     video: string;
     duree: string;
@@ -23,6 +23,7 @@ export class Offre {
     prix: number;
     supervisor: number;
     processus: string;
+  priceDetails:string;
     condidatoffre: CondidatOffre;
     skills: Skills[];
     project : Project[];
