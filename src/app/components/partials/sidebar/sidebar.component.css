@@ -1,8 +1,4 @@
-a{
-  text-decoration: none;
-  color: white;
-  cursor: pointer;
-}
+
 .sidebar{
   position: relative;
   width: 230px;
@@ -17,7 +13,5 @@ a{
     width: 190px;
 
   }
-  .list{
-    font-size: 12px;
-  }
+
 }

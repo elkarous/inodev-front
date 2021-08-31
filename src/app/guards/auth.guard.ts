@@ -26,7 +26,7 @@ export class AuthGuard implements CanActivate {
         this.accountService.changeAuthStatus(false);
         return false;
      }
-      console.warn('ok');
+
       return true;
   }
 

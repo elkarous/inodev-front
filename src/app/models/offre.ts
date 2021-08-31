@@ -6,6 +6,7 @@ import {Project} from './project';
 export class Offre {
 
     id : number;
+  startdateoffer:Date;
     image: string;
     acronym: string;
     type: string;

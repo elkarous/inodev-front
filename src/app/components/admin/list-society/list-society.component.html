@@ -1,0 +1,80 @@
+<div class="ml-2 container " xmlns="http://www.w3.org/1999/html">
+  <div class="col-sm-9  ">
+    <div class="container-fluid mb-3">
+
+      <h3 class="offset-5 font-weight-bold mb-5 mt-5" >
+        List of  Society
+      </h3>
+      <div class="row  mb-2">
+        <input type="text" class=" col-2 rounded  align-self-center  " style="height: 33px ; margin-left: 35px;" placeholder="Search ..." [(ngModel)]="term">
+
+        <button  class="btn   col-3 offset-6 rounded" data-toggle="modal" data-target="#exampleModalCenter" style=" height: 33px;  background-color: #CAF0F8 ;color:#03045E " >
+          <i class="fa fa-plus mr-1"></i>Add Society </button>
+      </div>
+
+
+      <div class="col-md-12 col-md-offset-2">
+        <table class="table ">
+          <thead >
+          <tr >
+
+            <th class="font-weight-bold text-center" scope="col"></th>
+            <th class="font-weight-bold text-center " scope="col">Full Name</th>
+            <th  class="font-weight-bold text-center " scope="col">Email</th>
+            <th class="font-weight-bold text-center"  scope="col">Action</th>
+
+          </tr>
+          </thead>
+          <tbody class="text-center" *ngFor="let candidate of candidates  | filter:term " >
+          <tr *ngIf="candidate.role=='Compnany'">
+
+            <td><img src = "{{'http://localhost:8081/condidat/img/'+candidate.userId}}"  width="35" height="35" class="rounded-circle"></td>
+            <td>{{candidate.firstName}} {{candidate.lastName}} </td>
+            <td>{{candidate.email}}</td>
+            <td>
+              <button class="btn" style="margin-left: 20px;background-color: #E4FFF8">
+                <i class="fa fa-pencil-square-o"  style="color: #15775d" routerLink="/user/{{candidate.userId}}">  </i></button>
+
+              <button class="btn m-1 " style="background-color: #FCD7D1" value="Delete" (click)="delete(candidate.userId)">
+                <i class="fa fa-trash-o text-danger"> </i></button>
+            </td>
+          </tr>
+
+
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <hr style="font-size: 70px" >
+
+  </div>
+</div>
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-white" style="background-color: #A0A0A0">
+        <h5 class="modal-title" id="exampleModalLongTitle">Add Society</h5>
+        <button type="button" class="close text-white" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <label>Email : *</label>
+        <input type="text" class="form-control" [(ngModel)]="condidate.email" name="email1">
+        <label>Password : *</label>
+        <input type="text " class="form-control " [(ngModel)]="condidate.encryptedPassword"  name="encrypted">
+        <label> Name :</label>
+        <input type="text " class="form-control " [(ngModel)]="condidate.firstName"  name="first">
+        <label>Description : </label>
+        <input type="text " class="form-control " [(ngModel)]="condidate.lastName"  name="last">
+
+      </div>
+      <div class="modal-footer">
+
+        <button type="button" class="btn w-50 " (click)="addSociety()" style="background-color: #A0A0A0; color: white ">Add</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+

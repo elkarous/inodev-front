@@ -1,5 +1,6 @@
 import {Condidat} from './condidat';
 import {Offre} from './offre';
+import {Document} from './document';
 
 export class Skills{
 
@@ -10,6 +11,7 @@ export class Skills{
   certifier: boolean;
   condidat : Condidat;
   offre : Offre;
+  document:Document;
 
 
 }

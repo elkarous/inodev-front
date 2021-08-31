@@ -82,7 +82,7 @@ export class PostulerComponent implements OnInit {
                                                         this.con = res;
     });
     this.id = this.router.snapshot.params.id;
-    this.off.getid(this.id, this.router.snapshot.params.id1).subscribe(res => {
+    this.off.getid(this.id).subscribe(res => {
       this.offre1 = res;
     });
     this.co.exist(this.id).subscribe((aa: number) => {

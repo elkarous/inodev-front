@@ -28,16 +28,16 @@ public spe: any;
     this.spe = this.route.snapshot.params.id;
     this.duree = this.route.snapshot.params.id1;
     this.niveau = this.route.snapshot.params.id2;
-    console.log(this.niveau, this.duree, this.spe);
-    this.alloffre(this.spe, this.duree, this.niveau);
+
     this.spec.getAll().subscribe(res => {
-      console.log(res);
+     this.of=res
+      console.log(this.of)
       this.s = res;
     });
   }
   alloffre(spe: string, duree: string, niveau: string) {
     this.off.getsearch(spe, duree, niveau, this.route.snapshot.params.id3).subscribe(res => {
-      console.log(res);
+
       this.of = res;
     });
   }

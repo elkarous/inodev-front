@@ -1,6 +1,7 @@
 import { JwtInterceptor } from './services/jwt.interceptor';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import {MatTooltipModule} from '@angular/material/tooltip';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './components/login/login.component';
@@ -64,6 +65,13 @@ import { DashSupervisorComponent } from './dash-supervisor/dash-supervisor.compo
 import { FooterComponent } from './components/partials/footer/footer.component';
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
 import { TestComponent } from './test/test.component';
+import { DashproComponent } from './dashpro/dashpro.component';
+import { PowerBiComponent } from './power-bi/power-bi.component';
+import {MatTableModule} from '@angular/material/table';
+import {MatPaginatorModule} from '@angular/material/paginator';
+import { ListSupervisorComponent } from './components/admin/list-supervisor/list-supervisor.component';
+import { ListSocietyComponent } from './components/admin/list-society/list-society.component';
+import {MatTreeModule} from '@angular/material/tree';
 
 @NgModule({
   declarations: [
@@ -113,28 +121,36 @@ import { TestComponent } from './test/test.component';
     DashSupervisorComponent,
     FooterComponent,
     TestComponent,
+    DashproComponent,
+    PowerBiComponent,
+    ListSupervisorComponent,
+    ListSocietyComponent,
   ],
-  imports: [
-    FontAwesomeModule,
-    SchedulerModule,
-    BrowserModule,
-    ReactiveFormsModule,
-    HttpClientModule,
-    AppRoutingModule,
-    BrowserAnimationsModule, // required animations module
-    ToastrModule.forRoot(),
-    FormsModule,
-    NgxPaginationModule,
-    MatAutocompleteModule,
-    MatSelectModule,
-    Ng2SearchPipeModule,
-    GridModule,
-    DayPilotModule,
-    MatCardModule,
-    MDBBootstrapModule.forRoot(),
+    imports: [
+        FontAwesomeModule,
+        SchedulerModule,
+        BrowserModule,
+        ReactiveFormsModule,
+        HttpClientModule,
+        AppRoutingModule,
+        MatTooltipModule,
+        BrowserAnimationsModule, // required animations module
+        ToastrModule.forRoot(),
+        FormsModule,
+        NgxPaginationModule,
+        MatAutocompleteModule,
+        MatSelectModule,
+        Ng2SearchPipeModule,
+        GridModule,
+        DayPilotModule,
+        MatCardModule,
+        MDBBootstrapModule.forRoot(),
+        MatTableModule,
+        MatPaginatorModule,
+        MatTreeModule,
 
-    // ToastrModule added
-  ],
+        // ToastrModule added
+    ],
   providers: [{
     provide: HTTP_INTERCEPTORS,
     useClass: JwtInterceptor,

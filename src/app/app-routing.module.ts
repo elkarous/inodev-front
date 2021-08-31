@@ -42,9 +42,14 @@ import {ArchiveComponent} from './components/project/archive/archive.component';
 import {ChatComponent} from './chat/chat.component';
 import {NewPlanComponent} from './new-plan/new-plan.component';
 import { BigprofileComponent } from './bigprofile/bigprofile.component';
+import {DashproComponent} from './dashpro/dashpro.component';
+import {PowerBiComponent} from './power-bi/power-bi.component';
+import {ListSocietyComponent} from './components/admin/list-society/list-society.component';
+import {ListSupervisorComponent} from './components/admin/list-supervisor/list-supervisor.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent},
+  { path: 'dashpro', component: DashproComponent},
   { path: 'chat', component: ChatComponent},
   { path: 'plan', component: PlanComponent ,children: [
       { path: 'ourplan', component: NewPlanComponent},
@@ -73,11 +78,18 @@ const routes: Routes = [
  // { path: 'question', component: QuestionComponent, canActivate: [AuthGuard]},
   { path: 'source', component: SourceComponent, canActivate: [AuthGuard]},
   { path: 'document', component: DocumentComponent, canActivate: [AuthGuard]},
-  { path: 'dash', component: DashComponent, canActivate: [AuthGuard]},
+  { path: 'dash', component: DashComponent ,children: [
+       { path: 'listc', component: ListCondidatComponent},
+       {path: "dashpwbi", component: PowerBiComponent},
+      {path: "listsoceity", component: ListSocietyComponent},
+      {path: "listsupervisor", component: ListSupervisorComponent},
+      { path: 'listoff', component: ListoffComponent}
+
+  ]},
   { path: 'categories/:id/:id1', component: CategoriesComponent, canActivate: [AuthGuard]},
-  { path: 'user/:id/:id1', component: ShowuserComponent, canActivate: [AuthGuard]},
-  { path: 'offre/:id/:id1', component: ShowoffreComponent, canActivate: [AuthGuard]},
-  { path: 'offre/edit/:id/:id1', component: EditoffreComponent, canActivate: [AuthGuard]},
+  { path: 'user/:id', component: ShowuserComponent, canActivate: [AuthGuard]},
+  { path: 'offre/:id', component: ShowoffreComponent, canActivate: [AuthGuard]},
+  { path: 'offre/edit/:id', component: EditoffreComponent, canActivate: [AuthGuard]},
   { path: 'calendar/:id', component: AddoffreComponent, canActivate: [AuthGuard]},
   { path: 'project', component: ProjectComponent, canActivate: [AuthGuard]},
   { path: 'project/archive', component: ArchiveComponent, canActivate: [AuthGuard]},
@@ -87,7 +99,7 @@ const routes: Routes = [
   { path: 'off/cat/:id', component: OffreComponent, canActivate: [AuthGuard]},
   { path: 'sup', component: SupervisorComponent, canActivate: [AuthGuard]},
   { path: 'postuler/:id/:id1', component: PostulerComponent, canActivate: [AuthGuard]},
-  { path: 'listc', component: ListCondidatComponent, canActivate: [AuthGuard]},
+
   { path: 'myapplication', component: CondidatureComponent, canActivate: [AuthGuard]},
   { path: 'listspe', component: SpecialiteComponent, canActivate: [AuthGuard]},
   { path: 'listoff/:id', component: ListoffComponent, canActivate: [AuthGuard]},

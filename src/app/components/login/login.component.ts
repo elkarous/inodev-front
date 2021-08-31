@@ -44,7 +44,7 @@ export class LoginComponent implements OnInit {
 
   handleResponse(data) {
     this.token.handle(data);
-    console.log(data);
+
 
     this.account.changeAuthStatus(true);
     this.toastr.success(
@@ -56,9 +56,12 @@ export class LoginComponent implements OnInit {
       }
     );
     this.ju = this.token.getInfos().id;
-    console.log( this.ju);
+
     this.router.navigateByUrl('/dashboard');
     window.location.reload();
   }
+  facebookLogin(){
+    this.authService.facebookLogin().subscribe();
+}
 
 }

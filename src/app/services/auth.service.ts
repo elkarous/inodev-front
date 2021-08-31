@@ -13,4 +13,7 @@ export class AuthService {
   login(auth: {email: string, password: string}) {
     return this.http.post(`${environment.baseUrl}/users/login`, auth);
   }
+  facebookLogin(){
+    return this.http.get(`${environment.baseUrl}/login`)
+  }
 }

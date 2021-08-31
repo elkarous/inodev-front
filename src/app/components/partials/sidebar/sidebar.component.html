@@ -1,34 +1,45 @@
-<nav class="px-1 bg-info position-fixed" id="sticky-sidebar">
-  <div class="nav flex-column flex-nowrap vh-100 overflow-auto text-white p-2" *ngIf="con.admin === 1">
-    <ul class="nav flex-column" >
-      <li class="nav-item">
-        <a class="nav-link list active" routerLink="/dash">
-          <span data-feather="home"></span>
-          Dashboard <span class="sr-only">(current)</span>
+<nav class="px-1 bg-info  position-fixed" id="sticky-sidebar" style="border-top-right-radius: 20px;">
+  <div class="nav flex-column flex-nowrap vh-100 overflow-auto text-white p-2" *ngIf="true">
+    <ul class="nav flex-column mt-3" >
+      <li class="nav-item text-white mb-2">
+        <a class="nav-link list active text-uppercase" routerLink="/dash">
+
+          <i class="fa fa-dashboard  mr-2 text-white "></i>Dashboard <span class="sr-only">(current)</span>
         </a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link list" routerLink="/listc">
-          <span data-feather="file"></span>
-          List Users
+      <li class="nav-item mb-2">
+        <a class="nav-link list text-uppercase" routerLink="/listc">
+
+          <i class=" nav-icon fa fa-users  mr-2 text-white"></i> List Users  <i class="fas fa-angle-right right ml-2 text-white">
+
+        </i>
         </a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link list" routerLink="/listoff/intership">
-          <span data-feather="shopping-cart"></span>
-          List Offres
+      <li class="nav-item mb-2 ">
+        <a class="nav-link list text-uppercase" routerLink="/listoff/intership">
+
+          <i class="fa fa-list-alt  mr-2 text-white "></i> List Offres
         </a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link list" routerLink="/listspe">
-          <span data-feather="users"></span>
-          List Specialite
+      <li class="nav-item mb-2">
+        <a class="nav-link list text-uppercase" routerLink="/listspe">
+
+          <i class="fa fa-cogs  mr-2 text-white"></i> List Specialite
         </a>
       </li>
+      <li class="nav-item mb-2">
+        <a class="nav-link list text-uppercase" routerLink="/listspe">
+
+          <i class="fa fa-project-diagram  mr-2 text-white"></i> List Projects
+        </a>
+      </li>
+
+
+
     </ul>
 
   </div>
-  <div class="nav flex-column flex-nowrap vh-100 overflow-auto text-white p-2" *ngIf="con.admin === 0">
+  <div class="nav flex-column flex-nowrap vh-100 overflow-auto text-white p-2" *ngIf="con.role === 0">
     <ul class="nav flex-column" >
       <li class="nav-item">
         <a class="nav-link list active" routerLink="/dash">
@@ -53,7 +64,7 @@
   </div>
 
 
-  <div class="mh-100 nav flex-column flex-nowrap min-vh-100 mw-25 overflow-auto text-white p-2" *ngIf="con.admin === 3">
+  <div class="mh-100 nav flex-column flex-nowrap min-vh-100 mw-25 overflow-auto text-white p-2" *ngIf="con.role === 3">
 
     <ul class="nav flex-column" >
       <li class="nav-item">
@@ -74,7 +85,7 @@
   </div>
 
 
-  <div class="mh-100 nav flex-column flex-nowrap min-vh-100 mw-25 overflow-auto text-white p-2" *ngIf="con.admin === 2">
+  <div class="mh-100 nav flex-column flex-nowrap min-vh-100 mw-25 overflow-auto text-white p-2" *ngIf="con.role === 2">
 
     <ul class="nav flex-column" >
       <li class="nav-item">

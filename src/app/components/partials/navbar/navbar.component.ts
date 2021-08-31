@@ -26,13 +26,12 @@ logo: any = '../assets/Logo.png';
     private toastr: ToastrService
   ) { }
 
-  ngOnInit() {
+   ngOnInit() {
     this.account.authStatus.subscribe(value => {
       this.loggedIn = value;
       this.id = this.Token.getId();
-      console.log(this.id)
       this.userInfos = this.Token.getInfos();
-      this.sign.get(this.id).subscribe((res: Condidat) => { console.log(res);
+      this.sign.get(this.id).subscribe((res: Condidat) => {
                                                             this.con = res;
       });
     });

@@ -37,7 +37,7 @@ export class ShowoffreComponent implements OnInit {
 
   ngOnInit(): void {
     this.id = this.route.snapshot.params.id;
-    this.off.getid(this.id, this.route.snapshot.params.id1).subscribe(res => {
+    this.off.getid(this.id).subscribe(res => {
       this.offre1 = res;
       this.az = this.offre1[0][13];
       console.log(this.offre1);

@@ -11,6 +11,9 @@ import {Experience} from '../../../models/experience';
 import {SkillsService} from '../../../services/skills.service';
 import {Skills} from '../../../models/skills';
 import {ActivatedRoute} from '@angular/router';
+import {HttpClient} from '@angular/common/http';
+import {Observable} from 'rxjs';
+
 
 @Component({
   selector: 'app-showuser',
@@ -18,20 +21,18 @@ import {ActivatedRoute} from '@angular/router';
   styleUrls: ['./showuser.component.css']
 })
 export class ShowuserComponent implements OnInit {
-  public documents: Document[];
+
+
   public aa: any;
-  public skills: Skills[];
-  public educations: Education[];
-  public experiences: Experience[];
-  private email: string;
+   skills: Skills[];
 
   constructor(public sign: SignupServiceService,
               private Token: TokenService,
               private educationService: EducationService,
               private documentService: DocumentService,
               private route: ActivatedRoute,
-              private experienceService: ExperienceService,
-              private skillsService: SkillsService) {
+             private http:HttpClient
+         ) {
   }
 
   con: Condidat;
@@ -39,40 +40,28 @@ export class ShowuserComponent implements OnInit {
   id: string;
 
   ngOnInit(): void {
+
     this.id = this.route.snapshot.params.id;
-    this.email = this.route.snapshot.params.id1;
     this.sign.get(this.id).subscribe((res: Condidat) => {
       console.log(res);
       this.con = res;
+
     });
     this.sign.getohoto(this.id).subscribe((res: Condidat) => {
-      console.log(res);
       this.aa = res;
-      console.log('hna');
+
     });
-    this.alldoc();
-    this.alledu();
-    this.allexp();
-    this.allskills();
+
   }
 
-  allskills() {
-    this.skillsService.getskillBYUser(this.email)
-      .subscribe((res: Skills[]) => this.skills = res);
-  }
+dowload(document:Document) {
+    console.log(document)
+  this.documentService.dowload(document.nom).subscribe()
+}
 
-  allexp() {
-    this.experienceService.getEperienceBYUser(this.email)
-      .subscribe((res: Experience[]) => this.experiences = res);
-  }
 
-  alldoc() {
-    this.documentService.getDocumentByUser(this.email)
-      .subscribe((res: Document[]) => this.documents = res);
-  }
 
-  alledu() {
-    this.educationService.getEducationBYUser(this.email)
-      .subscribe((res: Education[]) => this.educations = res);
-  }
+
+
+
 }
