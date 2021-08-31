@@ -59,13 +59,8 @@ photo: File;
 
   updateCond() {
     this.con.userId = this.id;
-    const formData = new FormData();
-    if (this.photo){
-    this.con.photo = this.photo.name; }
-    formData.append('photo', this.photo);
-    console.log(this.con);
-    formData.append('condidat', JSON.stringify(this.con));
-    this.sign.updateC(this.id, formData)
+
+    this.sign.update(this.id, this.con)
       .subscribe(res => {
         console.log(res);
       });
@@ -79,6 +74,7 @@ photo: File;
     if (event.target.files.length > 0) {
       this.photo = event.target.files[0];
       this.message = this.photo;
+
       console.log(this.message);
     }
   }

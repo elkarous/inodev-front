@@ -3,11 +3,12 @@ import {AccountService} from '../../../services/account.service';
 import {ActivatedRoute, Router} from '@angular/router';
 import {SignupServiceService} from '../../../services/signup-service.service';
 import {TokenService} from '../../../services/token.service';
-import {ToastrService} from 'ngx-toastr';
-import {environment} from '../../../../environments/environment';
 import {HttpClient} from '@angular/common/http';
 import {Condidat} from '../../../models/condidat';
 import {Location} from '@angular/common';
+import {Role} from '../../../models/Role';
+import {ToastrService} from 'ngx-toastr';
+import {error} from '@angular/compiler-cli/src/transformers/util';
 
 @Component({
   selector: 'app-list-condidat',
@@ -27,24 +28,26 @@ export class ListCondidatComponent implements OnInit {
     public sign: SignupServiceService,
     private Token: TokenService,
     private route: ActivatedRoute,
+    private toast: ToastrService,
     private location: Location,
     private http: HttpClient) {
   }
 
   candidates: Condidat[];
   con: Condidat;
-
+condidate:Condidat;
   ngOnInit(): void {
+   this.getAllUsers();
     this.con = new Condidat();
     this.id = this.Token.getInfos().id;
-    this.cond();
+this.condidate=new Condidat();
     this.sign.get(this.id).subscribe((res: Condidat) => {
-      console.log(res);
+
       this.con = res;
     });
   }
 
-  cond() {
+  getAllUsers() {
 
     this.sign.getAll().subscribe(res => {
       console.log(res);
@@ -84,8 +87,20 @@ export class ListCondidatComponent implements OnInit {
     if (window.confirm('Are sure you want to delete this Article ?')) {
       this.sign.delete(id).subscribe((res: Condidat) => {
         console.log(res);
-        this.cond();
+        this.getAllUsers();
       });
     }
+  }
+  addCondidate(){
+    this.condidate.role=Role.Student
+    this.sign.Save(this.condidate).subscribe(data=>{
+      this.toast.success("Candidate added ")
+    },error=>{
+      this.toast.error("same thing Wrong")
+    }
+
+
+    );
+    this.getAllUsers()
   }
 }

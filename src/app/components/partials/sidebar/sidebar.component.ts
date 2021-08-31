@@ -23,17 +23,17 @@ export class SidebarComponent implements OnInit {
     private account: AccountService,
     private router: Router,
     public sign: SignupServiceService,
-    public co: OffreService,
+    public offerService: OffreService,
     private Token: TokenService,
     private route: ActivatedRoute,
     private location: Location) { }
 
   ngOnInit(): void {
     this.id = this.Token.getInfos().id;
-    this.sign.get(this.id).subscribe((res: any) => { console.log(res);
-                                                     this.con = res;
-    });
-    this.co.getbynom().subscribe(res => {this.pos = res; console.log(this.pos); });
+    this.sign.get(this.id).subscribe();
+
+
+    this.offerService.getbynom().subscribe(res => {this.pos = res; console.log(this.pos); });
   }
   backClicked() {
     this.location.back();

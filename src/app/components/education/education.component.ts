@@ -8,6 +8,8 @@ import {EducationService} from '../../services/education.service';
 import {Education} from '../../models/education';
 import {Address} from '../../models/address';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
+import {Condidat} from '../../models/condidat';
+import {dateComparator} from '@ng-bootstrap/ng-bootstrap/datepicker/datepicker-tools';
 
 @Component({
   selector: 'app-education',
@@ -19,7 +21,7 @@ export class EducationComponent implements OnInit {
 
   @Output() editEducation = new EventEmitter();
   educationForm: FormGroup;
-
+condidat:Condidat;
   constructor(
     private account: AccountService,
     private router: Router,
@@ -27,6 +29,7 @@ export class EducationComponent implements OnInit {
     private Token: TokenService,
     private route: ActivatedRoute,
     private toastr: ToastrService,
+    private signUpservice:SignupServiceService,
     private srv: EducationService
   ) {
   this.educationForm = new FormGroup({
@@ -57,6 +60,7 @@ form = false;
     this.id = this.Token.getInfos().id;
     this.tok = this.Token.getToken();
     this.all();
+    this.getCondidat();
   }
   all(){
     this.srv.getAll()
@@ -107,9 +111,13 @@ form = false;
         .subscribe((res: Education[]) => this.educations = res);
     }
   }
+  getCondidat() {
+    this.signUpservice.get(this.id).subscribe(data =>
+      this.condidat = data);
+  }
   persistEducation(data: Education) {
-    this.srv.Save(data)
-      .subscribe((res: Education) => this.educations = [res, ...this.educations]);
+    this.srv.Save(data,this.id)
+      .subscribe();
     this.form = false;
     this.toastr.success('Data Store successfully !!', 'STORE', {
       timeOut: 3000,

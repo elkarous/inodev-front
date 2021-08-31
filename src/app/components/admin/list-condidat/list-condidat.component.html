@@ -1,210 +1,82 @@
-<body *ngIf="con.role === 2">
-<div class="container-fluid">
-  <div class="row my-4">
-    <div class="col-md-6">
+<div class="ml-2 container " xmlns="http://www.w3.org/1999/html">
+    <div class="col-sm-9  ">
+      <div class="container-fluid mb-3">
 
-    </div>
-  </div>
-  <div fxHide.gt-xs>
+      <h3 class="offset-5 font-weight-bold mb-5 mt-5" >
+        List of  candidates
+      </h3>
+<div class="row  mb-2">
+        <input type="text" class=" col-2 rounded  align-self-center  " style="height: 33px ; margin-left: 35px;" placeholder="Search ..." [(ngModel)]="term">
 
-  </div>
-  <div>
-    Liste Condidat
-  </div>
+        <button  class="btn   col-3 offset-6 rounded" data-toggle="modal" data-target="#exampleModalCenter" style=" height: 33px;  background-color: #CAF0F8 ;color:#03045E " >
+              <i class="fa fa-plus mr-1"></i>Add Candidate </button>
 
-  <div class="col-md-12 col-md-offset-2">
-    <div class="table-responsive">
-      <table class="table table-bordered table-responsive-sm table-responsive-md
-     table-responsive-lg">
-        <thead>
-        <tr>
-          <th scope="col">email</th>
-          <th scope="col">first Name</th>
-          <th scope="col">last Name</th>
-          <th class="text-center" scope="col">Action</th>
-        </tr>
-        </thead>
-        <tbody *ngFor="let condidate of candidates ">
-        <tr *ngIf="con.enabled === id && condidate.role === 0">
-          <th>{{condidate.email}}</th>
-          <td>{{condidate.firstName}}</td>
-          <td>{{condidate.lastName}}</td>
-          <td>
-            <button class="btn btn-warning" style="margin-left: 20px;">
-              <i class="fa fa-pencil-square-o"></i></button>
-          </td>
-          <td>
-            <button class="btn btn-danger">
-              <i class="fa fa-trash-o"></i></button>
-          </td>
-        </tr>
 
-        </tbody>
-
-      </table>
-    </div>
-  </div>
+  <!-- Modal -->
 </div>
-<button class="btn btn-info float-right" (click)="backClicked()"> Retour</button>
-</body>
-<div class="bg-light row">
 
-  <app-sidebar></app-sidebar>
-  <div *ngIf="con.role === 1">
-    <div class="col-sm-9 offset-3 ">
-      <div class="form-group">
-        <input type="text" class="form-control" placeholder="Search Here" [(ngModel)]="term">
-      </div>
-      <div>
-        Liste Condidat
-      </div>
-      <div fxFlex fxLayout fxLayoutAlign="end" fxHide.xs>
-        <ul fxLayout fxLayoutGap="15px" class="navigation-items">
-          <li>
-            <a routerLink="/signup" class="btn btn-sm btn-success text-white pull-right">
-              <i class="fa fa-plus"></i>Add Condidat </a>
-          </li>
-        </ul>
-      </div>
-      <div class="card-body" *ngIf="addc">
-        <p class="card-title h2 ct1">vgh</p>
-        <p class="card-text">hgghhg</p>
-        <a type="button" class="btn btn-secondary" (click)="Click()">cancel</a>
-      </div>
+
       <div class="col-md-12 col-md-offset-2">
-        <div class="table-responsive">
-          <table class="table table-bordered table-responsive-sm table-responsive-md
-     table-responsive-lg">
-            <thead>
-            <tr>
-              <th scope="col">email</th>
-              <th scope="col">first Name</th>
-              <th scope="col">last Name</th>
-              <th class="text-center" scope="col">Action</th>
-            </tr>
-            </thead>
-            <tbody *ngFor="let condid of candidates | filter:term">
-            <tr *ngIf=" condid.admin === 0">
-              <th>{{condid.email}}</th>
-              <td>{{condid.firstName}}</td>
-              <td>{{condid.lastName}}</td>
-              <td>
-                <button class="btn btn-warning" style="margin-left: 20px;">
-                  <i class="fa fa-pencil-square-o" routerLink="/user/{{condid.userId}}/{{condid.email}}"> Show </i></button>
-              </td>
-              <td>
-                <button class="btn btn-danger" value="Delete" (click)="delete(condid.userId)">
-                  <i class="fa fa-trash-o"> Delete</i></button>
-              </td>
-            </tr>
-            </tbody>
+        <table class="table ">
+          <thead >
+          <tr >
 
-          </table>
-        </div>
+            <th class="font-weight-bold text-center" scope="col"></th>
+            <th class="font-weight-bold text-center " scope="col">Full Name</th>
+            <th  class="font-weight-bold text-center " scope="col">Email</th>
+            <th class="font-weight-bold text-center"  scope="col">Action</th>
+
+          </tr>
+          </thead>
+          <tbody class="text-center" *ngFor="let candidate of candidates  | filter:term " >
+          <tr *ngIf="candidate.role=='Student'">
+
+            <td><img src = "{{'http://localhost:8081/condidat/img/'+candidate.userId}}"  width="35" height="35" class="rounded-circle"></td>
+            <td>{{candidate.firstName}} {{candidate.lastName}} </td>
+            <td>{{candidate.email}}</td>
+            <td>
+              <button class="btn" style="margin-left: 20px;background-color: #E4FFF8">
+                <i class="fa fa-pencil-square-o"  style="color: #15775d" routerLink="/user/{{candidate.userId}}">  </i></button>
+
+              <button class="btn m-1 " style="background-color: #FCD7D1" value="Delete" (click)="delete(candidate.userId)">
+                <i class="fa fa-trash-o text-danger"> </i></button>
+            </td>
+          </tr>
+
+
+          </tbody>
+        </table>
       </div>
-
-
-      <div class="container-fluid">
-        <div>
-          Liste des supervisor
-        </div>
-        <div fxFlex fxLayout fxLayoutAlign="end" fxHide.xs>
-          <ul fxLayout fxLayoutGap="15px" class="navigation-items">
-            <li>
-              <a (click)="Clickeds()" class="btn btn-sm btn-success text-white pull-right">
-                <i class="fa fa-plus"></i>Add Supervisor </a>
-            </li>
-          </ul>
-        </div>
-        <div class="card-body" *ngIf="adds">
-          <p class="card-title h2 ct1">vgh</p>
-          <p class="card-text">hgghhg</p>
-          <a type="button" class="btn btn-secondary" (click)="Clicks()">cancel</a>
-        </div>
-        <div class="col-md-12 col-md-offset-2">
-          <div class="table-responsive">
-            <table class="table table-bordered table-responsive-sm table-responsive-md
-     table-responsive-lg">
-              <thead>
-              <tr>
-                <th scope="col">email</th>
-                <th scope="col">first Name</th>
-                <th scope="col">last Name</th>
-                <th class="text-center" scope="col">Action</th>
-              </tr>
-              </thead>
-              <tbody *ngFor="let condida of candidates | filter:term ">
-              <tr *ngIf=" condida.admin === 2">
-                <th>{{condida.email}}</th>
-                <td>{{condida.firstName}}</td>
-                <td>{{condida.lastName}}</td>
-                <td>
-                  <button class="btn btn-warning" style="margin-left: 20px;">
-                    <i class="fa fa-pencil-square-o" routerLink="/user/{{condida.userId}}/{{condida.email}}"> Show</i>
-                  </button>
-                </td>
-                <td>
-                  <button class="btn btn-danger" value="Delete" (click)="delete(condida.userId)">
-                    <i class="fa fa-trash-o"> Delete</i></button>
-                </td>
-              </tr>
-              </tbody>
-
-            </table>
-          </div>
-        </div>
       </div>
-      <div class="container-fluid">
-        <div>
-          List company
-        </div>
-        <div fxFlex fxLayout fxLayoutAlign="end" fxHide.xs>
-          <ul fxLayout fxLayoutGap="15px" class="navigation-items">
-            <li>
-              <a (click)="Clickedc()" class="btn btn-sm btn-success text-white pull-right">
-                <i class="fa fa-plus"></i>Add Societe </a>
-            </li>
-          </ul>
-        </div>
-        <div class="card-body" *ngIf="addco">
-          <p class="card-title h2 ct1">vgh</p>
-          <p class="card-text">hgghhg</p>
-          <a type="button" class="btn btn-secondary" (click)="Clickc()">cancel</a>
-        </div>
-        <div class="col-md-12 col-md-offset-2">
-          <div class="table-responsive">
-            <table class="table table-bordered table-responsive-sm table-responsive-md
-     table-responsive-lg">
-              <thead>
-              <tr>
-                <th scope="col">email</th>
-                <th scope="col">Name</th>
-                <th scope="col">Description</th>
-                <th class="text-center" scope="col">Action</th>
-              </tr>
-              </thead>
-              <tbody *ngFor="let condidat of candidates | filter:term ">
-              <tr *ngIf=" condidat.admin === 3">
-                <th>{{condidat.email}}</th>
-                <td>{{condidat.firstName}}</td>
-                <td>{{condidat.lastName}}</td>
-                <td>
-                  <button class="btn btn-warning" style="margin-left: 20px;">
-                    <i class="fa fa-pencil-square-o" routerLink="/user/{{condidat.userId}}/{{condidat.email}}"> Show</i>
-                  </button>
-                </td>
-                <td>
-                  <button class="btn btn-danger" value="Delete" (click)="delete(condidat.userId)">
-                    <i class="fa fa-trash-o"> Delete</i></button>
-                </td>
-              </tr>
-              </tbody>
+      <hr style="font-size: 70px" >
 
-            </table>
-          </div>
-        </div>
+    </div>
+  </div>
+
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-white" style="background-color: #A0A0A0">
+        <h5 class="modal-title" id="exampleModalLongTitle">Add Candidate</h5>
+        <button type="button" class="close text-white" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
       </div>
-      <button class="btn btn-info float-right" (click)="backClicked()"> Retour</button>
+      <div class="modal-body">
+        <label>Email : *</label>
+        <input type="text" class="form-control" [(ngModel)]="condidate.email" name="email1">
+        <label>Password : *</label>
+        <input type="text " class="form-control " [(ngModel)]="condidate.encryptedPassword"  name="encrypted">
+        <label>First Name :</label>
+        <input type="text " class="form-control " [(ngModel)]="condidate.firstName"  name="first">
+        <label>Last Name : </label>
+        <input type="text " class="form-control " [(ngModel)]="condidate.lastName"  name="last">
+
+      </div>
+      <div class="modal-footer">
+
+        <button type="button" class="btn w-50 " (click)="addCondidate()" style="background-color: #A0A0A0; color: white ">Add</button>
+      </div>
     </div>
   </div>
 </div>

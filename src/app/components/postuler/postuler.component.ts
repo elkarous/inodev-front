@@ -37,11 +37,14 @@ export class PostulerComponent implements OnInit {
 
 
   ngOnInit(): void {
+
     this.getOffer();
 
+    
 
 
   }
+
   getOffer(){
     this.routeActive.params.subscribe(
       (params) => {
@@ -53,13 +56,6 @@ export class PostulerComponent implements OnInit {
         this.offre=data
       }
     );
-
-    console.log(this.offre);
-
-  }
-
-
-
-
-
+  
+}
 }

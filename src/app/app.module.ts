@@ -1,9 +1,14 @@
 import { JwtInterceptor } from './services/jwt.interceptor';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+
 import {MatStepperModule} from '@angular/material/stepper';
 import { CdkStepperModule } from '@angular/cdk/stepper';
 
+
+
+import {MatTooltipModule} from '@angular/material/tooltip';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 import { AppComponent } from './app.component';
 import { LoginComponent } from './components/login/login.component';
@@ -67,7 +72,17 @@ import { DashSupervisorComponent } from './dash-supervisor/dash-supervisor.compo
 import { FooterComponent } from './components/partials/footer/footer.component';
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
 import { TestComponent } from './test/test.component';
+
 import { SubdeciplineComponent } from './components/subdecipline/subdecipline.component';
+
+import { DashproComponent } from './dashpro/dashpro.component';
+import { PowerBiComponent } from './power-bi/power-bi.component';
+import {MatTableModule} from '@angular/material/table';
+import {MatPaginatorModule} from '@angular/material/paginator';
+import { ListSupervisorComponent } from './components/admin/list-supervisor/list-supervisor.component';
+import { ListSocietyComponent } from './components/admin/list-society/list-society.component';
+import {MatTreeModule} from '@angular/material/tree';
+
 
 @NgModule({
   declarations: [
@@ -117,6 +132,7 @@ import { SubdeciplineComponent } from './components/subdecipline/subdecipline.co
     DashSupervisorComponent,
     FooterComponent,
     TestComponent,
+
     SubdeciplineComponent,
   ],
   imports: [
@@ -143,8 +159,12 @@ import { SubdeciplineComponent } from './components/subdecipline/subdecipline.co
 
 
 
-    // ToastrModule added
+    DashproComponent,
+    PowerBiComponent,
+    ListSupervisorComponent,
+    ListSocietyComponent,
   ],
+   
   providers: [{
     provide: HTTP_INTERCEPTORS,
     useClass: JwtInterceptor,

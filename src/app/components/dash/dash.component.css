@@ -1,0 +1,30 @@
+.imgs{
+  background-image: url("src/assets/imgs/sidebar-1.jpg");
+
+
+
+}
+.jumbotron {
+
+opacity: 0.9;
+
+
+
+}
+row i :before{
+  text-decoration: none;
+
+}
+.nav-link:focus {
+  background-color: #ff0440;
+  color: white;
+
+}
+
+.nav-link{
+  border-radius:15px
+}
+.nav-item:hover:focus{
+  background-color: #ff0440;
+  color: white;
+}
