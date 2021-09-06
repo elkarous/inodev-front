@@ -1,4 +1,5 @@
 import {Condidat} from './condidat';
+import {AnneeEducation} from './annee';
 
 export class Education{
   id : number;
@@ -11,6 +12,7 @@ export class Education{
   niveau: string;
   condidat : Condidat;
   educationId: string;
+  annees:AnneeEducation[];
 
 
 

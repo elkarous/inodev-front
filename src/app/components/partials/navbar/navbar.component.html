@@ -1,5 +1,5 @@
 
-<nav class="navbar navbar-expand-lg sticky-top navbar-white bg-white "  >
+<nav class="navbar navbar-expand-lg sticky-top navbar-light  bg-light "  >
 
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -40,12 +40,12 @@
           <a id="dropdownMenuButton1" data-toggle="dropdown" aria-haspopup="true" class="btn" aria-expanded="false"> <i class="nav-item far fa-comment fa-2x "></i></a>
           <div class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
             <a class="dropdown-item" routerLink="/profile">profil</a>
-            <a class="dropdown-item" *ngIf="con.role!= 0" routerLink="/dash">Dashbord</a>
-            <a class="dropdown-item" *ngIf="con.role=== 0" routerLink="/myapplication">
+            <a class="dropdown-item" *ngIf="con.role != 0" routerLink="/dash">Dashbord</a>
+            <a class="dropdown-item" *ngIf="con.role === 0" routerLink="/myapplication">
               <span data-feather="file"></span>
               My Application
             </a>
-            <a  *ngIf="con.enabled != null && con.role=== 0" class="dropdown-item" routerLink="/calendar/{{con.enabled}}">
+            <a  *ngIf=" con.role === 0" class="dropdown-item" routerLink="/calendar/{{con.enabled}}">
               <span data-feather="file"></span>
               My calendar
             </a>
@@ -82,7 +82,7 @@
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
               <a class="dropdown-item" routerLink="/profile/personaldetails">profil</a>
-              <a class="dropdown-item" *ngIf="con.role != 0" routerLink="/dash">Dashbord</a>
+              <a class="dropdown-item" *ngIf="con.role != 0" routerLink="/dash/dashpwbi">Dashbord</a>
               <a class="dropdown-item" *ngIf="con.role === 0" routerLink="/myapplication">
                 <span data-feather="file"></span>
                 My Application

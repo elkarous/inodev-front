@@ -32,13 +32,8 @@ export class SourceComponent implements OnInit {
   }
 
   form = true;
-  statut = false;
+  statut = false
   educt: Source;
-  educ: Source = {
-    sourceId: '',
-    describ: '',
-    position: ''
-  };
   edu: any;
   tok: string;
   id: string;

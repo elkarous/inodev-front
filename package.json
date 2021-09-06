@@ -26,13 +26,18 @@
     "@coreui/coreui": "^3.4.0",
     "@fortawesome/angular-fontawesome": "^0.6.1",
     "@fortawesome/fontawesome-free": "~5.6.3",
-    "@fortawesome/fontawesome-svg-core": "^1.2.36",
+
+   
     "@fortawesome/free-brands-svg-icons": "^5.15.4",
     "@fortawesome/free-solid-svg-icons": "^5.15.4",
+    "@fortawesome/fontawesome-svg-core": "^1.2.28",
+  
+
     "@ng-bootstrap/ng-bootstrap": "^6.2.0",
     "@syncfusion/ej2-angular-charts": "*",
     "@syncfusion/ej2-angular-grids": "^19.1.63",
     "@types/chart.js": "^2.7.40",
+    "admin-lte": "^3.1.0",
     "angular-bootstrap-md": "^9.4.0",
     "animate.css": "~3.7.2",
     "bootstrap": "^4.6.0",

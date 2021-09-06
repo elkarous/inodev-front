@@ -16,6 +16,7 @@ import {Document} from '../../models/document';
   styleUrls: ['./postuler.component.css']
 })
 export class PostulerComponent implements OnInit {
+
   offre: Offre;
   documents: Document[];
   id : number;
@@ -80,7 +81,4 @@ export class PostulerComponent implements OnInit {
     }
     return this.req
   }
-
-
-
 }

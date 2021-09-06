@@ -7,14 +7,14 @@ import {Condidat} from '../models/condidat';
 import {AccountService} from '../services/account.service';
 import {SignupServiceService} from '../services/signup-service.service';
 import {TokenService} from '../services/token.service';
-
+import { faCamera } from '@fortawesome/free-solid-svg-icons'
 @Component({
   selector: 'app-bigprofile',
   templateUrl: './bigprofile.component.html',
   styleUrls: ['./bigprofile.component.css']
 })
 export class BigprofileComponent implements OnInit {
-
+  faCamera=faCamera;
   message: File;
   photo: File;
   fileInfos: Observable<any>;
@@ -84,6 +84,7 @@ export class BigprofileComponent implements OnInit {
       timeOut: 3000,
       positionClass: 'toast-bottom-left'
     });
+    this.router.navigateByUrl("/profile/education")
 
   }
 
@@ -91,6 +92,7 @@ export class BigprofileComponent implements OnInit {
     if (event.target.files.length > 0) {
       this.photo = event.target.files[0];
       this.message = this.photo;
+      this.updateCond();
       console.log(this.message);
     }
   }

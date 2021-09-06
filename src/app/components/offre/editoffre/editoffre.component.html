@@ -1,39 +1,46 @@
-<style>
-  .h2 {
-    font-weight: bolder;
-  }
-</style>
 
 
-<div class="bg-light min-vh-100 row">
-  <app-sidebar></app-sidebar>
-  <div class="col-sm-9 offset-2">
 
-<form class="bg-light">
-  <div class="form-row">
+<div class="container ">
+<div class="row">
+  <div class="card p-4 col-8 ">
+
+<form class=" container-fluid  ">
+  <div class="form-row  ">
     <div class="col-md-4 mb-3">
-      <label >Name</label>
-      <input type="text" class="form-control form-control-sm" [(ngModel)]="offre1[0][1]" [ngModelOptions]="{standalone: true}">
+      <label >Title</label>
+      <input type="text" class="form-control form-control-sm " [(ngModel)]="offer.nom" [ngModelOptions]="{standalone: true}">
     </div>
     <div class="col-md-4 mb-3">
-      <label >Date Debut</label>
+      <label >Post Date</label>
       <input class="form-control form-control-sm"
-             [(ngModel)]="offre1[0][4]"  [ngModelOptions]="{standalone: true}" type="date">          </div>
+             [(ngModel)]="offer.dateDebut"  [ngModelOptions]="{standalone: true}" type="date">          </div>
     <div class="col-md-4 mb-3">
-      <label >Date Fin</label>
+      <label >Deadline</label>
       <input class="form-control form-control-sm "
-             [(ngModel)]="offre1[0][5]"  [ngModelOptions]="{standalone: true}" type="date">
+             [(ngModel)]="offer.dateFin"  [ngModelOptions]="{standalone: true}" type="date">
 
     </div>
   </div>
-  <div class="form-row">
+  <div class="form-row  ">
+    <div class="col-md-4 mb-3">
+      <label >Acronym</label>
+      <input type="text" class="form-control form-control-sm " [(ngModel)]="offer.acronym" [ngModelOptions]="{standalone: true}">
+    </div>
+    <div class="col-md-4 mb-3">
+      <label >Internship Start</label>
+      <input class="form-control form-control-sm"
+             [(ngModel)]="offer.dateDebut"  [ngModelOptions]="{standalone: true}" type="date">          </div>
+
+  </div>
+  <div class="form-row ">
     <div class="col-md-6 mb-3">
-      <label for="validationServer03">Organisation</label>
-      <input type="text" [(ngModel)]="offre1[0][7]" [ngModelOptions]="{standalone: true}" class="form-control" id="validationServer03" required>
+      <label for="validationServer03">Organization</label>
+      <input type="text" [(ngModel)]="offer.organisation" [ngModelOptions]="{standalone: true}" class="form-control" id="validationServer03" required>
     </div>
     <div class="col-md-3 mb-3">
-      <label>Niveau</label>
-      <select [(ngModel)]="offre1[0][10]" [ngModelOptions]="{standalone: true}" class="form-control  form-select-lg mr-3"
+      <label>Study Level </label>
+      <select [(ngModel)]="offer.niveau" [ngModelOptions]="{standalone: true}" class="form-control  form-select-lg mr-3"
               aria-label=".form-select-lg example">
         <option value="Student 1st cycle">Student 1st cycle</option>
         <option value="Student 2nd cycle">Student 2nd cycle</option>
@@ -42,38 +49,60 @@
 
       </select>          </div>
     <div class="col-md-3 mb-3">
-      <label >Lien Video</label>
-      <input type="text" [ngModelOptions]="{standalone: true}" [(ngModel)]="offre1[0][14]" class="form-control" required>
+      <label > Video Link</label>
+      <input type="text" [ngModelOptions]="{standalone: true}" [(ngModel)]="offer.video" class="form-control" required>
     </div>
   </div>
-  <div class="form-row">
+  <div class="form-row ">
     <div class="col-md-4 mb-3">
-      <label for="validationServer03">Price</label>
-      <input type="number" [(ngModel)]="offre1[0][8]" [ngModelOptions]="{standalone: true}" class="form-control" required>
+      <label for="validationServer03">Fee (TND)</label>
+      <input type="number" [(ngModel)]="offer.prix" [ngModelOptions]="{standalone: true}" class="form-control" required>
+
     </div>
     <div class="col-md-4 mb-3">
       <label for="validationServer03">Type</label>
-      <select [(ngModel)]="offre1[0][12]" [ngModelOptions]="{standalone: true}" class="form-control form-select-lg"
+      <select [(ngModel)]="offer.type" [ngModelOptions]="{standalone: true}" class="form-control form-select-lg"
               aria-label=".form-select-lg example">
-        <option value="intership">intership</option>
+        <option value="intership">Internship</option>
         <option value="study">study</option>
         <option value="volunteer">volunteer</option>
       </select>            </div>
     <div class="col-md-4 mb-3">
-      <label >Duree</label>
-      <select [(ngModel)]="offre1[0][11]" [ngModelOptions]="{standalone: true}" class="form-control form-select-lg"
-              aria-label=".form-select-lg example">
-        <option value="Semester">Semester</option>
-        <option value="Summer">Summer</option>
-        <option value="Academic year">Academic year</option>
-      </select>          </div>
+      <label >Duration</label>
+      <input type="text" [(ngModel)]="offer.duree" [ngModelOptions]="{standalone: true}" class="form-control form-select-lg"/>
+                   </div>
   </div>
-  <div class="form-row">
-    <div class="col-md-10 mb-10">
-      <label >Description</label>
-      <textarea  type="text" class="form-control "[(ngModel)]="offre1[0][6]" [ngModelOptions]="{standalone: true}" required></textarea>
+  <div class="form-row ">
+    <div class="w-100">
+      <label class="col-form-label" >Description</label>
+      <textarea  type="text" class="form-control "[(ngModel)]="offer.description" [ngModelOptions]="{standalone: true}" required></textarea>
     </div>
+    <div class="form-row">
+      <div class="col-md-3 mb-3" *ngFor="let arr of offer.skills; let iaa = index">
+        <label > Skills</label>
+        <input type="text"name="nom{{iaa}}" [(ngModel)]="arr.nom">
+        <div class="col-md-3 mb-3" *ngIf="iaa != 0">
+          <span class="btn btn-danger" (click)="remov(iaa)"> - </span>
+        </div>
+      </div>  </div>
+
+    <button class="btn btn-warning" (click)="Addfor()">+</button>
   </div>
-  <button class="btn btn-primary" (click)="edit(offre1[0][13])">Update</button>
+
+<div class="form-row justify-content-start">
+  <button class="btn text-white   col-2 " style="background-color: #ff0440" (click)="edit(offer.id)">Update</button>
+
+</div>
 </form>
-  </div>  </div>
+
+
+  </div>
+    <div class="w-100 card p-0  col-4 ml-0">
+  <input type="file" id="file" accept="image/*" (change)="onSelectFile($event)" class="form-control-file" />
+
+  <img mat-card-image src="{{'http://localhost:8081/offer/Imgarticles/'+offer.id}}"  class=" h-100 img-responsive ">
+      <label for="file" class="uploadIcon  text-center text-white offset-10   "><a > <fa-icon [icon]="faCamera" class="fa-2x"></fa-icon></a></label>
+
+    </div>
+</div>
+</div>

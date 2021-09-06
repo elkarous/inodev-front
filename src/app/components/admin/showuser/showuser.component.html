@@ -1,221 +1,292 @@
-<div class="bg-light min-vh-100 row">
-  <app-sidebar></app-sidebar>
-  <div class="col-sm-9 offset-2">
-    <div class="container emp-profile">
-      <form method="post">
-        <div class="row">
-          <div class="col-md-4">
-            <div class="profile-img">
-              <img src="{{'http://localhost:8081/condidat/img/'+con.userId}}" alt=""/>
-            </div>
-          </div>
-          <div class="col-md-6">
-            <div class="profile-head">
-              <h5>
-                {{con.firstName}} {{con.lastName}}
-              </h5>
-              <h6>
-                {{con.nationality}}
-              </h6>
-              <p class="proile-rating">Type : <span *ngIf="con.role === 0">Condidat</span>
-                <span *ngIf="con.role === 2">Supervisor</span>
-                <span *ngIf="con.role === 3">Company</span>
-              </p>
-              <ul class="nav nav-tabs" id="myTab" role="tablist">
-                <li class="nav-item">
-                  <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab"
-                     aria-controls="home" aria-selected="true">About</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" id="edu-tab" data-toggle="tab" href="#education" role="tab"
-                     aria-controls="profile" aria-selected="false">Education</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" id="exp-tab" data-toggle="tab" href="#experience" role="tab"
-                     aria-controls="profile" aria-selected="false">Experience</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" id="skill-tab" data-toggle="tab" href="#skills" role="tab" aria-controls="profile"
-                     aria-selected="false">Document</a>
-                </li>
-              </ul>
-            </div>
-          </div>
+<div class="bg-light  row justify-content-center">
 
-        </div>
-        <div class="row">
-          <div class="col-md-4">
-            <div class="profile-work">
-              <p>SKILLS</p>
-              <a *ngFor="let skill of skills">{{skill.nom}}<br></a>
-              <hr>
+    <div class=" emp-profile ">
+        <div class="row  align-items-center">
+          <div class="col-md-3 text-center justify-content-center ml-3 ">
+            <div class="profile-img">
+              <img src="{{'http://localhost:8081/condidat/img/'+con.userId}}" class="rounded-circle"  alt=""/>
+            </div>
+            <div class="text-center mt-2">
+            <h5>
+
+            {{con.firstName}} {{con.lastName}}
+            </h5>
+            <h6>
+              ID  :  {{con.id}}
+            </h6>
             </div>
           </div>
-          <div class="col-md-8">
-            <div class="tab-content profile-tab" id="myTabContent">
-              <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+          <hr class="hv">
+          <div class="col-md-8 align-self-start">
+            <nav>
+              <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">Personal details</a>
+                <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false">Education</a>
+                <a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="#nav-contact" role="tab" aria-controls="nav-contact" aria-selected="false">Skills</a>
+                <a class="nav-item nav-link" id="nav-exper-tab" data-toggle="tab" href="#nav-exper" role="tab" aria-controls="nav-contact" aria-selected="false">Experience</a>
+                <a class="nav-item nav-link" id="nav-doc-tab" data-toggle="tab" href="#nav-doc" role="tab" aria-controls="nav-contact" aria-selected="false">Files</a>
+                <a class="nav-item nav-link" id="nav-job-tab" data-toggle="tab" href="#nav-job" role="tab" aria-controls="nav-contact" aria-selected="false">Job Question</a>
+                <a class="nav-item nav-link" id="nav-hobby-tab" data-toggle="tab" href="#nav-hobby" role="tab" aria-controls="nav-contact" aria-selected="false">Hobbies  </a>
+                <a class="nav-item nav-link" id="nav-source-tab" data-toggle="tab" href="#nav-source" role="tab" aria-controls="nav-contact" aria-selected="false">Source  </a>
+
+              </div>
+            </nav>
+            <div class="tab-content" id="nav-tabContent">
+              <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
                 <div class="row">
-                  <div class="col-md-6">
-                    <label>User Id</label>
+                  <div class="col">
+                    <div class="row m-3">
+
+                      <i class="material-icons mr-3 ">person</i> <p>{{con.firstName}} {{con.lastName}}</p>
+                    </div>
+                    <div class="row m-3">
+
+                      <i class="material-icons mr-3 ">calendar_today</i> <p>{{con.date_birthday|date}} </p>
+                    </div>
+                    <div class="row m-3">
+
+                      <i class="material-icons mr-3 ">face</i> <p>{{con.gender}} </p>
+                    </div>
+                    <div class="row m-3">
+
+                      <i class="material-icons mr-3 ">location_on</i> <p>{{con.nationality}} </p>
+                    </div>
+
+                    <div class="row m-3">
+
+                      <i class="material-icons mr-3 ">mail_outline</i> <p>{{con.email}} </p>
+                    </div>
                   </div>
-                  <div class="col-md-6">
-                    <p>{{con.userId}}</p>
+                  <div class="col">
+
+                <div class="row m-3">
+
+                  <i class="material-icons mr-3 ">card_travel</i> <p>{{con.role}} </p>
+                </div>
+                <div class="row m-3">
+
+                  <i class="material-icons mr-3 "> call</i> <p>{{con.phone}}</p>
+                </div>
+                <div class="row m-3">
+
+                  <i class="material-icons mr-3 ">language </i> <p> {{con.phoneEtronger}}</p>
+                </div>
+                <div class="row m-3">
+
+                  <i class="material-icons mr-3 ">fiber_new </i> <p>{{con.application}} </p>
+                </div>
+                <div class="row m-3">
+
+                      <i class="material-icons mr-3 ">contacts</i> <p>{{con.authProvider}} </p>
+              </div>
                   </div>
                 </div>
-                <div class="row">
-                  <div class="col-md-6">
-                    <label>Name</label>
-                  </div>
-                  <div class="col-md-6">
-                    <p>{{con.firstName}} {{con.lastName}}</p>
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="col-md-6">
-                    <label>Email</label>
-                  </div>
-                  <div class="col-md-6">
-                    <p>{{con.email}}</p>
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="col-md-6">
-                    <label>Phone</label>
-                  </div>
-                  <div class="col-md-6">
-                    <p>{{con.phone}}</p>
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="col-md-6">
-                    <label>Date Birthday</label>
-                  </div>
-                  <div class="col-md-6">
-                    <p>{{con.date_birthday | date}}</p>
-                  </div>
+
+              </div>
+              <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
+                <div class="row m-3"  >
+
+                  <table class="table ">
+                    <thead class="font-weight-bold " >
+                    <tr >
+                      <th scope="col" class="font-weight-bold" >Degree</th>
+                      <th scope="col" class="font-weight-bold">Discipline</th>
+                      <th scope="col" class="font-weight-bold">Institution name</th>
+                      <th scope="col" class="font-weight-bold">Start date</th>
+                      <th scope="col" class="font-weight-bold">End date</th>
+                      <th scope="col" class="font-weight-bold">Sub-discipline</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr *ngFor="let education of con.education">
+                      <td>{{education.niveau}}</td>
+                      <td>{{education.nomDiplome}}</td>
+                      <td>{{education.nomFaculte}}</td>
+                      <td>{{education.dateDebut |date}}</td>
+                      <td>{{education.dateFin |date}}</td>
+                      <td>{{education.specialite}}</td>
+                      <td>
+                        <!-- Button trigger modal -->
+                        <button type="button" class="btn" style="background-color: #ff0440 ;color: white ;border-radius: 7px" data-toggle="modal" data-target="#exampleModalCenter">
+                          See More
+                        </button>
+
+                        <!-- Modal -->
+                        <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                          <div class="modal-dialog modal-dialog-centered" role="document">
+                            <div class="modal-content">
+                              <div class="modal-header" style="background-color: #A0A0A0 ;color: white">
+                                <h5 class="modal-title text-uppercase" id="exampleModalLongTitle">{{education.niveau}}</h5>
+                                <button type="button  " class="close text-white" data-dismiss="modal" aria-label="Close">
+                                  <span aria-hidden="true">&times;</span>
+                                </button>
+                              </div>
+                              <div class="modal-body p-3">
+
+                                <table class="table">
+                                  <thead class="bg-light">
+                                  <tr>
+                                    <th scope="col">Level</th>
+                                    <th scope="col">Date</th>
+                                    <th scope="col">Grade</th>
+
+                                  </tr>
+                                  </thead>
+                                  <tbody class="bg-white">
+                                  <tr *ngFor="let annee of education.annees" >
+                                    <td>{{annee.nom}}</td>
+                                    <td>{{annee.date}}</td>
+                                    <td>{{annee.note}}</td>
+
+                                  </tr></tbody>
+                                </table>
+                              </div>
+                              <div class="modal-footer">
+                                <button type="button" class="btn " style="background-color: #A0A0A0;color: white" data-dismiss="modal">Close</button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+
+                      </td>
+                    </tr>
+
+                    </tbody>
+                  </table>
+
                 </div>
               </div>
-              <div class="tab-pane fade" id="education" role="tabpanel" aria-labelledby="edu-tab">
-                <div *ngFor="let education of educations">
-                  <div class="row">
-                    <div class="col-md-6">
-                      <label>Degree :</label>
-                    </div>
-                    <div class="col-md-6">
-                      <p>{{education.niveau}}</p>
-                    </div>
-                  </div>
-                  <div class="row">
-                    <div class="col-md-6">
-                      <label>Institute name :</label>
-                    </div>
-                    <div class="col-md-6">
-                      <p>{{education.nomFaculte}}</p>
-                    </div>
-                  </div>
-                  <div class="row">
-                    <div class="col-md-6">
-                      <label>Date Start</label>
-                    </div>
-                    <div class="col-md-6">
-                      <p>{{education.dateDebut}}</p>
-                    </div>
-                  </div>
-                  <div class="row">
-                    <div class="col-md-6">
-                      <label>Date End</label>
-                    </div>
-                    <div class="col-md-6">
-                      <p>{{education.dateFin}}</p>
-                    </div>
-                  </div>
-                  <div class="row">
-                    <div class="col-md-6">
-                      <label>Specialite</label>
-                    </div>
-                    <div class="col-md-6">
-                      <p>{{education.specialite}}</p>
-                    </div>
-                  </div>
-                  <div class="row">
-                    <div class="col-md-6">
-                      <label>Pays</label>
-                    </div>
-                    <div class="col-md-6">
-                      <p>{{education.pays}}</p>
-                    </div>
-                  </div>
-                  <hr>
-                </div>
+              <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
+                <table class="table m-3">
+                  <thead>
+                  <tr>
+
+                    <th scope="col" class="font-weight-bold">Skill</th>
+                    <th scope="col" class="font-weight-bold">Level</th>
+                    <th scope="col" class="font-weight-bold">Certification</th>
+                  </tr>
+                  </thead>
+                  <tbody>
+                  <tr *ngFor="let skill of con.skills ">
+
+                    <td>{{skill.nom}}</td>
+                    <td>{{skill.niveau}}</td>
+                    <td >  <span *ngIf="skill.certifier"  ><i class="  fa fa-check mr-3" style="color: green"></i>
+                      <a  href="{{'http://localhost:8081/document/download/'+skill.document.nom}}"><i class="fa fa-download" style="color: #A0A0A0"></i> </a>
+
+                    </span>
+                      <i *ngIf="!skill.certifier" class="  fa fa-times" style="color: red">
+                      </i>
+                    </td>
+                  </tr></tbody></table>
               </div>
-              <div class="tab-pane fade" id="experience" role="tabpanel" aria-labelledby="exp-tab">
-                <div *ngFor="let experience of experiences">
-                  <div class="row">
-                    <div class="col-md-6">
-                      <label>Job title :</label>
-                    </div>
-                    <div class="col-md-6">
-                      <p>{{experience.job_title}}</p>
-                    </div>
-                  </div>
-                  <div class="row">
-                    <div class="col-md-6">
-                      <label>Organisation name :</label>
-                    </div>
-                    <div class="col-md-6">
-                      <p>{{experience.organization}}</p>
-                    </div>
-                  </div>
-                  <div class="row">
-                    <div class="col-md-6">
-                      <label>Date Start</label>
-                    </div>
-                    <div class="col-md-6">
-                      <p>{{experience.dateDebut}}</p>
-                    </div>
-                  </div>
-                  <div class="row">
-                    <div class="col-md-6">
-                      <label>Date End</label>
-                    </div>
-                    <div class="col-md-6">
-                      <p>{{experience.dateFin}}</p>
-                    </div>
-                  </div>
-                  <div class="row">
-                    <div class="col-md-6">
-                      <label>Type</label>
-                    </div>
-                    <div class="col-md-6">
-                      <p>{{experience.type}}</p>
-                    </div>
-                  </div>
-                  <div class="row">
-                    <div class="col-md-6">
-                      <label>Pays</label>
-                    </div>
-                    <div class="col-md-6">
-                      <p>{{experience.pays}}</p>
-                    </div>
-                  </div>
-                  <hr>
-                </div>
+              <div class="tab-pane fade" id="nav-exper" role="tabpanel" aria-labelledby="nav-contact-tab">
+                <table class="table m-3">
+                  <thead>
+                  <tr>
+
+                    <th scope="col" class="font-weight-bold">Job Title</th>
+                    <th scope="col" class="font-weight-bold">Type</th>
+                    <th scope="col" class="font-weight-bold">Organization</th>
+                    <th scope="col" class="font-weight-bold">Start Date</th>
+                    <th scope="col" class="font-weight-bold">End Date</th>
+                    <th scope="col" class="font-weight-bold">Country</th>
+
+
+
+                  </tr>
+                  </thead>
+                  <tbody>
+                  <tr *ngFor="let exper of con.experience ">
+
+                    <td>{{exper.job_title}}</td>
+                    <td>{{exper.type}}</td>
+                    <td>{{exper.organization}}</td>
+                    <td>{{exper.dateDebut}}</td>
+                    <td>{{exper.dateFin}}</td>
+                    <td>{{exper.pays}}</td>
+                  </tr></tbody></table>
+
               </div>
-              <div class="tab-pane fade" id="skills" role="tabpanel" aria-labelledby="skill-tab">
-                <div *ngFor="let document of documents">
-                  <div class="row">
-                    <div class="col-md-6">
-                      <label>{{ document.nom }}</label>
-                      <a href="{{'http://localhost:8080/document/download/'+document.nom}}">Download</a>
-                      <hr>
-                    </div>
+              <div class="tab-pane fade p-3" id="nav-doc" role="tabpanel" aria-labelledby="nav-contact-tab">
+                <div *ngFor="let doc of con.document" >
+                  <div class="row m-4 ">
+                 <i class="fa fa-file-pdf-o fa-2x" style="color: #ff0440;"></i>
+                    <h6 class="col-6 text-lowercase ">{{doc.nom}}</h6>
+                    <div class="col-2"> <a  href="{{'http://localhost:8081/document/download/'+doc.nom}}"><i class="fa fa-download" style="color: #A0A0A0"></i> </a> </div>
                   </div>
                 </div>
+
+
               </div>
-            </div>
-          </div>
-        </div>
-      </form>
-    </div>
-  </div>
+              <div class="tab-pane fade" id="nav-job" role="tabpanel" aria-labelledby="nav-contact-tab">
+<div class="card p-3">
+                  <ul *ngFor="let question of con.question ">
+                    <li><p class="font-weight-bold">What is the highest degree do you hols to this position and area of speciality?</p>
+                    <p>
+                      {{question.premier}}
+                    </p>
+                    </li>
+
+                    <li> <p class="font-weight-bold">Provide a short example of an innovative teaching strategy you utilize.</p>
+                    <p> {{question.deuxieme}}</p>
+                    </li>
+                    <li>
+                      <p class="font-weight-bold"> describe one example of your collaborative work with students</p>
+                    <p>{{question.troiseme}}</p></li>
+
+
+
+                  </ul>
 </div>
+              </div>
+              <div class="tab-pane fade offset-3" id="nav-hobby" role="tabpanel" aria-labelledby="nav-contact-tab">
+
+                <table class="table m-4 w-50 h-50  ">
+                  <thead>
+                  <th scope="col" class="font-weight-bold">Hobby</th>
+                  <th scope="col" class="font-weight-bold">Details</th>
+                  </thead>
+                  <tbody>
+                  <tr *ngFor="let hobie of con.hobbies">
+                    <td>{{hobie.nom}}</td>
+                    <td>{{hobie.description}}</td>
+                  </tr>
+                  </tbody>
+
+                </table>
+
+              </div>
+              <div class="tab-pane fade " id="nav-source" role="tabpanel" aria-labelledby="nav-contact-tab">
+                <div class="card p-3">
+                  <ul *ngFor="let source of con.origins ">
+                    <li><p class="font-weight-bold"> How did you hear about this position?</p>
+                      <p>
+                        {{source.position}}
+                      </p>
+                    </li>
+
+                    <li> <p class="font-weight-bold">If employee or other, please describe:</p>
+                      <p>  {{source.describ}}</p>
+                    </li>
+
+
+
+                  </ul>
+                </div>
+
+
+
+              </div>
+
+              </div>
+
+            </div>
+          </div>
+        </div></div>
+
+
+
+
+
+

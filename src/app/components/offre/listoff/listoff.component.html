@@ -1,11 +1,8 @@
-<style>
-  .h2 {
-    font-weight: bolder;
-  }
-</style>
+
+<!--
 <div class="bg-light min-vh-100 row">
-  <app-sidebar></app-sidebar>
-  <div class="col-sm-9 offset-2">
+
+  <div class="col-sm-9 ">
 <nav class="nav nav-pills nav-fill mb-5">
   <a type="button" class="nav-item nav-link active" (click)="CI()">List Offre Intership</a>|
   <a type="button" class="nav-item nav-link active" (click)="CS()">List Offre Study</a>|
@@ -17,12 +14,12 @@
 <button class="btn btn-info float-right mb-5" data-toggle="modal" data-target="#exampleModalCenter"> Add Offre</button>
 
 <div class="row mt-5">
-    <div class="col-sm-4" style="max-width: 100%; width: 300px;" *ngFor="let item of offre1 | filter:term let i = index" [ngClass]="{'active': i == 0 }">
-      <div *ngIf="condidat.role === 3 && item[7] === condidat.firstName">
+    <div class="col-sm-4" style="max-width: 100%; width: 300px;" *ngFor="let item of offer| filter:term let i = index" [ngClass]="{'active': i == 0 }">
+      <div *ngIf="condidat.role === 1 && item[7] === condidat.firstName">
       <div class="card col-12 ml-5 h-100 cs1 text-center"  style="width: 21rem;">
         <img style="width: 280px; height: 200px;" src="{{'http://localhost:8081/offre/Imgarticles/'+item[11]}}" class=" img1" alt="...">
         <div class="card-body">
-          <p class="card-title h2 ct1">{{item[1]}}</p>
+          <p class="card-title h2 ct1"></p>
           <p class="card-text">{{item[6]}}</p>
           <a type="button" class="btn btn-secondary" routerLink="/offre/edit/{{item[0]}}/{{item[10]}}">Edit</a>
           <a type="button" (click)="delete(item[11])" class="btn ml-5 btn-info " >Delete</a>
@@ -271,4 +268,287 @@
 
 
       <br>
+    </div></div></div>
+    -->
+<div class=" container " >
+
+    <div class="container-fluid mb-3">
+
+      <h3 class="offset-5 font-weight-bold mb-5 mt-5" >
+        List of  offer
+      </h3>
+      <div class="row  mb-2">
+        <input type="text" class=" col-2 rounded  align-self-center  " style="height: 33px ; margin-left: 35px;" placeholder="Search ..." [(ngModel)]="term">
+
+        <button  class="btn   col-3 offset-6 rounded" data-toggle="modal" data-target="#exampleModalCenter" style=" height: 33px;  background-color: #CAF0F8 ;color:#03045E " >
+          <i class="fa fa-plus mr-1"></i>Add Offer </button>
+      </div>
+
+
+      <div class="col-12 ">
+        <table class="table ">
+          <thead >
+          <tr >
+
+            <th class="font-weight-bold text-center" scope="col"></th>
+            <th class="font-weight-bold text-center " scope="col">Acronym</th>
+            <th  class="font-weight-bold text-center " scope="col">Description</th>
+            <th class="font-weight-bold text-center"  scope="col">Start Date</th>
+            <th class="font-weight-bold text-center"  scope="col">End Date</th>
+            <th class="font-weight-bold text-center"  scope="col">Duration</th>
+            <th class="font-weight-bold text-center"  scope="col">level</th>
+            <th class="font-weight-bold text-center"  scope="col">Price</th>
+            <th class="font-weight-bold text-center"  scope="col">Action</th>
+
+          </tr>
+          </thead>
+          <tbody class="text-center" *ngFor="let off of offer  | filter:term " >
+         <tr>
+
+            <td><img src = "{{'http://localhost:8081/offer/Imgarticles/'+off.id}}"  width="35" height="35" class="rounded-circle"></td>
+            <td> {{off.acronym}} </td>
+            <td>{{off.description}}</td>
+            <td>{{off.dateDebut|date}}</td>
+            <td>{{off.dateFin |date}}</td>
+            <td>{{off.duree}}</td>
+            <td>{{off.niveau}}</td>
+            <td>{{off.prix}}</td>
+            <td>
+              <button class="btn" style="margin-left: 20px;background-color: #E4FFF8">
+                <i class="fa fa-pencil-square-o"  style="color: #15775d" routerLink="/offre/edit/{{off.id}}">  </i></button>
+              <button class="btn m-1 " style="background-color: #FCD7D1" value="Delete" (click)="delete(off.id)">
+                <i class="fa fa-trash-o text-danger"> </i></button>
+            </td>
+          </tr>
+
+
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+
+
+</div>
+
+
+<div class="modal fade bd-example-modal-lg " id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+
+  <div class="modal-dialog modal-dialog-centered modal-lg ">
+    <div class="modal-content">
+      <div class="modal-header text-white" style="background-color: #A0A0A0">
+        <h5 class="modal-title" id="exampleModalLabel">Add Offer</h5>
+        <button type="button" class="close text-white" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form class=" ">
+          <div class="form-row">
+            <div class="col-md-4 mb-3">
+              <label >Name</label>
+              <input type="text" class="form-control form-control-sm" [(ngModel)]="con.nom" [ngModelOptions]="{standalone: true}">
+            </div>
+            <div class="col-md-4 mb-3">
+              <label >Date Debut</label>
+              <input class="form-control form-control-sm"
+                     [(ngModel)]="con.dateDebut"  [ngModelOptions]="{standalone: true}" type="date">          </div>
+            <div class="col-md-4 mb-3">
+              <label >Date Fin</label>
+              <input class="form-control form-control-sm "
+                     [(ngModel)]="con.dateFin"  [ngModelOptions]="{standalone: true}" type="date">
+
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="col-md-6 mb-3">
+              <label for="validationServer03">Organisation</label>
+              <input type="text" [(ngModel)]="con.organisation" [ngModelOptions]="{standalone: true}" class="form-control" id="validationServer03" required>
+            </div>
+            <div class="col-md-3 mb-3">
+              <label>level</label>
+              <select [(ngModel)]="con.niveau" [ngModelOptions]="{standalone: true}" class="form-control  form-select-lg mr-3"
+                      aria-label=".form-select-lg example">
+                <option value="Student 1st cycle">Student 1st cycle</option>
+                <option value="Student 2nd cycle">Student 2nd cycle</option>
+                <option value="Student 3rd cycle">Student 3rd cycle</option>
+                <option value="Graduate">Graduate</option>
+
+              </select>          </div>
+            <div class="col-md-3 mb-3">
+              <label >Lien Video</label>
+              <input type="text" [ngModelOptions]="{standalone: true}" [(ngModel)]="con.video" class="form-control" required>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="col-md-4 mb-3">
+              <label for="validationServer03">Price</label>
+              <input type="number" [(ngModel)]="con.prix" [ngModelOptions]="{standalone: true}" class="form-control" required>
+            </div>
+            <div class="col-md-4 mb-3">
+              <label for="validationServer03">Type</label>
+              <select [(ngModel)]="con.type" [ngModelOptions]="{standalone: true}" class="form-control form-select-lg"
+                      aria-label=".form-select-lg example">
+                <option value="intership">intership</option>
+                <option value="study">study</option>
+                <option value="volunteer">volunteer</option>
+              </select>            </div>
+            <div class="col-md-4 mb-3">
+              <label >Duree</label>
+              <select [(ngModel)]="con.duree" [ngModelOptions]="{standalone: true}" class="form-control form-select-lg"
+                      aria-label=".form-select-lg example">
+                <option value="Semester">Semester</option>
+                <option value="Summer">Summer</option>
+                <option value="Academic year">Academic year</option>
+              </select>          </div>
+          </div>
+          <div class="form-row">
+            <div class="col-md-10 mb-10">
+              <label >Description</label>
+              <textarea  type="text" class="form-control "[(ngModel)]="con.description" [ngModelOptions]="{standalone: true}" required></textarea>
+            </div><br>
+            <div class="col-md-4 mb-3">
+              <label >Supervisor</label>
+              <input type="text" class="form-control form-control-sm" [(ngModel)]="con.supervisor" [ngModelOptions]="{standalone: true}">
+            </div>
+            <div class="mt-5 custom-file">
+              <input type="file" class="custom-file-input" (change)="onSelectFile($event)" required>
+              <label class="custom-file-label">Choose Image...</label>
+            </div>
+          </div>
+
+
+          <div class="form-row">
+            <div class="col-md-3 mb-3" *ngFor="let arra of dataarray; let i = index">
+              <label >Name specialite</label>
+              <select [(ngModel)]="arra.nom" name="nom{{i}}" class="form-control  form-select-lg mr-3 "
+                      aria-label=".form-select-lg example" style="width: 10rem;">
+
+                <option value="Accounting">Accounting</option>
+                <option value="Administrative">Administrative</option>
+                <option value="Agriculture">Agriculture</option>
+                <option value="Animal sciences">Animal sciences</option>
+                <option value="Anthrolopology">Anthrolopology</option>
+                <option value="Archaeology">Archaeology</option>
+                <option value="Architecture">Architecture</option>
+                <option value="Art & Fine Arts<">Art & Fine Arts</option>
+                <option value="Art History">Art History</option>
+                <option value="Astronomy & Astrophysics">Astronomy & Astrophysics</option>
+                <option value="Au Pair">Au Pair</option>
+                <option value="Aviation">Aviation</option>
+                <option value="Biochemistry">Biochemistry</option>
+                <option value="Biology">Biology</option>
+                <option value="Biomedical Science">Biomedical Science</option>
+                <option value="Business">Business</option>
+                <option value="Call Center">Call Center</option>
+                <option value="Camp Counseler & Trip Leader">Camp Counseler & Trip Leader</option>
+                <option value="Chemical Engineering">Chemical Engineering</option>
+                <option value="Chemistry">Chemistry</option>
+                <option value="Civil Engineering">Civil Engineering</option>
+                <option value="Communications">Communications</option>
+                <option value="Computer Science">Computer Science</option>
+                <option value="Construction">Construction</option>
+                <option value="Counseling">Counseling</option>
+                <option value="Creative writing">Creative writing</option>
+                <option value="Criminal Justice">Criminal Justice</option>
+                <option value="Culinary Arts & Cooking">Culinary Arts & Cooking</option>
+                <option value="Dentistry">Dentistry</option>
+                <option value="Development">Development</option>
+                <option value="Ecology">Ecology</option>
+                <option value="Economics">Economics</option>
+                <option value="Education">Education</option>
+                <option value="Electrical Engineering">Electrical Engineering</option>
+                <option value="Environmental Management">Environmental Management</option>
+                <option value="Environmental Studies">Environmental Studies</option>
+                <option value="Fashion Business">Fashion Business</option>
+                <option value="Fashion Design">Fashion Design</option>
+                <option value="Finance">Finance</option>
+                <option value="Food Science & Nutrition">Food Science & Nutrition</option>
+                <option value="Forestry">Forestry</option>
+                <option value="Geology">Geology</option>
+                <option value="Graphic Design">Graphic Design</option>
+                <option value="Health Administration">Health Administration</option>
+                <option value="Health Sciences">Health Sciences</option>
+                <option value="History">History</option>
+                <option value="Horticulture">Horticulture</option>
+                <option value="Hospitality">Hospitality</option>
+                <option value="Human Resources">Human Resources</option>
+                <option value="Human Rights">Human Rights</option>
+                <option value="Humanities">Humanities</option>
+                <option value="Industrial & Manufacturing">Industrial & Manufacturing</option>
+                <option value="Information Systems">Information Systems</option>
+                <option value="Interior Design">Interior Design</option>
+                <option value="international Relations">international Relations</option>
+                <option value="International Trade">International Trade</option>
+                <option value="Journalism">Journalism</option>
+                <option value="Kinesiology & Exercise Science">Kinesiology & Exercise Science</option>
+                <option value="Labor & Industrial Relations">Labor & Industrial Relations</option>
+                <option value="Law">Law</option>
+                <option value="Liberal Arts">Liberal Arts</option>
+                <option value="Library & Information Science">Library & Information Science</option>
+                <option value="Linguistics">Linguistics</option>
+                <option value="Marine Science">Marine Science</option>
+                <option value="Marketing, Advertising, & PR">Marketing, Advertising, & PR</option>
+                <option value="Mathematics">Mathematics</option>
+                <option value="Mechanical Engineering">Mechanical Engineering</option>
+                <option value="Media">Media</option>
+                <option value="Medicine">Medicine</option>
+                <option value="Meteorology">Meteorology</option>
+                <option value="Museum Studies">Museum Studies</option>
+                <option value="Music">Music</option>
+                <option value="National Park">National Park</option>
+                <option value="Nursing">Nursing</option>
+                <option value="Parks & Recreation">Parks & Recreation</option>
+                <option value="Pharmaceuticals">Pharmaceuticals</option>
+                <option value="Philosophy">Philosophy</option>
+                <option value="Photography">Photography</option>
+                <option value="Physical Therapy">Physical Therapy</option>
+                <option value="Physics">Physics</option>
+                <option value="Political Science & Government">Political Science & Government</option>
+                <option value="Ranch">Ranch</option>
+                <option value="Real Estate">Real Estate</option>
+                <option value="Religious Work">Religious Work</option>
+                <option value="Resort">Resort</option>
+                <option value="Sales">Sales</option>
+                <option value="Scuba">Scuba</option>
+                <option value="Ski Resort">Ski Resort</option>
+                <option value="Social Sciences">Social Sciences</option>
+                <option value="Social Work">Social Work</option>
+                <option value="Sociology">Sociology</option>
+                <option value="Spanish">Spanish</option>
+                <option value="Sports">Sports</option>
+                <option value="Statistics">Statistics</option>
+                <option value="Sustainable Development">Sustainable Development</option>
+                <option value="Technology">Technology</option>
+                <option value="Tourism">Tourism</option>
+                <option value="Web Design">Web Design</option>
+                <option value="Women's Studies">Women's Studies</option>
+                <option value="Zoology & Wildlife Sciences">Zoology & Wildlife Sciences</option>
+              </select>
+
+              <div class="col-md-3 mb-3" *ngIf="i != 0">
+                <span class="btn btn-danger" (click)="remove(i)"> - </span>
+              </div> </div>
+          </div>
+          <button class="btn btn-warning" (click)="Addform()">+</button>
+
+          <div class="form-row">
+            <div class="col-md-3 mb-3" *ngFor="let arr of dataarra; let iaa = index">
+              <label >Name Skills</label>
+              <input type="text"name="nom{{iaa}}" [(ngModel)]="arr.nom">
+              <div class="col-md-3 mb-3" *ngIf="iaa != 0">
+                <span class="btn btn-danger" (click)="remov(iaa)"> - </span>
+              </div>
+            </div>  </div>
+          <button class="btn btn-warning" (click)="Addfor()">+</button>
+          <br>
+
+        </form>
+      </div>
+      <div class="modal-footer">
+        <a type="button" class="btn btn-secondary float-right w-25 " data-dismiss="modal" aria-label="Close"(click)="Click()">cancel</a>
+
+        <button class="btn text-white w-25 float-right" (click)="Add()" style="background-color: #A0A0A0">Add</button>
+      </div>
+
     </div></div></div>

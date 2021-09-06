@@ -7,9 +7,13 @@ import {Question} from './question';
 import {CondidatOffre} from './CondidatOffre';
 import {Role} from './Role';
 import {Hobbies} from './hobbies';
+import {Document} from './document';
+import {Source} from './Source';
 
 export class Condidat {
     id: number;
+  phoneEtronger:string;
+
   firstName: string;
   phone: string;
   lastName: string;
@@ -25,14 +29,15 @@ export class Condidat {
   encryptedPassword : string;
   photo: string;
   application : Application;
-  education: Education;
-  experience: Experience;
-  skills: Skills;
+  education: Education[];
+  experience: Experience [];
+  skills: Skills[];
   condidatoffre: CondidatOffre;
-  question:Question;
-  document:Document;
-  hobbies: Hobbies;
+  question:Question[];
+  document:Document[];
+  hobbies: Hobbies[];
   enabled :string;
+  origins:Source[];
 
   }
 

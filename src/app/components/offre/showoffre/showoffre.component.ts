@@ -42,6 +42,7 @@ export class ShowoffreComponent implements OnInit {
               private srv: DocumentService) { }
 
   ngOnInit(): void {
+
 this.getOffer();
 
 

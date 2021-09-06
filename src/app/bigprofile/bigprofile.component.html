@@ -1,12 +1,13 @@
 <div class=" main h-100 w-100">
-    <div class="container h-100 w-75 d-flex align-items-center justify-content-center">
+    <div class="container h-100 w-75 d-flex align-items-center  justify-content-center">
       <!-- Block gauche-->
+      <label for="file" class="uploadIcon  text-center bg-light   rounded-circle"><a > <fa-icon [icon]="faCamera" class="fa-x"></fa-icon></a></label>
       <div class="text-center align-items-center" id="login">
         <div class="h-75 mt-1 align-items-center justify-content-center" id="signup">
-          <div class="wrapper"><input type="file" accept="image/*" (change)="onSelectFile($event)" />
-            <a href="#"><img class="card-img-top img-responsive"
+          <div class="wrapper"> <input type="file" id="file" accept="image/*" (change)="onSelectFile($event)" class="form-control-file" />
+           <a href="#"><img class="card-img-top img-responsive  "
                              src = "{{'http://localhost:8081/condidat/img/'+con.userId}}"
-                             style = "height :100px;width:100px"
+                             style = "height :100px;width:100px ;border: solid 2px white"
                              alt=""></a>
            </div><br>
           <div class=" text-left ml-2" *ngIf="con.role === 3">
@@ -18,8 +19,8 @@
             <p class="h6 text-left" routerLink="/profile/education"><a class="text-white active" >Education</a></p><br>
             <p class="h6 text-left"><a routerLink="/profile/skills" class="text-white">Skills</a></p><br>
             <p class="h6 text-left"><a routerLink="/profile/experiences" class="text-white">Experience</a></p><br>
-            <p class="h6 text-left"><a routerLink="/profile/job"class="text-white">Job Question</a></p><br>
-            <p class="h6 text-left"><a routerLink="/profile/source"class="text-white">Source</a></p><br>
+            <p class="h6 text-left"><a routerLink="/profile/job" class="text-white">Job Question</a></p><br>
+            <p class="h6 text-left"><a routerLink="/profile/source" class="text-white">Source</a></p><br>
             <p class="h6 text-left"><a routerLink="/profile/documents" class="text-white">Add Documents</a></p>
           </div>
         </div>

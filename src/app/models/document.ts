@@ -7,5 +7,4 @@ export class Document{
   type : string;
   condidat : Condidat;
 
-
 }

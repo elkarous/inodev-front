@@ -1,7 +1,7 @@
 import { ToastrService } from 'ngx-toastr';
-import { TokenService } from './../../../services/token.service';
+import { TokenService } from '../../../services/token.service';
 import { Router } from '@angular/router';
-import { AccountService } from './../../../services/account.service';
+import { AccountService } from '../../../services/account.service';
 import { Component, OnInit } from '@angular/core';
 import {Condidat} from '../../../models/condidat';
 import {SignupServiceService} from '../../../services/signup-service.service';
@@ -26,13 +26,12 @@ logo: any = '../assets/Logo.png';
     private toastr: ToastrService
   ) { }
 
-  ngOnInit() {
+   ngOnInit() {
     this.account.authStatus.subscribe(value => {
       this.loggedIn = value;
       this.id = this.Token.getId();
-      console.log(this.id)
       this.userInfos = this.Token.getInfos();
-      this.sign.get(this.id).subscribe((res: Condidat) => { console.log(res);
+      this.sign.get(this.id).subscribe((res: Condidat) => {
                                                             this.con = res;
       });
     });

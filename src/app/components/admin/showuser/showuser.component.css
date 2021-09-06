@@ -1,5 +1,6 @@
 body{
   background: -webkit-linear-gradient(left, #3931af, #00c6ff);
+  font-family: "Avenir Next LT Pro";
 }
 .emp-profile{
   padding: 3%;
@@ -93,3 +94,23 @@ body{
   font-weight: 600;
   color: #0062cc;
 }
+.hv{
+
+  border:         none;
+  border-left:    1px solid hsl(193, 9%, 69%);
+  height:         50vh;
+  width:          1px;
+}
+
+.nav-item:focus{
+  background-color: #ff0440;
+  color: white;
+}
+.nav-item:hover{
+  background-color: #ff0440;
+  color: white;
+}
+.material-icons{
+  color: #ff0440;
+}
+

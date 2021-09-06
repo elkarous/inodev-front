@@ -21,11 +21,12 @@ export class OffreService {
   getohoto(id: string): Observable<any>{
     return this.http.get(`${environment.baseUrl}/offer/Imgarticles/` + id);
   }
-  get(id: string, type: string):Observable <Offre>{
-    return this.http.get<Offre>(`${environment.baseUrl}/offer/` + id + '/' + type);
+  get(id: number):Observable <Offre>{
+    return this.http.get<Offre>(`${environment.baseUrl}/offer/` + id );
   }
- public getid(id: number, type: string):Observable<String>{
-    return this.http.get<string>(`${environment.baseUrl}/offer/id/` + id + '/' + type);
+ public getid(id: number):Observable<String>{
+    return this.http.get<string>(`${environment.baseUrl}/offer/id/` + id );
+
   }
   public getcat(id: string, type: string):Observable<Offre>{
     return this.http.get<Offre>(`${environment.baseUrl}/offer/cat/` + id + '/' + type);
@@ -36,17 +37,19 @@ export class OffreService {
   public getbynom(){
     return this.http.get(`${environment.baseUrl}/offer/spe`);
   }
-  delete(id: string) {
+  delete(id: number) {
 
     return this.http.delete(`${environment.baseUrl}/offer/` + id);
   }
   save(photo: FormData){
     return this.http.post(`${environment.baseUrl}/offer`,  photo);
   }
-  update(id: string, a: any){
-    return this.http.put(`${environment.baseUrl}/offer/edit/` + id,  a);
-  }
   getbyId(id:number) : Observable<Offre>{
     return this.http.get<Offre>(`${environment.baseUrl}/offer/` + id);
+  }
+
+  update(id: number, a: Offre){
+    return this.http.put(`${environment.baseUrl}/offer/edit/` + id,  a);
+
   }
 }

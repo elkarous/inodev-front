@@ -21,7 +21,8 @@ import {Skills} from '../../../models/skills';
   styleUrls: ['./listoff.component.css']
 })
 export class ListoffComponent implements OnInit {
-  public offre1: any;
+   offre1: Offre;
+  offer: Offre[];
   private a: any;
   myControle = new FormControl();
   dataarray = [];
@@ -52,12 +53,15 @@ export class ListoffComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.sign.get(this.id).subscribe((res: any) => { console.log(res);
+      this.condidat = res;
+    });
+    this.condidat;
     this.p = 0;
+    this.offer
     this.allOffre();
     this.id = this.Token.getInfos().id;
-    this.sign.get(this.id).subscribe((res: any) => { console.log(res);
-                                                     this.condidat = res;
-    });
+
     this.myDate = new Date().toISOString();
     console.log(this.myDate);
     this.spe = new Specialite();
@@ -85,9 +89,8 @@ export class ListoffComponent implements OnInit {
   }
 
   allOffre() {
-    this.off.getOfferbyType(this.route.snapshot.params.id).subscribe(res => {
-      console.log(res);
-      this.offre1 = res;
+    this.off.getAll().subscribe(res => {
+      this.offer = res;
     });
   }
 
@@ -95,9 +98,8 @@ export class ListoffComponent implements OnInit {
 
   }
 
-  delete(id: string) {
+  delete(id: number) {
     if (window.confirm('Are sure you want to delete this Offre?')) {
-    console.log(id);
     this.off.delete(id)
       .subscribe(res => {this.a = res; this.allOffre(); } );
     this.toastr.error('Data delete successfully !!', 'DELETE', {
