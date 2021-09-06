@@ -2,6 +2,7 @@ import {Skills} from './skills';
 import {Specialite} from './specialite';
 import {CondidatOffre} from './CondidatOffre';
 import {Project} from './project';
+import {Document} from './document';
 
 export class Offre {
 
@@ -12,6 +13,7 @@ export class Offre {
     offreId: string;
     nom: string;
     adress: string;
+  priceDetails: string;
     organisation: string;
     dateDebut: Date;
     dateFin: Date;
@@ -26,6 +28,7 @@ export class Offre {
     condidatoffre: CondidatOffre;
     skills: Skills[];
     project : Project[];
+    documents: Document[];
 
 
 }

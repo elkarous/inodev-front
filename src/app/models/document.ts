@@ -4,6 +4,7 @@ export class Document{
   id: number;
   documentId: string;
   nom: string;
+  type : string;
   condidat : Condidat;
 
 

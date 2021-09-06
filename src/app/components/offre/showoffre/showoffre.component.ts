@@ -30,6 +30,7 @@ export class ShowoffreComponent implements OnInit {
   public clicked3=false;
   public mouse1="#ff0440";
 
+
   constructor(public route: ActivatedRoute,
               public router: Router,
               public spec: SpecialiteService,
@@ -51,6 +52,7 @@ this.getOffer();
       console.log(aa);
       this.exist = aa;
     });
+
   }
   all(){
     this.srve.skillsoffre(this.id)

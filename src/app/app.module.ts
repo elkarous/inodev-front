@@ -1,6 +1,23 @@
 import { JwtInterceptor } from './services/jwt.interceptor';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { CdkStepperModule } from '@angular/cdk/stepper';
+import {MatStepperModule} from '@angular/material/stepper';
+
+import { MatSliderModule } from "@angular/material/slider";
+import { MatButtonModule } from "@angular/material/button";
+import { MatFormFieldModule } from "@angular/material/form-field";
+import { MatInputModule } from "@angular/material/input";
+import { MatButtonToggleModule } from "@angular/material/button-toggle";
+import { MatTooltipModule } from "@angular/material/tooltip";
+import { MatSidenavModule } from "@angular/material/sidenav";
+import { MatIconModule } from "@angular/material/icon";
+import { MatCheckboxModule } from "@angular/material/checkbox";
+import { MatDialogModule } from "@angular/material/dialog";
+import {MatTabsModule} from '@angular/material/tabs';
+import {MatVerticalStepper} from '@angular/material/stepper';
+
+
 
 
 import { AppComponent } from './app.component';
@@ -66,6 +83,7 @@ import { FooterComponent } from './components/partials/footer/footer.component';
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
 import { TestComponent } from './test/test.component';
 import { SubdeciplineComponent } from './components/subdecipline/subdecipline.component';
+import { UniquePipe } from './pipe/unique.pipe'
 
 @NgModule({
   declarations: [
@@ -116,6 +134,7 @@ import { SubdeciplineComponent } from './components/subdecipline/subdecipline.co
     FooterComponent,
     TestComponent,
     SubdeciplineComponent,
+    UniquePipe,
   ],
   imports: [
     SchedulerModule,
@@ -134,12 +153,21 @@ import { SubdeciplineComponent } from './components/subdecipline/subdecipline.co
     DayPilotModule,
     MatCardModule,
     MDBBootstrapModule.forRoot(),
+    CdkStepperModule,
+    MatSliderModule,
+    MatButtonModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatButtonToggleModule,
+    MatTooltipModule,
+    MatSidenavModule,
+    MatCheckboxModule,
+    MatIconModule,
+    MatDialogModule,
+    MatTabsModule,
+    MatStepperModule,
 
 
-
-
-
-    // ToastrModule added
   ],
   providers: [{
     provide: HTTP_INTERCEPTORS,
@@ -148,4 +176,6 @@ import { SubdeciplineComponent } from './components/subdecipline/subdecipline.co
   }],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+
+}
