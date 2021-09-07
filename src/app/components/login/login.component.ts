@@ -5,7 +5,8 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
-
+import {SocialAuthService, SocialUser} from 'angularx-social-login';
+import { FacebookLoginProvider, GoogleLoginProvider } from "angularx-social-login";
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -13,12 +14,15 @@ import { ToastrService } from 'ngx-toastr';
 })
 export class LoginComponent implements OnInit {
  ju: any;
+  user: SocialUser;
+  loggedIn: boolean;
   loginForm = new FormGroup({
     email: new FormControl(null, [Validators.required]),
     password: new FormControl(null, [Validators.required, Validators.minLength(8)])
   });
 
   constructor(
+    private authServiceS: SocialAuthService,
       private authService: AuthService,
       private token: TokenService,
       private account: AccountService,
@@ -27,8 +31,23 @@ export class LoginComponent implements OnInit {
     ) { }
 
   ngOnInit(): void {
+    this.authServiceS.authState.subscribe((user) => {
+      this.user = user;
+      this.loggedIn = (user != null);
+    });
   }
 
+  signInWithGoogle(): void {
+    this.authServiceS.signIn(GoogleLoginProvider.PROVIDER_ID);
+  }
+
+  signInWithFB(): void {
+    this.authServiceS.signIn(FacebookLoginProvider.PROVIDER_ID);
+  }
+
+  signOut(): void {
+    this.authServiceS.signOut();
+  }
   signIn() {
     this.authService.login(this.loginForm.value)
         .subscribe(
@@ -63,5 +82,7 @@ export class LoginComponent implements OnInit {
   facebookLogin(){
     this.authService.facebookLogin().subscribe();
 }
-
+  refreshToken(): void {
+    this.authServiceS.refreshAuthToken(GoogleLoginProvider.PROVIDER_ID);
+  }
 }

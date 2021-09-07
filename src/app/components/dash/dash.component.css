@@ -15,16 +15,17 @@ row i :before{
   text-decoration: none;
 
 }
-.nav-link:focus {
+a:focus {
   background-color: #ff0440;
   color: white;
 
 }
-
+.linkS:focus{
+  background-color: #ff0440;
+  color: white;
+}
 .nav-link{
   border-radius:15px
 }
-.nav-item:hover:focus{
-  background-color: #ff0440;
-  color: white;
-}
+
+

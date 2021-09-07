@@ -1,0 +1,24 @@
+<select class="form-control">
+  <option  >Select Offer..</option>
+  <option *ngFor="let offer of subs" value="offer">{{offer.acronym}}</option>
+</select>
+
+<table class="table" *ngFor="let offer of subs">
+  <thead>
+  <tr>
+
+    <th scope="col">First</th>
+    <th scope="col">Last</th>
+    <th scope="col">Handle</th>
+  </tr>
+  </thead>
+  <tbody *ngFor="let candidate of offer.candidates">
+  <tr>
+
+    <td> </td>
+    <td>{{candidate.note}}</td>
+    <td>
+      <input type="number" class="form-control">
+    </td>
+
+  </tr></tbody></table>

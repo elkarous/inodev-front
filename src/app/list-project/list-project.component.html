@@ -1,0 +1,123 @@
+<div class=" container " >
+
+  <div class="container-fluid mb-3">
+
+    <h3 class="offset-5 font-weight-bold mb-5 mt-5" >
+      List of  Project
+    </h3>
+    <div class="row  mb-2">
+      <input type="text" class=" col-2 rounded  align-self-center  " style="height: 33px ; margin-left: 35px;" placeholder="Search ..." [(ngModel)]="term">
+
+      <button  class="btn   col-3 offset-6 rounded" data-toggle="modal" data-target="#exampleModalCenter" style=" height: 33px;  background-color: #CAF0F8 ;color:#03045E " >
+        <i class="fa fa-plus mr-1"></i>Add Project </button>
+    </div>
+
+
+    <div class="col-12 ">
+      <table class="table ">
+        <thead >
+        <tr >
+
+          <th class="font-weight-bold text-center" scope="col"></th>
+          <th class="font-weight-bold text-center " scope="col">Acronym</th>
+          <th  class="font-weight-bold text-center " scope="col">Name</th>
+          <th class="font-weight-bold text-center"  scope="col"> Description</th>
+          <th class="font-weight-bold text-center"  scope="col">Organization</th>
+          <th class="font-weight-bold text-center"  scope="col">Deadline</th>
+          <th class="font-weight-bold text-center"  scope="col">Partner</th>
+
+          <th class="font-weight-bold text-center"  scope="col">Action</th>
+
+        </tr>
+        </thead>
+        <tbody class="text-center"  >
+        <tr *ngFor="let pro of projects ">
+          <td><img src = "{{'http://localhost:8081/Project/Imgarticles/'+pro.id}}"  width="35" height="35" class="rounded-circle"></td>
+
+          <td> {{pro.acronyme}} </td>
+          <td>{{pro.nom}}</td>
+          <td>{{pro.description}}</td>
+          <td>{{pro.orginistaion}}</td>
+          <td>{{pro.endDate |date}}</td>
+          <td>{{pro.partenar}}</td>
+
+
+
+
+
+          <td>
+            <button class="btn" style="margin-left: 20px;background-color: #E4FFF8">
+              <i class="fa fa-pencil-square-o"  style="color: #15775d" routerLink="/offre/edit/{{project.id}}">  </i></button>
+            <button class="btn m-1 " style="background-color: #FCD7D1" value="Delete" (click)="delete(project.id)">
+              <i class="fa fa-trash-o text-danger"> </i></button>
+          </td>
+        </tr>
+
+
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+
+
+</div>
+
+
+<div class="modal fade bd-example-modal-lg " id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+
+  <div class="modal-dialog modal-dialog-centered modal-lg ">
+    <div class="modal-content">
+      <div class="modal-header text-white" style="background-color: #A0A0A0">
+        <h5 class="modal-title" id="exampleModalLabel">Add Offer</h5>
+        <button type="button" class="close text-white" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form class=" ">
+          <div class="form-row">
+            <div class="col-md-4 mb-3">
+              <label >Name</label>
+              <input type="text" class="form-control form-control-sm" [(ngModel)]="project.nom" [ngModelOptions]="{standalone: true}">
+            </div>
+            <div class="col-md-4 mb-3">
+              <label >Date Debut</label>
+              <input class="form-control form-control-sm"
+                     [(ngModel)]="project.endDate"  [ngModelOptions]="{standalone: true}" type="date">          </div>
+
+          </div>
+          <div class="form-row">
+            <div class="col-md-6 mb-3">
+              <label for="validationServer03">Organisation</label>
+              <input type="text" [(ngModel)]="project.orginistaion" [ngModelOptions]="{standalone: true}" class="form-control" id="validationServer03" required>
+            </div>
+
+          </div>
+          <div class="form-row">
+            <div class="col-md-10 mb-10">
+              <label >Description</label>
+              <textarea  type="text" class="form-control "[(ngModel)]="project.description" [ngModelOptions]="{standalone: true}" required></textarea>
+            </div><br>
+            <div class="col-md-4 mb-3">
+              <label >Supervisor</label>
+              <input type="text" class="form-control form-control-sm" [(ngModel)]="project.orginistaion" [ngModelOptions]="{standalone: true}">
+            </div>
+            <div class="mt-5 custom-file">
+              <input type="file" class="custom-file-input" (change)="onSelectFile($event)" required>
+              <label class="custom-file-label">Choose Image...</label>
+            </div>
+          </div>
+
+
+
+        </form>
+      </div>
+      <div class="modal-footer">
+        <a type="button" class="btn btn-secondary float-right w-25 " data-dismiss="modal" aria-label="Close">cancel</a>
+
+        <button class="btn text-white w-25 float-right" (click)="Add()" style="background-color: #A0A0A0">Add</button>
+      </div>
+
+    </div></div></div>
+

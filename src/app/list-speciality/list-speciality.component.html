@@ -1,0 +1,81 @@
+<div class=" container " >
+
+  <div class="container-fluid mb-3">
+
+    <h3 class="offset-5 font-weight-bold mb-5 mt-5" >
+      List of  Speciality
+    </h3>
+    <div class="row  mb-2">
+      <input type="text" class=" col-2 rounded  align-self-center  " style="height: 33px ; margin-left: 35px;" placeholder="Search ..." [(ngModel)]="term">
+
+      <button  class="btn   col-3 offset-6 rounded" data-toggle="modal" data-target="#exampleModalCenter" style=" height: 33px;  background-color: #CAF0F8 ;color:#03045E " >
+        <i class="fa fa-plus mr-1"></i>Add Speciality </button>
+    </div>
+
+
+    <div class="col-12 ">
+      <table class="table  ">
+        <thead >
+        <tr >
+
+          <th class="font-weight-bold text-center" scope="col"></th>
+
+          <th  class="font-weight-bold text-center " scope="col">Name</th>
+<th *ngIf="show"></th>
+
+          <th class="font-weight-bold text-center"  scope="col">Action</th>
+
+        </tr>
+        </thead>
+        <tbody class="text-center" *ngFor="let speciality of specialities "  >
+        <tr style="background-color: #f3f3f3">
+          <td><img src = "{{'http://localhost:8081/specialite/Imgarticles/'+speciality.id}}"  width="35" height="35" class="rounded-circle"></td>
+
+          <td>{{speciality.nom}}</td>
+
+
+<td *ngIf="show"></td>
+
+
+
+          <td>
+            <button class="btn" style="margin-left: 20px;background-color: #E4FFF8">
+              <i class="fa fa-pencil-square-o"  style="color: #15775d" routerLink="/offre/edit/{{speciality.id}}">  </i></button>
+            <button class="btn m-1 " style="background-color: #FCD7D1" value="Delete" (click)="delete(speciality.id)">
+              <i class="fa fa-trash-o text-danger"> </i></button>
+            <button class="btn m-1 " style="background-color: #FCD7D1" value="show" (click)="showdisc()">
+              <i class="fa fa-street-view text-danger"> </i></button>
+          </td>
+        </tr>
+        <ng-container *ngIf="show">
+        <tr *ngFor="let sub of speciality.subDecipline" >
+<td></td>
+            <td><img src = "{{'http://localhost:8081/specialite/Imgarticles/'+speciality.id}}"  width="35" height="35" class="rounded-circle"></td>
+
+            <td>{{sub.nom}}</td>
+
+
+
+
+
+
+            <td>
+              <button class="btn" style="margin-left: 20px;background-color: #E4FFF8">
+                <i class="fa fa-pencil-square-o"  style="color: #15775d" routerLink="/offre/edit/{{speciality.id}}">  </i></button>
+              <button class="btn m-1 " style="background-color: #FCD7D1" value="Delete" (click)="delete(speciality.id)">
+                <i class="fa fa-trash-o text-danger"> </i></button>
+              <button class="btn m-1 " style="background-color: #FCD7D1" value="show" (click)="showdisc()">
+                <i class="fa fa-street-view text-danger"> </i></button>
+            </td>
+
+        </tr>
+        </ng-container>
+
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+
+
+</div>

@@ -53,7 +53,7 @@ form = false;
   ide: string;
   email: string;
   show1: Education;
-
+educationToAdd:Education;
   educations: Education[];
   educationss: any;
   ngOnInit(): void {
@@ -61,24 +61,14 @@ form = false;
     this.tok = this.Token.getToken();
     this.all();
     this.getCondidat();
+    this.educationToAdd=new Education();
+
   }
   all(){
     this.srv.getAll()
       .subscribe((res: Education[]) => this.educations = res);
   }
-  logout() {
-    this.Token.remove();
-    this.account.changeAuthStatus(false);
-    this.toastr.info(
-      `Déconnexion`,
-      'Vous êtes déconnecter !',
-      {
-        timeOut: 3000,
-        positionClass: 'toast-bottom-left'
-      }
-    );
-    this.router.navigateByUrl('/login');
-  }
+
   edit(ided: string,  education: Education) {
     this.srv.updateEducation(ided, education)
       .subscribe(res => {console.log(res); });
@@ -117,16 +107,17 @@ form = false;
   }
   persistEducation(data: Education) {
     this.srv.Save(data,this.id)
-      .subscribe();
-    this.form = false;
+      .subscribe(
+  data=>{
     this.toastr.success('Data Store successfully !!', 'STORE', {
       timeOut: 3000,
-      positionClass: 'toast-bottom-left'
-    });
-  }
+      positionClass: 'toast-bottom-left'});
+  })
+    }
+
   createEducation() {
 
-    this.persistEducation(this.educationForm.value);
+    this.persistEducation(this.educationToAdd);
     this.educationForm.reset();
   }
   openform(){

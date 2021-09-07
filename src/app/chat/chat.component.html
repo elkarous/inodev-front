@@ -1,5 +1,29 @@
+<div class="main-container">
+  <div class="header-container">
+    <mat-grid-list cols="3" rowHeight="100px">
+      <mat-grid-tile>
+        <div style="position: absolute; left: 0px;">
+          <img src="assets/img/logo.jpg" height="80px">
+        </div>
+      </mat-grid-tile>
+      <mat-grid-tile>
+        <div *ngIf="receiver !== null && receiver !== undefined && receiver !== ''" class="receiver-header">Talk
+          to {{receiver}}</div>
+      </mat-grid-tile>
+      <mat-grid-tile class="user-header">
+        <button mat-raised-button>Welcome, {{username}}</button>
 
+      </mat-grid-tile>
+    </mat-grid-list>
+  </div>
 
-
-
-<button (click)="login()">facebook</button>
+  <mat-grid-list class="chat-table" cols="8" rowHeight="550" gutterSize="20">
+    <mat-grid-tile class="user-list-col wt-justify cell-border" [colspan]="2" [style.vertical-align]="'top'">
+      <app-user-list [username]="username" class="user-container" (receiverUpdated)="onReceiverChange($event)">
+      </app-user-list>
+    </mat-grid-tile>
+    <mat-grid-tile class="wt-justify cell-border" [colspan]="6">
+      <app-message [username]="username" class="message-wrapper"></app-message>
+    </mat-grid-tile>
+  </mat-grid-list>
+</div>

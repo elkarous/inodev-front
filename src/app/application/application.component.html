@@ -1,0 +1,77 @@
+
+  <div class="row justify-content-center">
+    <div class="col-8">
+<div class="card  " >
+  <div class="card-header" style="background-color: #ff0440 ;">
+  <h3 class="card-title mb-3 text-center text-white">Application of <a routerLink="/user/{{application.condidat.userId}}">{{application.condidat.firstName}}</a> in {{offer}} </h3>
+  </div>
+<div class="container pt-2  w-100 pb-2">
+
+<div class="row"> <div class="col-4">
+
+  <p class="">Name : </p></div>
+  <div class="col-8"> <p>{{application.condidat.firstName}} {{application.condidat.lastName}}</p></div>
+</div>
+  <div class="row"> <div class="col-4">
+
+    <p>Note : </p></div>
+    <div class="col-8"> <p>{{application.note}}</p></div>
+  </div>
+  <div class="row"> <div class="col-4">
+
+    <p>Status : </p></div>
+    <div class="col-8">
+    <input type="radio" class=""  value="In_progress" [(ngModel)]="application.status" name="status"> In Progress
+      <input type="radio" class=""  value="selected" [(ngModel)]="application.status" name="status"> selected
+ <input type="radio" class=""  value="Accepted" [(ngModel)]="application.status" name="status"> Accepted
+
+
+
+      <input type="radio" class=""  value="Refused" [(ngModel)]="application.status" name="status"> Refused</div>
+    </div>
+
+  <div class="row"> <div class="col-4">
+
+    <p>Date : </p></div>
+    <div class="col-8"> <h5>{{application.registeredAt |date}} </h5></div>
+  </div>
+
+
+
+<div class="row"> <div class="col-4">
+  <p>Interview Note: </p></div>
+  <div class="col-8">  <input type="number" class="form-control w-25" [(ngModel)]="application.noteinterview" name="text"></div>
+
+</div>
+  <div class="row"> <div class="col-4">
+    <p>Portugal Note: </p></div>
+    <div class="col-8"> <input type="number"  class="form-control w-25" [(ngModel)]="application.notePortugal" name="text"></div>
+
+  </div>
+  <div class="row"> <div class="col-4">
+
+    <p>Recommended : </p></div>
+    <div class="col-8"> <h5><input type="checkbox" class="form-check" [(ngModel)]="application.recommended" name="recommended"> </h5></div>
+  </div>
+  <div class="row"> <div class="col-4">
+    <p>Recommended Text: </p></div>
+    <div class="col-8"> <textarea   class="form-control " [(ngModel)]="application.recommendedText" name="text"></textarea></div>
+  </div>
+
+
+
+<button class="btn  mt-3 w-25 offset-8" style="color: white;background-color: #ff0440" (click)="update()">Register</button>
+</div>
+</div>
+    </div>
+<div class="card col-3  h-75 pb-5">
+  <div class="card-header ">
+    <h3 class="card-title mb-3 text-center ">Documents</h3>
+    <hr>
+
+  </div>
+  <div *ngFor="let doc of application.documents">
+    <div class="row ml-2"> <h5> {{doc.type}}</h5> <a  href="{{'http://localhost:8081/document/download/'+doc.nom}}" class="ml-2"><i class="fa fa-download" style="color: #A0A0A0"></i> </a></div>
+  </div>
+</div>
+  </div>

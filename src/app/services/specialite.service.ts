@@ -3,6 +3,7 @@ import {HttpClient} from '@angular/common/http';
 import {environment} from '../../environments/environment';
 import {Observable} from 'rxjs';
 import {Specialite} from '../models/specialite';
+import {SubDecipline} from '../models/subDecipline';
 
 @Injectable({
   providedIn: 'root'
@@ -10,7 +11,9 @@ import {Specialite} from '../models/specialite';
 export class SpecialiteService {
 
   constructor(private http: HttpClient) { }
-
+  getAllSub():Observable<SubDecipline[]>{
+    return this.http.get<SubDecipline[]>(`${environment.baseUrl}/subDecipline` );
+  }
   getAll():Observable<Specialite[]>{
     return this.http.get<Specialite[]>(`${environment.baseUrl}/specialite` );
   }
@@ -23,7 +26,11 @@ export class SpecialiteService {
   getoffreId(id: number){
     return this.http.get(`${environment.baseUrl}/specialite/o/` + id);
   }
-  delete(id: string) {
+  delete(id: number) {
+
+    return this.http.delete(`${environment.baseUrl}/subDecipline/` + id);
+  }
+  deleteSub(id: number) {
 
     return this.http.delete(`${environment.baseUrl}/specialite/` + id);
   }

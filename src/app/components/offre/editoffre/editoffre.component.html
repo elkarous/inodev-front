@@ -77,16 +77,19 @@
       <label class="col-form-label" >Description</label>
       <textarea  type="text" class="form-control "[(ngModel)]="offer.description" [ngModelOptions]="{standalone: true}" required></textarea>
     </div>
-    <div class="form-row">
-      <div class="col-md-3 mb-3" *ngFor="let arr of offer.skills; let iaa = index">
-        <label > Skills</label>
-        <input type="text"name="nom{{iaa}}" [(ngModel)]="arr.nom">
-        <div class="col-md-3 mb-3" *ngIf="iaa != 0">
-          <span class="btn btn-danger" (click)="remov(iaa)"> - </span>
-        </div>
-      </div>  </div>
+    <div class=" mt-3">
+      <label class="mb-2"  > Skills</label>
+      <div  *ngFor="let arr of offer.skills; let iaa = index">
+        <div class="row ml-3">
+        <input type="text"name="nom{{iaa}}" class="form-control co-4" [(ngModel)]="arr.nom">
 
-    <button class="btn btn-warning" (click)="Addfor()">+</button>
+          <span class="btn btn-danger col-1 w-25 h-100 " (click)="remov(iaa)"> - </span>
+        </div>
+
+      </div>
+
+    <a (click)="Addfor()" class="btn btn-outline-info w-100">+</a>
+    </div>
   </div>
 
 <div class="form-row justify-content-start">

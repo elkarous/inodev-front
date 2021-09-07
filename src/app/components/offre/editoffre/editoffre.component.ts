@@ -49,14 +49,14 @@ export class EditoffreComponent implements OnInit {
     }
   }
   remove(index){
-    this.dataarray.splice(index);
+    this.offer.skills.splice(index);
   }
 
   Addfor(){
     this.skill = new Skills();
-    this.dataarra.push(this.skill);
+    this.offer.skills.push(this.skill);
   }
   remov(index){
-    this.dataarra.splice(index);
+    this.offer.skills.splice(index);
   }
 }

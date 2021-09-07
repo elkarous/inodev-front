@@ -2,7 +2,7 @@
 
     <div class=" emp-profile ">
         <div class="row  align-items-center">
-          <div class="col-md-3 text-center justify-content-center ml-3 ">
+          <div class="col-md-2 text-center justify-content-center ml-2 ">
             <div class="profile-img">
               <img src="{{'http://localhost:8081/condidat/img/'+con.userId}}" class="rounded-circle"  alt=""/>
             </div>
@@ -17,7 +17,7 @@
             </div>
           </div>
           <hr class="hv">
-          <div class="col-md-8 align-self-start">
+          <div class="col-md-9 align-self-start">
             <nav>
               <div class="nav nav-tabs" id="nav-tab" role="tablist">
                 <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">Personal details</a>
@@ -28,6 +28,7 @@
                 <a class="nav-item nav-link" id="nav-job-tab" data-toggle="tab" href="#nav-job" role="tab" aria-controls="nav-contact" aria-selected="false">Job Question</a>
                 <a class="nav-item nav-link" id="nav-hobby-tab" data-toggle="tab" href="#nav-hobby" role="tab" aria-controls="nav-contact" aria-selected="false">Hobbies  </a>
                 <a class="nav-item nav-link" id="nav-source-tab" data-toggle="tab" href="#nav-source" role="tab" aria-controls="nav-contact" aria-selected="false">Source  </a>
+                <a class="nav-item nav-link" id="nav-app-tab" data-toggle="tab" href="#nav-app" role="tab" aria-controls="nav-app" (click)="getAllApplication()" aria-selected="false">Applications  </a>
 
               </div>
             </nav>
@@ -278,7 +279,30 @@
 
 
               </div>
+              <div class="tab-pane fade " id="nav-app" role="tabpanel" aria-labelledby="nav-app-tab">
+                <div class="card p-3">
+                  <table class="table m-4  h-50  ">
+                    <thead>
+                    <th scope="col" class="font-weight-bold">Offer Acronym</th>
+                    <th scope="col" class="font-weight-bold">Status</th>
+                    <th scope="col" class="font-weight-bold">Recommended</th>
+                    <th scope="col" class="font-weight-bold">Recommended Text</th>
+                    </thead>
+                    <tbody>
+                    <tr *ngFor="let app of applications">
+                      <td>{{app.offer}}</td>
+                      <td>{{app.status}}</td>
+                      <td>{{app.recommended}}</td>
+                      <td>{{app.recommendedText}}</td>
+                    </tr>
+                    </tbody>
 
+                  </table>
+                </div>
+
+
+
+              </div>
               </div>
 
             </div>

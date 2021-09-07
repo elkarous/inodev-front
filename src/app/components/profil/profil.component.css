@@ -59,7 +59,7 @@
 }
 
 #login {
-  background-color: #178da9;
+  background-color: #ff0440;
   height: 450px;
   width: 170px;
   text-align: center;
@@ -69,7 +69,7 @@
 }
 
 #signup {
-  background-color: #178da9;
+  background-color: #ff0440;
   margin-top: 40px;
   font-family: 'AvenirNextLTPro';
 
@@ -85,7 +85,7 @@ a{
   cursor: pointer;
 }
 .but {
-  background-color: #178da9;
+  background-color: #ff0440;
   color: white;
   margin-left: 260px;
   margin-top: 30px;
@@ -93,10 +93,10 @@ a{
 }
 
 #perso{
-  color: #178da9;
+  color: #ff0440;
 }
 #pers{
-  color: #178da9;
+  color: #ff0440;
 }
 .bord{
   opacity: 50%;

@@ -13,12 +13,15 @@ input[type="file"]{
 
 }
   #contwhite {
-    background: rgba(255, 255, 255, 0.658);
+    /*
+    background: rgba(255, 255, 255, 0.658);*/
+    background-color: lavender;
     font-family: 'AvenirNextLTPro';
     height: 800px;
     width: 700px;
     margin-right: 40px;
-    margin-top: 100px;
+    margin-top: 200px;
+    padding-top: 50px;
 
 
   }
@@ -28,7 +31,7 @@ input[type="file"]{
     height: 520px;
     width: 700px;
     margin-right: 40px;
-    margin-top: 5px;
+    margin-top: 20px;
 
   }
   .wrapper{
@@ -52,7 +55,7 @@ input[type="file"]{
     box-sizing: border-box;
     cursor: pointer;
     transition: 0.5s;
-    left: 0px;
+
     font-size: 10px;
   }
   .file::-webkit-file-upload-button{
@@ -65,26 +68,25 @@ input[type="file"]{
   }
 
   #login {
-    background-color: #178da9;
+    background-color: #ff0440;
 
-    height: 700px;
+    font-family: 'AvenirNextLTPro';
+    height: 800px;
     width: 170px;
     text-align: center;
     margin-right: -50px;
     z-index: 1;
     margin-left: 130px;
+    margin-top: 200px;
   }
 
   #signup {
-    background-color: #178da9;
+    background-color: #ff0440;
     margin-top: 40px;
     font-family: 'AvenirNextLTPro';
 
   }
-  .main {
-   background-image: url(src/assets/profile.jpg);
-   background-color: #f0f3f5 !important;
-  }
+
 
   #dn {
     margin-left: 0.5px;
@@ -95,7 +97,7 @@ input[type="file"]{
     cursor: pointer;
   }
   .but {
-    background-color: #178da9;
+    background-color: #ff0440;
     color: white;
     margin-left: 260px;
     margin-top: 30px;
@@ -103,10 +105,10 @@ input[type="file"]{
   }
 
   #perso{
-    color: #178da9;
+    color: #ff0440;
   }
   #pers{
-    color: #178da9;
+    color: #ff0440;
   }
   .border{
     opacity: 75%;
@@ -129,21 +131,9 @@ input[type="file"]{
     *{
       font-size: 12px;
     }
-    #login{
-      position: absolute;
-      left: -125px;
-      width: 100px;
-    }
-    #contwhite{
-      position: relative;
-      width: 300px;
-      right: -30px;
-    }
-    #contwhite1{
-      position: relative;
-      width: 300px;
-      right: -30px;
-    }
+
+
+
     .ddr{
       position: relative;
       top: -35px;
@@ -262,10 +252,16 @@ input[type="file"]{
   height: 25px;
 width: 25px ;
   z-index: 1000;
-  margin-right: -250px;
-  margin-top: -510px;
+  margin-right: -258px;
+  margin-top: -420px;
 }
-
-  /* #signup h5{
+/*
+ .main {
+  background-image: url(src/assets/profile.jpg);
+  background-color: #f0f3f5 !important;
+  height: 800px;
+}
+   #signup h5{
     color: white:!important;
+
   } */

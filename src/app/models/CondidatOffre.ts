@@ -1,14 +1,20 @@
 import {Condidat} from './condidat';
 import {Offre} from './offre';
 import {Status} from './status';
+import {Document} from './document';
 
-export class CondidatOffre{
-  id : number;
+export class CondidatOffre {
+  id: number;
   condidatoffreId: string;
-  condidat:Condidat;
-  offre:Offre;
+  condidat: Condidat;
+  offer: string;
   registeredAt: Date;
   status: Status;
-  note:number;
-
+  note: number;
+  noteinterview: number;
+  notePortugal: number;
+  recommended: boolean;
+  recommendedText: string;
+  score: number;
+  documents: Document[];
 }

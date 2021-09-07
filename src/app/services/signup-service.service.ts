@@ -4,6 +4,7 @@ import {Address} from '../models/address';
 import {environment} from '../../environments/environment';
 import {Condidat} from '../models/condidat';
 import {Observable} from 'rxjs';
+import {CondidatOffre} from '../models/CondidatOffre';
 const requestHeaders = new HttpHeaders();
 requestHeaders.append('Content-Type', 'image/png');
 
@@ -43,5 +44,8 @@ export class SignupServiceService {
   }
   getAll():Observable<Condidat[]>{
     return this.http.get<Condidat[]>(`${environment.baseUrl}/condidat` );
+  }
+  getAllApplication(id:number):Observable<CondidatOffre[]>{
+    return this.http.get<CondidatOffre[]>(`${environment.baseUrl}/condidat/application/`+id );
   }
 }

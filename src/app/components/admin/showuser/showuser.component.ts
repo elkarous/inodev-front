@@ -13,6 +13,7 @@ import {Skills} from '../../../models/skills';
 import {ActivatedRoute} from '@angular/router';
 import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs';
+import {CondidatOffre} from '../../../models/CondidatOffre';
 
 
 @Component({
@@ -22,7 +23,7 @@ import {Observable} from 'rxjs';
 })
 export class ShowuserComponent implements OnInit {
 
-
+applications:CondidatOffre[]
   public aa: any;
    skills: Skills[];
 
@@ -43,10 +44,10 @@ export class ShowuserComponent implements OnInit {
 
     this.id = this.route.snapshot.params.id;
     this.sign.get(this.id).subscribe((res: Condidat) => {
-      console.log(res);
       this.con = res;
 
     });
+
     this.sign.getohoto(this.id).subscribe((res: Condidat) => {
       this.aa = res;
 
@@ -61,7 +62,12 @@ dowload(document:Document) {
 
 
 
+getAllApplication(){
+  this.sign.getAllApplication(this.con.id).subscribe(data=>{
+    this.applications=data
+    console.log(data)})
 
+}
 
 
 }

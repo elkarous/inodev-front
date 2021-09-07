@@ -35,7 +35,7 @@
                   </div>
 <br>
                   <div class="justify-content-center ml-5">
-                    <button  type="button" class=" btn btn-outline-info"  (click)="openform()">
+                    <button  type="button" class=" btn text-white " style="background-color: #ff0440"  (click)="openform()">
                       <i class="fa fa-plus-square-o" aria-hidden="true"></i>
                       Add academic experience
                     </button>
@@ -46,19 +46,19 @@
                     <div class="row ">
                   <div class="form-group col-6">
                     <label class="m-2">Institute name</label>
-                    <input type="text" formControlName="nomFaculte"   name="institutename" class=" form-control form-control-sm rounded border border-dark bg-transparent">
+                    <input type="text" [(ngModel)]="educationToAdd.nomFaculte"   name="institutename" class=" form-control form-control-sm rounded border border-dark bg-transparent">
                   </div>
 
                   <div class="form-group col-6">
                     <label class="m-2">Start date</label>
-                    <input type="date" formControlName="dateDebut"   name="start date" class=" form-control form-control-sm rounded border border-dark bg-transparent">
+                    <input type="date"[(ngModel)]="educationToAdd.dateDebut"    name="start date" class=" form-control form-control-sm rounded border border-dark bg-transparent">
                   </div>
                   </div>
 
                   <div class="row">
                     <div class="form-group col-6 ">
                     <label>Specialisation</label>
-                    <select formControlName="specialite" class=" form-control form-control-sm rounded border border-dark bg-transparent"
+                    <select [(ngModel)]="educationToAdd.specialite"  class=" form-control form-control-sm rounded border border-dark bg-transparent"
                             aria-label=".form-select-lg example" >
 
                       <option value="Accounting">Accounting</option>
@@ -166,7 +166,7 @@
 
                   <div class="form-group col-6">
                     <label>Country</label>
-                    <select id="country" formControlName="pays"  name="country" class=" form-control form-control-sm rounded border border-dark bg-transparent">
+                    <select id="country"[(ngModel)]="educationToAdd.pays"   name="country" class=" form-control form-control-sm rounded border border-dark bg-transparent">
                       <option value="Tunisia" selected="selected">Tunisia</option>
                       <option value="Afganistan">Afghanistan</option>
                       <option value="Albania">Albania</option>
@@ -421,11 +421,11 @@
                   <div class="row">
                     <div class="form-group col-6">
                     <label>End date</label>
-                    <input type="date" formControlName="dateFin" name="end date" class="Rl form-control form-control-sm rounded border border-dark bg-transparent">
+                    <input type="date" [(ngModel)]="educationToAdd.dateFin"  name="end date" class="Rl form-control form-control-sm rounded border border-dark bg-transparent">
                     </div>
                     <div class="form-group col-6">
                     <label>Degree</label>
-                    <select id="degree" formControlName="niveau"   name="degree" class="Rl form-control form-control-sm rounded border border-dark bg-transparent ">
+                    <select id="degree" [(ngModel)]="educationToAdd.niveau"   name="degree" class="Rl form-control form-control-sm rounded border border-dark bg-transparent ">
                       <option value="licene" >Licence</option>
                       <option value="master" >Master</option>
                       <option value="doctorat" >Doctorat</option>
@@ -439,7 +439,7 @@
                       <input type="text" formControlName="year"   name="year"   class=" form-control form-control-sm rounded border border-dark bg-transparent">
                     </div>
 
-                    <button  type="submit" [disabled]="educationForm.invalid" (click)="createEducation()" class="btn btn-info offset-11" >Save</button>
+                    <button  type="submit"  (click)="createEducation()" class="btn text-white offset-11" style="background-color: #ff0440" >Save</button>
 
                   </div> <br><br><br><br><br><br><br><br><br><br><br><br><br><br>
                 </form>

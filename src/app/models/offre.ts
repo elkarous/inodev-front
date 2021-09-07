@@ -22,7 +22,7 @@ export class Offre {
     prix: number;
     supervisor: number;
     processus: string;
-    condidatoffre: CondidatOffre;
+  candidates: CondidatOffre[];
     skills: Skills[];
     project : Project[];
 

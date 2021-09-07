@@ -13,7 +13,7 @@ import {Source} from './Source';
 export class Condidat {
     id: number;
   phoneEtronger:string;
-
+  recommended:boolean;
   firstName: string;
   phone: string;
   lastName: string;
@@ -38,6 +38,7 @@ export class Condidat {
   hobbies: Hobbies[];
   enabled :string;
   origins:Source[];
+  connected:boolean;
 
   }
 

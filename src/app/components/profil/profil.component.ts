@@ -64,7 +64,7 @@ photo: File;
       .subscribe(res => {
         console.log(res);
       });
-    this.toastr.warning('Data update successfully !!', 'UPDATE', {
+    this.toastr.success('Data update successfully !!', 'UPDATE', {
       timeOut: 3000,
       positionClass: 'toast-bottom-left'
     });

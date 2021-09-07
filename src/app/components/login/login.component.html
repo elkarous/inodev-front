@@ -62,7 +62,7 @@
               </div>
               <div class="mt-3 hb">
                 <div>
-                  <a type="button" (click)="facebookLogin()" class="btn  w-100 col-xs-6 btn-sm fbk text-light mb-3 "><i
+                  <a type="button" (click)="signInWithFB()" class="btn  w-100 col-xs-6 btn-sm fbk text-light mb-3 "><i
                     class="bi bi-facebook" style="font-size: 15px;position: absolute; margin-left: -40px;margin-top: -2px;"></i>Log in with
                     facebook</a>
 
@@ -73,7 +73,7 @@
                     linkedin</a>
                 </div>
                 <div>
-                  <a type="button"  href="http://localhost:8081/oauth2/authorize/google?redirect_uri=http://localhost:4200/oauth2/redirect" class="btn  w-100  col-xs-7 btn-sm  ggl text-light mb-3"><i
+                  <a type="button"   (click)="signInWithGoogle()" class="btn  w-100  col-xs-7 btn-sm  ggl text-light mb-3"><i
                     class="bi bi-google" style="font-size: 15px;position: absolute; margin-left: -40px;margin-top: -2px;"></i>Log in with
                     google</a>
                 </div>
@@ -121,3 +121,9 @@
 
   <script src="https://kit.fontawesome.com/6d3194976d.js" crossorigin="anonymous"></script>
     </div></div></div>
+<img src="{{ user.photoUrl }}">
+<div>
+  <h4>{{ user.name }}</h4>
+  <p>{{ user.email }}</p>
+</div>
+<button (click)="signOut()">logout</button>

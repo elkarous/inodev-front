@@ -83,7 +83,7 @@ export class SpecialiteComponent implements OnInit {
     });
   }
 
-  delete(id: string) {
+  delete(id: number ) {
     if (window.confirm('Are sure you want to delete this Article ?')) {
     console.log(id);
     this.off.delete(id)

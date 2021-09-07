@@ -46,6 +46,11 @@ import {DashproComponent} from './dashpro/dashpro.component';
 import {PowerBiComponent} from './power-bi/power-bi.component';
 import {ListSocietyComponent} from './components/admin/list-society/list-society.component';
 import {ListSupervisorComponent} from './components/admin/list-supervisor/list-supervisor.component';
+import {ListProjectComponent} from './list-project/list-project.component';
+import {ListSubdiciplineComponent} from './list-subdicipline/list-subdicipline.component';
+import {ListSpecialityComponent} from './list-speciality/list-speciality.component';
+import {CondidateComponent} from './condidate/condidate.component';
+import {ApplicationComponent} from './application/application.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent},
@@ -83,11 +88,16 @@ const routes: Routes = [
        {path: "dashpwbi", component: PowerBiComponent},
       {path: "listsoceity", component: ListSocietyComponent},
       {path: "listsupervisor", component: ListSupervisorComponent},
-      { path: 'listoff', component: ListoffComponent}
+      { path: 'listoff', component: ListoffComponent},
+      {path:'listproject', component :ListProjectComponent},
+      {path:'candidate', component :CondidateComponent},
+      {path:'listSpeciality', component :ListSpecialityComponent},
+      { path: 'application/:offer/:id', component: ApplicationComponent, canActivate: [AuthGuard]},
 
   ]},
   { path: 'categories/:id/:id1', component: CategoriesComponent, canActivate: [AuthGuard]},
   { path: 'user/:id', component: ShowuserComponent, canActivate: [AuthGuard]},
+
   { path: 'offre/:id', component: ShowoffreComponent, canActivate: [AuthGuard]},
   { path: 'offre/edit/:id', component: EditoffreComponent, canActivate: [AuthGuard]},
   { path: 'calendar/:id', component: AddoffreComponent, canActivate: [AuthGuard]},
