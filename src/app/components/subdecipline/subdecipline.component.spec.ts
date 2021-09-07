@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
-import { AddoffreComponent } from './addoffre.component';
+import { SubdeciplineComponent } from './subdecipline.component';
 
-describe('AddoffreComponent', () => {
-  let component: AddoffreComponent;
-  let fixture: ComponentFixture<AddoffreComponent>;
+describe('SubdeciplineComponent', () => {
+  let component: SubdeciplineComponent;
+  let fixture: ComponentFixture<SubdeciplineComponent>;
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [ AddoffreComponent ]
+      declarations: [ SubdeciplineComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(AddoffreComponent);
+    fixture = TestBed.createComponent(SubdeciplineComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

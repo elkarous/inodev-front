@@ -1,0 +1,67 @@
+.text {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  opacity: 0;
+  padding: 50px;
+  background: linear-gradient(0deg, rgba(35,79,109,0.3785889355742297) 0%, rgba(69,95,113,1) 100%);
+  height: 100%;
+  width: 75%;
+  color: white;
+
+}
+.box:hover .text{
+  opacity:1;
+}
+.container {
+  display: flex;
+  width: 100%;
+  padding: 4% 2%;
+  box-sizing: border-box;
+  height: 100vh;
+}
+.box {
+  position: relative;
+  flex: 1;
+  overflow: hidden;
+  transition: .5s;
+  margin: 0 2%;
+ box-shadow: 0 20px 30px rgba(0,0,0,.1);
+  line-height: 0;
+  max-height: 500px;
+  width: 300px;
+}
+
+.box > img {
+  width: 200%;
+  height: calc(100% - 10vh);
+  object-fit: cover;
+  transition: .5s;
+}
+
+.box > span {
+  font-size: 2vh;
+  font-family: "Avenir Next LT Pro";
+  display: block;
+  text-align: center;
+  height: 5vh;
+  line-height: 2.6;
+}
+
+.box:hover { flex: 1 1 50%; }
+.box:hover > img {
+  width: 100%;
+  height: 100%;
+}
+a{
+  color: white;
+}
+
+
+
+
+
+
+
+
+

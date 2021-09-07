@@ -9,6 +9,7 @@ import {Document} from '../../../models/document';
 import {DocumentService} from '../../../services/document.service';
 import {Skills} from '../../../models/skills';
 import {SkillsService} from '../../../services/skills.service';
+import {Offre} from '../../../models/offre';
 
 @Component({
   selector: 'app-showoffre',
@@ -16,7 +17,7 @@ import {SkillsService} from '../../../services/skills.service';
   styleUrls: ['./showoffre.component.css']
 })
 export class ShowoffreComponent implements OnInit {
-  public offre1: any;
+  public offre: Offre;
   public s: any;
   public exist: number;
   public ds = 0;
@@ -24,6 +25,11 @@ export class ShowoffreComponent implements OnInit {
   public az: string;
   public id: number;
   public skills: any;
+  public clicked1=false;
+  public clicked2=false;
+  public clicked3=false;
+  public mouse1="#ff0440";
+
 
   constructor(public route: ActivatedRoute,
               public router: Router,
@@ -31,17 +37,15 @@ export class ShowoffreComponent implements OnInit {
               public tok: TokenService,
               private toastr: ToastrService,
               public co: CondidatoffreService,
-              public off: OffreService,
+              public offreService: OffreService,
               public srve: SkillsService,
               private srv: DocumentService) { }
 
   ngOnInit(): void {
-    this.id = this.route.snapshot.params.id;
-    this.off.getid(this.id).subscribe(res => {
-      this.offre1 = res;
-      this.az = this.offre1[0][13];
-      console.log(this.offre1);
-    });
+
+this.getOffer();
+
+
     this.spec.getAll().subscribe(res => {
       this.s = res;
     });
@@ -49,6 +53,7 @@ export class ShowoffreComponent implements OnInit {
       console.log(aa);
       this.exist = aa;
     });
+
   }
   all(){
     this.srve.skillsoffre(this.id)
@@ -77,5 +82,39 @@ export class ShowoffreComponent implements OnInit {
         positionClass: 'toast-bottom-left'
       });
     }
+  }
+  getOffer() {
+
+    this.route.params.subscribe(
+      (params) => {
+        this.id = params.id;
+
+      })
+    this.offreService.getbyId(this.id).subscribe(
+      data=>{
+        console.log(data)
+        this.offre=data
+      }
+    );
+
+    console.log(this.offre);
+
+  }
+  affiche1(){
+    this.clicked1=!this.clicked1;
+    this.clicked2=this.clicked2=false;
+  }
+  affiche2(){
+    this.clicked2=!this.clicked2;
+    this.clicked1=this.clicked3=false;
+  }
+  affiche3(){
+    this.clicked3=!this.clicked3;
+    this.clicked1=this.clicked2=false;
+  }
+  Watchvideo(path:string) {
+
+    window.location.href =path ;
+
   }
 }

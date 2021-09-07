@@ -17,11 +17,6 @@ import { PageNotFoundComponent } from './components/partials/page-not-found/page
 import { ShowAddressesComponent } from './components/show-addresses/show-addresses.component';
 import { AddressComponent } from './components/address/address.component';
 import { ModalComponent } from './components/addresses/modal/modal.component';
-import { SocialLoginModule, SocialAuthServiceConfig } from 'angularx-social-login';
-import {
-  GoogleLoginProvider,
-  FacebookLoginProvider
-} from 'angularx-social-login';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
@@ -77,21 +72,6 @@ import {MatPaginatorModule} from '@angular/material/paginator';
 import { ListSupervisorComponent } from './components/admin/list-supervisor/list-supervisor.component';
 import { ListSocietyComponent } from './components/admin/list-society/list-society.component';
 import {MatTreeModule} from '@angular/material/tree';
-import { ListProjectComponent } from './list-project/list-project.component';
-import { ListSubdiciplineComponent } from './list-subdicipline/list-subdicipline.component';
-import { ListSpecialityComponent } from './list-speciality/list-speciality.component';
-import { CondidateComponent } from './condidate/condidate.component';
-import {InjectableRxStompConfig, RxStompService, rxStompServiceFactory} from '@stomp/ng2-stompjs';
-import {myRxStompConfig} from './my-rx-stomp.config';
-import {MatListModule} from '@angular/material/list';
-import {MatIconModule} from '@angular/material/icon';
-import {MatGridListModule} from '@angular/material/grid-list';
-import { UserListComponent } from './chat/user-list/user-list.component';
-import {MatSnackBarModule} from '@angular/material/snack-bar';
-import { MessageComponent } from './chat/message/message.component';
-import {MatInputModule} from '@angular/material/input';
-import {MatButtonModule} from '@angular/material/button';
-import { ApplicationComponent } from './application/application.component';
 
 @NgModule({
   declarations: [
@@ -145,72 +125,33 @@ import { ApplicationComponent } from './application/application.component';
     PowerBiComponent,
     ListSupervisorComponent,
     ListSocietyComponent,
-    ListProjectComponent,
-    ListSubdiciplineComponent,
-    ListSpecialityComponent,
-    CondidateComponent,
-    UserListComponent,
-    MessageComponent,
-    ApplicationComponent,
   ],
-  imports: [
-    SocialLoginModule,
-    FontAwesomeModule,
-    SchedulerModule,
-    BrowserModule,
-    ReactiveFormsModule,
-    HttpClientModule,
-    AppRoutingModule,
-    MatTooltipModule,
-    BrowserAnimationsModule, // required animations module
-    ToastrModule.forRoot(),
-    FormsModule,
-    NgxPaginationModule,
-    MatAutocompleteModule,
-    MatSelectModule,
-    Ng2SearchPipeModule,
-    GridModule,
-    DayPilotModule,
-    MatCardModule,
-    MDBBootstrapModule.forRoot(),
-    MatTableModule,
-    MatPaginatorModule,
-    MatTreeModule,
-    MatListModule,
-    MatIconModule,
-    MatGridListModule,
-    MatSnackBarModule,
-    MatInputModule,
-    MatButtonModule,
+    imports: [
+        FontAwesomeModule,
+        SchedulerModule,
+        BrowserModule,
+        ReactiveFormsModule,
+        HttpClientModule,
+        AppRoutingModule,
+        MatTooltipModule,
+        BrowserAnimationsModule, // required animations module
+        ToastrModule.forRoot(),
+        FormsModule,
+        NgxPaginationModule,
+        MatAutocompleteModule,
+        MatSelectModule,
+        Ng2SearchPipeModule,
+        GridModule,
+        DayPilotModule,
+        MatCardModule,
+        MDBBootstrapModule.forRoot(),
+        MatTableModule,
+        MatPaginatorModule,
+        MatTreeModule,
 
-  ],
+        // ToastrModule added
+    ],
   providers: [{
-    provide: InjectableRxStompConfig,
-    useValue: myRxStompConfig
-  },
-    {
-      provide: RxStompService,
-      useFactory: rxStompServiceFactory,
-      deps: [InjectableRxStompConfig]
-    },{
-    provide: 'SocialAuthServiceConfig',
-    useValue: {
-      autoLogin: false,
-      providers: [
-        {
-          id: GoogleLoginProvider.PROVIDER_ID,
-          provider: new GoogleLoginProvider(
-            '681209312875-drrb3j1rf3unkqid6oqukdk4pmhk7q5t.apps.googleusercontent.com'
-          )
-        },
-        {
-          id: FacebookLoginProvider.PROVIDER_ID,
-          provider: new FacebookLoginProvider('966540550860555')
-        }
-      ]
-    } as SocialAuthServiceConfig,
-  },
-    {
     provide: HTTP_INTERCEPTORS,
     useClass: JwtInterceptor,
     multi: true

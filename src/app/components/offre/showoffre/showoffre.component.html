@@ -1,94 +1,199 @@
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
-<div class=" bg-light d-flex justify-content-center    ">
-<mat-card class="bg-white m-2   ">
-  <div class="row align-items-center  ">
-    <img src="{{'http://localhost:8081/offre/Imgarticles/'+offre1[0][13]}}"  class=" col-8 mb-2 offset-2 h-75">
+<mat-card class="bg-white">
 
-  </div>
-  <hr class="text-light">
-  <div class="row">
-<div  class=" col-5 mr-1 ">
-
-  <h4>Description</h4>
-  <p>{{offre1[0][6]}}</p>
-  <hr>
-
-  <h4>Process</h4><br>
-  <p>The steps involved in being recruited for this job.</p>
-  <div class="d-flex"><p>1</p><p class="ml-2"> Contact applicant after receiving application</p></div>
-  <div class="d-flex"> <p>2</p><p class="ml-2"> Set up interview with applicant based on schedules favorable to applicant</p></div>
-  <div class="d-flex"> <p>3</p><p class="ml-2"> Set up interview with applicant and company</p></div>
-  <div class="d-flex"> <p>4</p><p class="ml-2"> Make a decision on shortlisted applicants</p></div>
-  <div class="d-flex"> <p>5</p><p class="ml-2"> Final decision on selected applicants</p></div>
-  <div class="d-flex"> <p>6</p><p class="ml-2"> Provde feedback to candidate after interview</p></div>
-
-</div>
-
-<div class=" col-6  ">
-  <h4>Details</h4>
-  <div class="container bg-white " >
-      <p class="h5">{{offre1[0][7]}}</p>
-      <p class="h3">{{offre1[0][1]}}</p>
-      <div class="d-flex pt-2">
-        <p class="ml-2">Porto, Portugal</p>
-      </div>
-      <div class="d-flex">
-        <div>
-          <i class="bi bi-wallet-fill"></i>
-        </div>
-        <div class="ml-2">
-          <p  class="h5">{{offre1[0][11]}}</p>
-
-        </div>
-      </div>
-
-      <div class="d-flex">
-        <div>
-          <i class="bi bi-chat-fill"></i>
-        </div>
-        <div class="ml-2">
-          <p  class="h5">Proficiency in English </p>
-          <p>To Learn portugues visit our langage platform</p>
-        </div>
-      </div>
-    <hr class="text-light">
-    <h4>Requirements</h4>
-      <div class="d-flex row">
-         <br>
-        <div class="col-sm-6"><h6>Backgrounds</h6></div>
-        <div class="col-sm-6 "> <p class="ff">Mechanical </p></div>
-      </div>
-      <div class="d-flex row">
-        <div class="col-sm-6"><h6>Skills</h6></div>
-        <div class="col-sm-6 "><p class="ff">Mechanical</p>
-
-        </div>
-      </div>
-    <hr class="text-light">
-      <h4>Date {{offre1[0][10]}}</h4>
-      <div class="d-flex row p-1"><p class="col-sm-4">Offer end date</p><p class="col-sm-4 ml-2 ff"> {{offre1[0][4] | date}}</p></div>
-      <div class="d-flex p-1"><p class="col-sm-4">Start Day</p><p class="col-sm-4 ml-2 ff"> {{offre1[0][5] | date}}</p></div>
-
-    <hr class="text-light">
-
-  <div class="d-flex row p-1"><p class="col-sm-4">Price : </p><p class="col-sm-4 ml-2 ff">{{offre1[0][8]}} DT</p></div>
-
-        <p class="card-text text-center">Pick the slot most suitable for you</p>
-
-        <button routerLink="/postuler/{{offre1[0][0]}}/{{offre1[0][12]}}" class="btn row   text-white w-100 mb-3"  style="background-color: #ff0440">Apply Now</button>
-  <br>
-
-
-
-  <button class="btn btn-primary row w-100 " routerLink="{{offre1[0][14]}}">Watch Video</button>
-  </div>
+  <div class="row container justify-content-center" >
+    <img src="{{'http://localhost:8081/offer/Imgarticles/'+offre.id}}">
   </div>
 
 
-  </div>
+  <div class="row justify-content-center  ">
+    <div class=" col-lg-5 mr-1 mt-4  col-sm-12">
+      <h1 class="font-weight-bold">{{offre.acronym}}</h1>
+      <h3 class="font-weight-bold">{{offre.nom}}</h3>
+      <h4 class="font-weight-bold mt-5">Description</h4>
+      <p>{{offre.description}}</p>
+      <p *ngIf="offre.video!=null"> For more information see the video:
+        <a (click)="Watchvideo(offre.video)" style="color: #0e86c7"  class="font-weight-bold"> click here</a></p>
+      <hr>
 
+      <h4 class="font-weight-bold">Process</h4><br>
+      <!-- Vertical Steppers -->
+      <div class="row ">
+        <u class="col-md-12">
+
+          <!-- Stepers Wrapper -->
+          <ul class="stepper stepper-vertical">
+
+            <!-- First Step -->
+            <li class="completed">
+              <a (click)="affiche1()">
+                <span class="circle">1</span>
+                <span class="label  text-capitalize">application</span>
+              </a>
+
+              <!-- Section Description -->
+              <div class="step-content grey lighten-3" *ngIf="clicked1">
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse cupiditate voluptate facere
+                  iusto
+                  quaerat
+                  vitae excepturi, accusantium ut aliquam repellat atque nesciunt nostrum similique. Inventore
+                  nostrum
+                  ut,
+                  nobis porro sapiente.</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore error excepturi veniam nemo
+                  repellendus, distinctio soluta vitae at sit saepe. Optio eaque quia excepturi adipisci pariatur
+                  totam,
+                  atque odit fugiat.</p>
+                <p>Deserunt voluptatem illum quae nisi soluta eum perferendis nesciunt asperiores tempore saepe
+                  reiciendis,
+                  vero quod a dolor corporis natus qui magni quas fuga rem excepturi laboriosam. Quisquam
+                  expedita ab
+                  fugiat.</p>
+              </div>
+            </li>
+
+            <!-- Second Step -->
+            <li class="active">
+
+              <!--Section Title -->
+              <a (click)="affiche2() ">
+                <span class="circle" style="background-color: #ff0440">2</span>
+                <span class="label text-capitalize">interview</span>
+              </a>
+
+              <!-- Section Description -->
+              <div class="step-content grey lighten-3" *ngIf="clicked2">
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse cupiditate voluptate facere
+                  iusto
+                  quaerat
+                  vitae excepturi, accusantium ut aliquam repellat atque nesciunt nostrum similique. Inventore
+                  nostrum
+                  ut,
+                  nobis porro sapiente.</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore error excepturi veniam nemo
+                  repellendus, distinctio soluta vitae at sit saepe. Optio eaque quia excepturi adipisci pariatur
+                  totam,
+                  atque odit fugiat.</p>
+                <p>Deserunt voluptatem illum quae nisi soluta eum perferendis nesciunt asperiores tempore saepe
+                  reiciendis,
+                  vero quod a dolor corporis natus qui magni quas fuga rem excepturi laboriosam. Quisquam
+                  expedita ab
+                  fugiat.</p>
+              </div>
+            </li>
+
+            <!-- Third Step -->
+            <li class="active">
+              <a (click)="affiche3()">
+                <span class="circle">3</span>
+                <span class="label text-capitalize">final decision</span>
+              </a>
+              <!-- Section Description -->
+              <div class="step-content grey lighten-3" *ngIf="clicked3">
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse cupiditate voluptate facere
+                  iusto
+                  quaerat
+                  vitae excepturi, accusantium ut aliquam repellat atque nesciunt nostrum similique. Inventore
+                  nostrum
+                  ut,
+                  nobis porro sapiente.</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore error excepturi veniam nemo
+                  repellendus, distinctio soluta vitae at sit saepe. Optio eaque quia excepturi adipisci pariatur
+                  totam,
+                  atque odit fugiat.</p>
+                <p>Deserunt voluptatem illum quae nisi soluta eum perferendis nesciunt asperiores tempore saepe
+                  reiciendis,
+                  vero quod a dolor corporis natus qui magni quas fuga rem excepturi laboriosam. Quisquam
+                  expedita ab
+                  fugiat.</p>
+              </div>
+
+            </li>
+
+
+          </ul>
+        </u>
+      </div>
+
+
+    </div>
+
+    <div class=" col-lg-6 col-sm-12   " style="background: #eeeeee; ">
+
+      <h4 class="font-weight-bold ml-4 mt-4">Registration</h4>
+      <div class="d-flex row p-1 ml-4"><p class="col-sm-4 text-capitalize ">Start Date </p>
+        <p class="col-sm-4 ml-2 "> {{offre.dateDebut | date}}</p></div>
+      <div class="d-flex row p-1 ml-4"><p class="col-sm-4 text-capitalize"> end date </p>
+        <p class="col-sm-4 ml-2 "> {{offre.dateFin | date}}</p></div>
+
+      <hr class="text-light">
+      <h4 class="font-weight-bold ml-4">Details</h4>
+      <div class="container-fluid ml-4">
+        <div class="d-flex row p-sm-0 p-lg-1"><p class="col-sm-4 text-capitalize"> duration </p>
+          <p class="col-sm-4 ml-2 text-capitalize"> {{offre.duree}}</p></div>
+        <div class="d-flex row p-sm-0 p-lg-1"><p class="col-sm-4 text-capitalize"> start date  </p>
+          <p class="col-sm-4 ml-2 text-capitalize"> {{offre.startdateoffer |date}}</p></div>
+        <div class="d-flex row p-sm-0 p-lg-1"><p class="col-sm-4 text-capitalize"> commandation </p>
+          <p class="col-sm-4 ml-2 text-capitalize"> {{offre.adress}}</p></div>
+        <div class="d-flex row p-sm-0 p-lg-1"><p class="col-sm-4 text-capitalize"> organisation </p>
+          <p class="col-sm-4 ml-2 text-capitalize"> {{offre.organisation}}</p></div>
+
+      </div>
+
+      <hr class="text-light">
+
+      <div class="d-flex font-weight-bold row ml-4 p-1"><a type="button" class=" mt-0 mr-0 " style="color: #ff0440" data-toggle="modal" data-target="#exampleModalCenter">
+        <i class="fa fa-info-circle " aria-hidden="true"></i></a>
+        <p class="col-sm-4">Price : </p>
+        <p class="col-sm-4 ml-2 ">{{offre.prix}} DT</p>
+      </div>
+
+      <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content">
+            <div class="modal-header" style="background-color: #eeeeee">
+              <h5 class="modal-title" id="exampleModalLongTitle" >Price details </h5>
+            </div>
+            <div class="modal-body">
+              <h4 style="color: black">
+                {{offre.priceDetails}}</h4>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn " style="background-color: #eeeeee" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <hr class="text-light">
+
+
+        <h4 class="font-weight-bold ml-4 p-sm-0  ">Requirements</h4>
+        <div class="d-flex row p-sm-0 p-lg-1 ml-4"><p class="col-sm-4 text-capitalize"> level </p>
+          <p class="col-sm-4 ml-2 text-capitalize"> {{offre.niveau}}</p></div>
+
+        <div class="d-flex row p-sm-0 p-lg-1 ml-4">
+          <p class="col-sm-4 text-capitalize"> skills </p>
+          <div *ngFor="let skill of offre.skills">
+            <p class="ml-5 w-75"
+               style=" text-align: center; border: #ececec solid 2px ; border-radius: 15px ; background-color: #f8f8f8 ">{{skill.nom}}</p>
+          </div>
+        </div>
+
+        <div class="d-flex row p-sm-0 p-lg-1 ml-4"><p class="col-sm-4 text-capitalize"> other </p>
+          <p class="col-sm-4 ml-2 text-capitalize"> {{offre.processus}}</p></div>
+
+
+    <div class="row ml-3 mr-3 align-content-center ">
+      <button routerLink="/postuler/{{offre.id}}" class="btn text-white w-100 mb-3"
+              style="background-color: #ff0440">Apply Now
+      </button>
+
+    </div>
+    </div>
+  </div>
 
 
 </mat-card>
 
-</div>
+

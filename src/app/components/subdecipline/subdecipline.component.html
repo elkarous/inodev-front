@@ -1,0 +1,32 @@
+<app-offre></app-offre>
+<div id="carouselExampleControls" class="carousel SL  slide h-75 d-flex  " data-ride="carousel">
+
+  <a class="carousel-control-prev prev " href="#carouselExampleControls" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon " aria-hidd en="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next next " href="#carouselExampleControls" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+  <div class="container mt-3">
+    <div class="container">
+      <div class="box"
+           *ngFor="let subdecipline of specialite.subDecipline | paginate: { itemsPerPage: 3, currentPage: p } let i = index ">
+        <img src="{{'http://localhost:8081/subDecipline/Imgarticles/'+subdecipline.id}}">
+        <div class="text" style="overflow-x: hidden;overflow-y: scroll;">
+          <h2 class="text-uppercase -bold" style="text-align: center;">Projects</h2>
+          <br>
+          <div *ngFor="let projet of subdecipline.project">
+              <p class="m-3 " style="text-overflow:ellipsis;white-space: nowrap;"> <strong> <a [routerLink]="['/offer',categorie,'specialite', specialite.id,subdecipline.id,'project', projet.id ]">{{projet.nom}} </a> </strong>:
+              {{projet.description}}</p>
+            <br>
+          </div>
+        </div>
+        <span class="text-uppercase ">{{subdecipline.nom}}</span>
+      </div>
+
+    </div>
+  </div>
+</div>
+<pagination-controls (pageChange)="p = $event"></pagination-controls>

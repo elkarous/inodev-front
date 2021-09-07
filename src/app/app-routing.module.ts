@@ -42,6 +42,8 @@ import {ArchiveComponent} from './components/project/archive/archive.component';
 import {ChatComponent} from './chat/chat.component';
 import {NewPlanComponent} from './new-plan/new-plan.component';
 import { BigprofileComponent } from './bigprofile/bigprofile.component';
+import {SubdeciplineComponent} from './components/subdecipline/subdecipline.component';
+
 import {DashproComponent} from './dashpro/dashpro.component';
 import {PowerBiComponent} from './power-bi/power-bi.component';
 import {ListSocietyComponent} from './components/admin/list-society/list-society.component';
@@ -51,6 +53,7 @@ import {ListSubdiciplineComponent} from './list-subdicipline/list-subdicipline.c
 import {ListSpecialityComponent} from './list-speciality/list-speciality.component';
 import {CondidateComponent} from './condidate/condidate.component';
 import {ApplicationComponent} from './application/application.component';
+
 
 const routes: Routes = [
   { path: '', component: HomeComponent},
@@ -96,22 +99,27 @@ const routes: Routes = [
 
   ]},
   { path: 'categories/:id/:id1', component: CategoriesComponent, canActivate: [AuthGuard]},
+
   { path: 'user/:id', component: ShowuserComponent, canActivate: [AuthGuard]},
 
   { path: 'offre/:id', component: ShowoffreComponent, canActivate: [AuthGuard]},
   { path: 'offre/edit/:id', component: EditoffreComponent, canActivate: [AuthGuard]},
+
   { path: 'calendar/:id', component: AddoffreComponent, canActivate: [AuthGuard]},
-  { path: 'project', component: ProjectComponent, canActivate: [AuthGuard]},
+  { path: 'offer/:categorie/specialite/:id/:subdecipline/project/:idproject', component: ProjectComponent, canActivate: [AuthGuard]},
   { path: 'project/archive', component: ArchiveComponent, canActivate: [AuthGuard]},
   { path: 'postulation/:id', component: PostulationComponent, canActivate: [AuthGuard]},
   { path: 'specialite/:id', component: EditspeComponent, canActivate: [AuthGuard]},
   { path: 'search/:id/:id1/:id2/:id3', component: SearchComponent, canActivate: [AuthGuard]},
-  { path: 'off/cat/:id', component: OffreComponent, canActivate: [AuthGuard]},
+  { path: 'offer/:id', component: SpecialiteComponent, canActivate: [AuthGuard]},
+  { path: 'offer/:categorie/specialite/:id', component: SubdeciplineComponent, canActivate: [AuthGuard]},
   { path: 'sup', component: SupervisorComponent, canActivate: [AuthGuard]},
-  { path: 'postuler/:id/:id1', component: PostulerComponent, canActivate: [AuthGuard]},
+
+  { path: 'postuler/:id', component: PostulerComponent, canActivate: [AuthGuard]},
+  { path: 'listc', component: ListCondidatComponent, canActivate: [AuthGuard]},
 
   { path: 'myapplication', component: CondidatureComponent, canActivate: [AuthGuard]},
-  { path: 'listspe', component: SpecialiteComponent, canActivate: [AuthGuard]},
+  //{ path: 'listspe', component: SpecialiteComponent, canActivate: [AuthGuard]},
   { path: 'listoff/:id', component: ListoffComponent, canActivate: [AuthGuard]},
   { path: 'listAdresse', component: ListAddressesComponent, pathMatch: 'full', canActivate: [AuthGuard] },
   { path: 'addresses', children: [
@@ -129,7 +137,7 @@ const routes: Routes = [
   declarations: [],
   imports: [
     CommonModule,
-    RouterModule.forRoot(routes)
+    RouterModule.forRoot(routes, { relativeLinkResolution: 'legacy' })
   ],
   exports: [RouterModule]
 })

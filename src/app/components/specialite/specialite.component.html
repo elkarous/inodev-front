@@ -1,156 +1,51 @@
-<style>
-  .h2 {
-    font-weight: bolder;
-  }
-</style>
+<app-offre></app-offre>
+<div id="carouselExampleControls" class="carousel SL  slide h-75 d-flex  " data-ride="carousel">
 
-<div class="bg-light min-vh-100 row">
-<app-sidebar></app-sidebar>
-<div class="col-sm-9 offset-2">
-<div class="form-group">
-  <input type="text" class="form-control" placeholder="Search Here" [(ngModel)]="term">
-</div>
-<button class="btn btn-info float-right" (click)="Clicked()"> Add Specialite</button>
-<div class="card-body" *ngIf="add">
+  <a class="carousel-control-prev prev " href="#carouselExampleControls" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon " aria-hidd en="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next next " href="#carouselExampleControls" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
 
+  <div class="container mt-3" >
 
+    <div class="row">
+      <div class="col-md-4 active h-100" *ngFor="let specialite of specialites | paginate: { itemsPerPage: 3, currentPage: p } let i = index" >
+        <div class="card text-white card-has-bg  click-col" style=" border-radius: 15px ; background-image:url({{'http://localhost:8081/specialite/Imgarticles/'+specialite.id}});">
+          <img class="card-img d-none" src="https://source.unsplash.com/600x900/?tech,street" alt="Goverment Lorem Ipsum Sit Amet Consectetur dipisi?">
+          <div class="card-img-overlay d-flex flex-column">
+            <div class="card-body ">
+              <small class="card-meta mb-2">Domaine</small>
+              <h3 class="card-title  mt-5 text-uppercase "><a class="text-white"  herf="#">{{specialite.nom}}</a></h3>
+            </div>
+            <div class="card-footer">
+              <div class="media">
+                <div class="stage ">
+                  <a [routerLink]="['/offer',categorie,'specialite', specialite.id ]"
 
-  <form class="bg-light">
-    <div class="form-row">
-      <div class="col-md-3 mb-3">
-        <label >Name</label>
-        <select [(ngModel)]="con.nom" [ngModelOptions]="{standalone: true}" class="form-control  form-select-lg mr-3 "
-                aria-label=".form-select-lg example" style="width: 10rem;">
+                     class="readmorebutn ">Read More</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
 
-          <option value="Accounting">Accounting</option>
-          <option value="Administrative">Administrative</option>
-          <option value="Agriculture">Agriculture</option>
-          <option value="Animal sciences">Animal sciences</option>
-          <option value="Anthrolopology">Anthrolopology</option>
-          <option value="Archaeology">Archaeology</option>
-          <option value="Architecture">Architecture</option>
-          <option value="Art & Fine Arts<">Art & Fine Arts</option>
-          <option value="Art History">Art History</option>
-          <option value="Astronomy & Astrophysics">Astronomy & Astrophysics</option>
-          <option value="Au Pair">Au Pair</option>
-          <option value="Aviation">Aviation</option>
-          <option value="Biochemistry">Biochemistry</option>
-          <option value="Biology">Biology</option>
-          <option value="Biomedical Science">Biomedical Science</option>
-          <option value="Business">Business</option>
-          <option value="Call Center">Call Center</option>
-          <option value="Camp Counseler & Trip Leader">Camp Counseler & Trip Leader</option>
-          <option value="Chemical Engineering">Chemical Engineering</option>
-          <option value="Chemistry">Chemistry</option>
-          <option value="Civil Engineering">Civil Engineering</option>
-          <option value="Communications">Communications</option>
-          <option value="Computer Science">Computer Science</option>
-          <option value="Construction">Construction</option>
-          <option value="Counseling">Counseling</option>
-          <option value="Creative writing">Creative writing</option>
-          <option value="Criminal Justice">Criminal Justice</option>
-          <option value="Culinary Arts & Cooking">Culinary Arts & Cooking</option>
-          <option value="Dentistry">Dentistry</option>
-          <option value="Development">Development</option>
-          <option value="Ecology">Ecology</option>
-          <option value="Economics">Economics</option>
-          <option value="Education">Education</option>
-          <option value="Electrical Engineering">Electrical Engineering</option>
-          <option value="Environmental Management">Environmental Management</option>
-          <option value="Environmental Studies">Environmental Studies</option>
-          <option value="Fashion Business">Fashion Business</option>
-          <option value="Fashion Design">Fashion Design</option>
-          <option value="Finance">Finance</option>
-          <option value="Food Science & Nutrition">Food Science & Nutrition</option>
-          <option value="Forestry">Forestry</option>
-          <option value="Geology">Geology</option>
-          <option value="Graphic Design">Graphic Design</option>
-          <option value="Health Administration">Health Administration</option>
-          <option value="Health Sciences">Health Sciences</option>
-          <option value="History">History</option>
-          <option value="Horticulture">Horticulture</option>
-          <option value="Hospitality">Hospitality</option>
-          <option value="Human Resources">Human Resources</option>
-          <option value="Human Rights">Human Rights</option>
-          <option value="Humanities">Humanities</option>
-          <option value="Industrial & Manufacturing">Industrial & Manufacturing</option>
-          <option value="Information Systems">Information Systems</option>
-          <option value="Interior Design">Interior Design</option>
-          <option value="international Relations">international Relations</option>
-          <option value="International Trade">International Trade</option>
-          <option value="Journalism">Journalism</option>
-          <option value="Kinesiology & Exercise Science">Kinesiology & Exercise Science</option>
-          <option value="Labor & Industrial Relations">Labor & Industrial Relations</option>
-          <option value="Law">Law</option>
-          <option value="Liberal Arts">Liberal Arts</option>
-          <option value="Library & Information Science">Library & Information Science</option>
-          <option value="Linguistics">Linguistics</option>
-          <option value="Marine Science">Marine Science</option>
-          <option value="Marketing, Advertising, & PR">Marketing, Advertising, & PR</option>
-          <option value="Mathematics">Mathematics</option>
-          <option value="Mechanical Engineering">Mechanical Engineering</option>
-          <option value="Media">Media</option>
-          <option value="Medicine">Medicine</option>
-          <option value="Meteorology">Meteorology</option>
-          <option value="Museum Studies">Museum Studies</option>
-          <option value="Music">Music</option>
-          <option value="National Park">National Park</option>
-          <option value="Nursing">Nursing</option>
-          <option value="Parks & Recreation">Parks & Recreation</option>
-          <option value="Pharmaceuticals">Pharmaceuticals</option>
-          <option value="Philosophy">Philosophy</option>
-          <option value="Photography">Photography</option>
-          <option value="Physical Therapy">Physical Therapy</option>
-          <option value="Physics">Physics</option>
-          <option value="Political Science & Government">Political Science & Government</option>
-          <option value="Ranch">Ranch</option>
-          <option value="Real Estate">Real Estate</option>
-          <option value="Religious Work">Religious Work</option>
-          <option value="Resort">Resort</option>
-          <option value="Sales">Sales</option>
-          <option value="Scuba">Scuba</option>
-          <option value="Ski Resort">Ski Resort</option>
-          <option value="Social Sciences">Social Sciences</option>
-          <option value="Social Work">Social Work</option>
-          <option value="Sociology">Sociology</option>
-          <option value="Spanish">Spanish</option>
-          <option value="Sports">Sports</option>
-          <option value="Statistics">Statistics</option>
-          <option value="Sustainable Development">Sustainable Development</option>
-          <option value="Technology">Technology</option>
-          <option value="Tourism">Tourism</option>
-          <option value="Web Design">Web Design</option>
-          <option value="Women's Studies">Women's Studies</option>
-          <option value="Zoology & Wildlife Sciences">Zoology & Wildlife Sciences</option>
-        </select>
-    </div>
-    </div>
-    <div class="form-row"><br>
-      <div class="mt-5 custom-file">
-        <input type="file" class="custom-file-input" (change)="onSelectFile($event)" required>
-        <label class="custom-file-label">Choose Image...</label>
       </div>
     </div>
-    <button class="btn btn-primary" (click)="Add()">Add</button>
-    <a type="button" class="btn btn-secondary" (click)="Click()">cancel</a>
-  </form>
 
-
-
-</div>
-
-<div class="row">
-  <div class="card col-sm-3 text-center" style="width: 21rem;" *ngFor="let item of offre1 | filter:term let i = index" [ngClass]="{'active': i == 0 }">
-    <img src="{{'http://localhost:8081/specialite/Imgarticles/'+item[3]}}" class=" img1" alt="...">
-    <div class="card-body">
-      <p class="card-title h2 ct1">{{item[0]}}</p>
-     <p class="card-text"*ngFor="let it of offre let i = index"> <a *ngIf="it[2] === item[2]">{{it[1]}}</a></p>
-      <a type="button" class="btn btn-secondary"  routerLink="/specialite/{{item[0]}}">Edit</a>
-      <a type="button" (click)="delete(item[2])" class="btn btn-info " >Delete</a>
-
-    </div>
   </div>
-</div>
-<button class="btn btn-info float-right" (click)="backClicked()"> Retour</button>
-</div>
-</div>
+
+
+
+
+
+
+
+
+
+
+</div><br>
+<pagination-controls (pageChange)="p = $event"></pagination-controls>

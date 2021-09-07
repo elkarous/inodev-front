@@ -1,3 +1,23 @@
 h4{
   color: #ff0440;
 }
+span:hover{
+  color: #ff0440;
+
+
+}
+.container {
+  display: flex;
+  min-width: 102%;
+  padding: 4% 2%;
+  box-sizing: border-box;
+  height:70vh;
+}
+img{
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  height: calc(100% - 1vh);
+  object-fit: cover;
+  transition: .5s
+}

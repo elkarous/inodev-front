@@ -1,66 +1,70 @@
-<div class="bg-light min-vh-100 row" >
-  <nav class="px-1 bg-info position-fixed" id="sticky-sidebar">
-    <div class="mh-100 nav flex-column flex-nowrap min-vh-100 mw-25 overflow-auto text-white p-2" >
-      <ul class="nav flex-column" >
-        <li class="nav-item">
-          <a class="nav-link list text-white" routerLink="/dash">
-            <span data-feather="home"></span>
-            Dashboard <span class="sr-only">(current)</span>
-          </a>
-        </li>
-        <li class="nav-item" >
-          <a class="nav-link list text-white" style="width: 200px" routerLink="/project/archive">
-            <span data-feather="file"></span>
-            Archive
-          </a>
-        </li>
-        <li class="nav-item" >
-          <a class="nav-link list text-white" style="width: 200px" routerLink="/project">
-            <span data-feather="file"></span>
-            Project
-          </a>
-        </li>
+<div class="mt-3 mb-2">
+  <div class="row pl-5">
+  <a [routerLink]="['/offer',categorie]">{{specialite.nom}} </a>
+    <i class="fa fa-angle-double-right mr-2 ml-2 mt-1" aria-hidden="true"></i>
+  <a [routerLink]="['/offer',categorie,'specialite',specialite.id ]"> {{subdecipline.nom}}</a>
+    <i class="fa fa-angle-double-right mr-2 ml-2 mt-1 " aria-hidden="true"></i>
+    <a href="#" class="active font-weight-bold" style="color: #ff0440"> {{project.acronyme}}</a>
+</div>
+<div class="row justify-content-center mt-3">
+  <div class="card col-4">
+    <div class="card-body">
+      <h1 class="card-title text-uppercase font-weight-bold">{{project.acronyme}}</h1>
+      <p class="card-text font-weight-bold ">{{project.nom}}</p>
+
+      <div class="row justify-content-center mb-5 mt-5">
+        <button type="button " class="btn btn-primary" (click)="GoToRequirements()" > <strong>Requirements</strong></button>
+        <button type="button " class="btn_wrap btn btn-primary ml-4 w-25">
+          <span> <strong> Share Now </strong> </span>
+          <div class="container">
+            <i class="fa fa-facebook-f m-1"></i>
+            <i class="fa fa-twitter m-1"></i>
+            <i class="fa fa-instagram m-1"></i>
+            <i class="fa fa-github m-1"></i>
 
 
-      </ul>
+          </div>
+        </button>
+      </div>
+      <div class="mt-5 ">
+        <table class="table table-hover" style="font-family: 'Avenir Next LT Pro'">
+          <thead>
+          <tr style="text-transform: capitalize;">
+            <th>intership </th>
+            <th>level</th>
+            <th>duration </th>
+            <th>explore</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr   *ngFor="let offre of project.offers">
+            <td>{{offre.nom}} </td>
+            <td>{{offre.niveau}}</td>
+            <td>{{offre.duree}} </td>
+            <td><a [routerLink]="['/showOffre',offre.id ]"><i class="fa fa-eye" aria-hidden="true" style="color: #ff0440"></i></a></td>
+          </tr>
+
+          </tbody>
+        </table>
+      </div>
+      <div class="mt-5" style="color: black; font-size: small">
+        <p style="text-transform: capitalize;"> adresse du projet<br>
+        English level prerequisite: Intermediate<br>
+        Field : {{subdecipline.nom}}</p>
+      </div>
     </div>
-  </nav>
-    <div class="col-sm-9 offset-3">
-
-<div class="col-sm-4" *ngFor="let a of pos let i = index" >
-
-  <div *ngIf="a[3] === con.id">
-  <div *ngIf="a[5] === 'Summer' && a[4] + summer > taw">
-    <a class="nav-link list text-dark" style="width: 200px" routerLink="/calendar/{{a[2]}}">
-      <img style="width: 280px; height: 200px;" src="{{'http://localhost:8081/offre/Imgarticles/'+a[0]}}" class=" img1" alt="...">
-      <span data-feather="file"></span>
-      Project {{a[1]}}
-    </a>
+  </div>
+  <div class="col-4 mt-5">
+   <p class="text-break text-justify">{{project.description}}</p>
+   <div class="text-break text-justify text-capitalize row" *ngIf="project.partenar!=null">
+     <p class="font-weight-bold col-sm-3 ">Partenar : </p>
+     <p class="col-sm-6">{{project.partenar}}</p>
+   </div>
+   <div class="text-break text-justify row " *ngIf="project.endDate!=null">
+     <p class="font-weight-bold col-sm-3">EndDate : </p>
+     <p class="col-sm-6"> {{project.endDate | date}}</p>
+   </div>
+  </div>
+</div>
 
 </div>
-  <div *ngIf="a[5] === 'Semester'"><div *ngIf="a[4] + semester > taw">
-
-      <a class="nav-link list text-dark" style="width: 200px" routerLink="/calendar/{{a[2]}}">
-        <img style="width: 280px; height: 200px;" src="{{'http://localhost:8081/offre/Imgarticles/'+a[0]}}" class=" img1" alt="...">
-        <span data-feather="file"></span>
-        Project {{a[1]}}
-      </a>
-
-  </div></div>
-  <div *ngIf="a[5] === 'Academic year'"><div *ngIf="a[4] + year > taw">
-
-      <a class="nav-link list text-dark" style="width: 200px" routerLink="/calendar/{{a[2]}}">
-        <img style="width: 280px; height: 200px;" src="{{'http://localhost:8081/offre/Imgarticles/'+a[6]}}" class=" img1" alt="...">
-        <span data-feather="file"></span>
-        Project {{a[1]}}
-      </a>
-
-  </div>
-  </div>
-  </div></div>
-
-
-
-    </div>
-
-  </div>

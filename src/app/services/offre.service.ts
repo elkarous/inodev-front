@@ -3,8 +3,6 @@ import {environment} from '../../environments/environment';
 import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs';
 import {Offre} from '../models/offre';
-import {Project} from '../models/project';
-import {CondidatOffre} from '../models/CondidatOffre';
 
 @Injectable({
   providedIn: 'root'
@@ -24,12 +22,6 @@ export class OffreService {
   }
   get(id: number):Observable <Offre>{
     return this.http.get<Offre>(`${environment.baseUrl}/offer/` + id );
-  }
-  getCandidates(id: string):Observable <CondidatOffre[]>{
-    return this.http.get<CondidatOffre[]>(`${environment.baseUrl}/offer/getCondidates/` + id );
-  }
-  getCandidatOffer(id: number):Observable <CondidatOffre>{
-    return this.http.get<CondidatOffre>(`${environment.baseUrl}/condidatoffre/` + id );
   }
  public getid(id: number):Observable<String>{
     return this.http.get<string>(`${environment.baseUrl}/offer/id/` + id );
@@ -53,23 +45,4 @@ export class OffreService {
   update(id: number, a: Offre){
     return this.http.put(`${environment.baseUrl}/offer/edit/` + id,  a);
   }
-  updatApplication(application:CondidatOffre){
-    return this.http.put(`${environment.baseUrl}/condidatoffre` ,  application);
-  }
-getAllProject():Observable<Project[]>{
-    return this.http.get<Project[]>(`${environment.baseUrl}/Project`)
-}
-  AddProject(project:Project):Observable<Project>{
-    return this.http.post<Project>(`${environment.baseUrl}/Project`,project)
-  }
-  UpdateProject(project:Project):Observable<Project>{
-    return this.http.put<Project>(`${environment.baseUrl}/Project`,project)
-  }
-  getProject(id:number):Observable<Project>{
-    return this.http.get<Project>(`${environment.baseUrl}/Project`+id)
-  }
-  DeleteProject(id:number):Observable<Project>{
-    return this.http.delete<Project>(`${environment.baseUrl}/Project`+id)
-  }
-
 }
